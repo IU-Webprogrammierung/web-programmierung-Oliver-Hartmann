@@ -1,0 +1,33 @@
+menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+}
+
+.img-hero {
+    width: 100%;
+}
+
+.img-start-33 {
+    width: 33%;
+}
+
+.img-start-50 {
+    width: 50%;
+}
+
+.img-start-66 {
+    width: 66%;
+}
+
+.footer {
+    margin-top: 2rem;
+}
