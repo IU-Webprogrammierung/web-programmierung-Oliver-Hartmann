@@ -33,6 +33,13 @@ ul {
     margin: 8px;
 }
 
+figure {
+    margin: 0;
+}
+figcaption {
+    margin-bottom: 1rem;
+}
+
 .footer {
     margin-top: 2rem;
 }
