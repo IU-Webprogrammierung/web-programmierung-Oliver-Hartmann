@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="live.css">
+    <link rel="stylesheet" href="style-live.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script defer src="js/loader.js"> </script>
     <title>Live | Insect O.</title>
@@ -15,136 +15,157 @@
 
     <!-- Top Navi-->
     <header>
-
     </header>
 
     <main>
-
-        <!-- Hero Text Overlay-->
-        <h1>Live</h1>
-
         <!-- Hero Bild-->
-        <img src="img/hero-live-performance-1920.jpg"
-            alt="modular synthesizers with a lot of cables and a drum maschine" class="img-hero"
-            title="modular synthesizer and drum maschine">
+        <div class="hero-outer">
+            <div class="hero-image">
+                <div class="hero-text">
+                    <h1>Live</h1>
+                </div>
+            </div>
+        </div>
 
-        <!-- Live Dates-->
-        <section aria-label="concert dates">
-            <h2>Concerts</h2>
-            <table>
-                <tr>
-                    <th>Date</th>
-                    <th>City</th>
-                    <th>Venue</th>
-                    <th>Ticket</th>
-                </tr>
-                <tbody>
-                    <tr>
-                        <td>
+        <div class="inner">
+
+            <!-- Live Dates-->
+            <section aria-label="concert dates">
+                <h2>Concerts</h2>
+
+                <section class="grid-table-container">
+                    <section class="grid-table-row">
+                        <h3 class="bold mtb-1">
+                            Date
+                        </h3>
+                        <h3 class="bold mtb-1">
+                            City
+                        </h3>
+                        <h3 class="bold mtb-1">
+                            Venu
+                        </h3>
+                        <h3 class="bold mtb-1">
+                            Ticket
+                        </h3>
+                    </section>
+
+                    <div class="line-grid"></div>
+
+                    <section class="grid-table-row">
+                        <p class="mtb-1">
                             2025-05-23
-                        </td>
-                        <td>
+                        </p>
+                        <p class="mtb-1">
                             Dresden
-                        </td>
-                        <td>
+                        </p>
+                        <p class="mtb-1">
                             Sektor Evolution
-                        </td>
-                        <td>
+                        </p>
+                        <p class="mtb-1">
                             coming soon
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
+                        </p>
+                    </section>
+
+                    <div class="line-grid"></div>
+
+                    <section class="grid-table-row">
+                        <p class="mtb-1">
                             2025-11-07
-                        </td>
-                        <td>
+                        </p>
+                        <p class="mtb-1">
                             Dresden
-                        </td>
-                        <td>
+                        </p>
+                        <p class="mtb-1">
                             DAVE Festival
-                        </td>
-                        <td>
+                        </p>
+                        <p class="mtb-1">
                             coming soon
-                        </td>
-                    </tr>
+                        </p>
+                    </section>
+                    <div class="line-grid"></div>
+                </section>
+            </section>
 
-                </tbody>
-            </table>
-        </section>
+            <!-- Live intro-->
+            <section aria-label="performing live dub techno">
+                <h2>Live Dub Techno</h2>
+                <p class="single-column mtb-2">Performing live dub techno with synthesizers and modular gear is all about
+                    blending
+                    deep, hypnotic rhythms with the spontaneous, hands-on manipulation of sound. The genre itself
+                    thrives on spacious, atmospheric textures, heavy basslines, and subtle, evolving effects—all of
+                    which are perfectly suited to the flexibility and unpredictability of modular synthesis.</p>
+                <a href="contact.html" class="button-nav">Send a booking request</a>
+            </section>
 
-        <!-- Live intro-->
-        <section aria-label="performing live dub techno">
-            <h2>Live Dub Techno</h2>
-            <p>Performing live dub techno with synthesizers and modular gear is all about blending deep, hypnotic
-                rhythms with the spontaneous, hands-on manipulation of sound. The genre itself thrives on spacious,
-                atmospheric textures, heavy basslines, and subtle, evolving effects—all of which are perfectly
-                suited to the flexibility and unpredictability of modular synthesis.</p>
-            <a href="contact.html">Send a booking request.</a>
-        </section>
+            <div class="line"></div>
 
-        <!-- Landscapes Live AV -->
-        <section aria-label="performing Landscapes audio-visual show">
-            <h2>Landscapes Live AV</h2>
-            <iframe width="536" height="316" src="https://www.youtube.com/embed/mm6zJkIH-jk?si=jAAu_P2UiAGGepmk"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <p>
-                Landscapes Live A/V is an audio-visual live performance by sound artist Insect O. and video artist
-                highpitchedblack. The performance is an improvisation on modular synthesizers. The artists are exploring
-                rhythm structures and sound fields to create new landscapes – both in sound and on video.
-            </p>
+            <!-- Landscapes Live AV -->
+            <section aria-label="performing Landscapes audio-visual show">
+                <h2>Landscapes Live AV</h2>
+                <iframe id="video" src="https://www.youtube.com/embed/mm6zJkIH-jk?si=jAAu_P2UiAGGepmk"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <p class="single-column">
+                    Landscapes Live A/V is an audio-visual live performance by sound artist Insect O. and video
+                    artist highpitchedblack. The performance is an improvisation on modular synthesizers. The artists
+                    are exploring rhythm structures and sound fields to create new landscapes – both in sound and on
+                    video. The A/V show has been performed at DAVE pres. Kulturschaufenster in the city of Dresden.
+                </p>
+            </section>
 
-        </section>
+            <div class="line"></div>
 
-        <!-- Impresson Gallery -->
-
-        <section aria-label="impressions of concerts">
-            <h2>Impressions</h2>
-            <figure>
-                <img src="img/live/live-1.jpg" alt="artist Insect O. on his mordular synthesizer" class="img-11-s"
-                    title="Insect O. on his mordular synthesizers">
-                <figcaption>Landscapes Live AV</figcaption>
-            </figure>
-            <figure>
-                <img src="img/live/live-2.jpg" alt="visual artist highpitchedblack looking at laptop screen"
-                    class="img-11-s" title="visual artist highpitchedblack and Insect O.">
-                <figcaption>Landscapes Live AV</figcaption>
-            </figure>
-            <figure>
-                <img src="img/live/live-3.jpg" alt="artist Insect O. performing on his synthesizers" class="img-11-s"
-                    title="Insect O. live at Club Paula in Dresden">
-                <figcaption>Live At 20 Years Etui Records</figcaption>
-            </figure>
-            <figure>
-                <img src="img/live/live-4.jpg" alt="artist Insect O. performing on his synthesizers" class="img-11-s"
-                    title="Insect O. live at Club Paula in Dresden">
-                <figcaption>Live At 20 Years Etui Records</figcaption>
-            </figure>
-            <figure>
-                <img src="img/live/live-5.jpg" alt="artist Insect O. on his modular synthesizers" class="img-11-s"
-                    title="Insect O. at DAVE Live Jam">
-                <figcaption>DAVE Live Jam</figcaption>
-            </figure>
-            <figure>
-                <img src="img/live/live-6.jpg" alt="artist Insect O. on his modular synthesizers" class="img-11-s"
-                    title="Insect O. at DAVE Live Jam">
-                <figcaption>DAVE Live Jam</figcaption>
-            </figure>
-            <figure>
-                <img src="img/live/live-7.jpg" alt="concert hall with synthesizer artists and a big screen with visuals"
-                    class="img-11-s" title="DAVE Live Jam 2023 at Zentralwerk">
-                <figcaption>DAVE Live Jam</figcaption>
-            </figure>
-            <figure>
-                <img src="img/live/live-8.jpg" alt="artist Insect O. on his modular synthesizers" class="img-11-s"
-                    title="Insect O. at DAVE Live Jam">
-                <figcaption>DAVE Live Jam</figcaption>
-            </figure>
-            <h3>Photo Credits</h3>
-            <p>Daniel Madlung, Reinhard Spunkner, Roberto Krebs</p>
-        </section>
-
+            <!-- Impresson Gallery -->
+            <section aria-label="impressions of concerts">
+                <h2>Impressions</h2>
+                <div class="grid-gallerie-row">
+                    <figure class="">
+                        <img src="img/live/live-1.jpg" alt="artist Insect O. on his mordular synthesizer"
+                            class="img-11-s" title="Insect O. on his mordular synthesizers">
+                        <figcaption class="center mtb-1">Landscapes Live AV</figcaption>
+                    </figure>
+                    <figure class="">
+                        <img src="img/live/live-2.jpg" alt="visual artist highpitchedblack looking at laptop screen"
+                            class="img-11-s" title="visual artist highpitchedblack and Insect O.">
+                        <figcaption class="center mtb-1">Landscapes Live AV</figcaption>
+                    </figure>
+                    <figure class="">
+                        <img src="img/live/live-3.jpg" alt="artist Insect O. performing on his synthesizers"
+                            class="img-11-s" title="Insect O. live at Club Paula in Dresden">
+                        <figcaption class="center mtb-1">Live At 20 Years Etui Records</figcaption>
+                    </figure>
+                    <figure class="">
+                        <img src="img/live/live-4.jpg" alt="artist Insect O. performing on his synthesizers"
+                            class="img-11-s" title="Insect O. live at Club Paula in Dresden">
+                        <figcaption class="center mtb-1">Live At 20 Years Etui Records</figcaption>
+                    </figure>
+                    <figure class="">
+                        <img src="img/live/live-5.jpg" alt="artist Insect O. on his modular synthesizers"
+                            class="img-11-s" title="Insect O. at DAVE Live Jam">
+                        <figcaption class="center mtb-1">DAVE Live Jam</figcaption>
+                    </figure>
+                    <figure class="">
+                        <img src="img/live/live-6.jpg" alt="artist Insect O. on his modular synthesizers"
+                            class="img-11-s" title="Insect O. at DAVE Live Jam">
+                        <figcaption class="center mtb-1">DAVE Live Jam</figcaption>
+                    </figure>
+                    <figure class="">
+                        <img src="img/live/live-7.jpg"
+                            alt="concert hall with synthesizer artists and a big screen with visuals" class="img-11-s"
+                            title="DAVE Live Jam 2023 at Zentralwerk">
+                        <figcaption class="center mtb-1">DAVE Live Jam</figcaption>
+                    </figure>
+                    <figure class="">
+                        <img src="img/live/live-8.jpg" alt="artist Insect O. on his modular synthesizers"
+                            class="img-11-s" title="Insect O. at DAVE Live Jam">
+                        <figcaption class="center mtb-1">DAVE Live Jam</figcaption>
+                    </figure>
+                </div>
+                <h3>Photo Credits</h3>
+                <p>Daniel Madlung, Reinhard Spunkner, Roberto Krebs</p>
+            </section>
+        </div>
     </main>
 
     <footer>

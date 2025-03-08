@@ -1,66 +1,8 @@
 .hero-image {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("img/hero-releases-1920.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 1.0)), url("img/hero-releases.jpg");
 
 }
 
 h1 {
-  color: var(--graphit);
-}
-.hero-text {
-  text-align: left;
-  position: absolute;
-  top: 66%;
-  left: 3vw;
-  transform: translate(-0%, -50%);
-  color: var(--white) !important;
-  line-height: 1;
-}
-
-
-@media only screen and (min-width: 577px) {
-
-
-  .flex-item {
-    width: 48% !important;
-  }
-  .flex-item-feature {
-    width: 48% !important;
-  }
-
-  .flex-item-textbox {
-    padding-left: 1rem !important;
-  }
-
-}
-
-
-@media only screen and (min-width: 825px) {
-
-  .section-flex {
-    column-gap: 1rem ;
-  }
-
-  .flex-item {
-    width: 280px!important;
-  }
-
-  .flex-item-feature {
-    width: 380px;
-  }
-
-  .flex-item-textbox {
-    padding-left: 2rem !important;
-  }
-
-}
-
-
-.flex-item {
-  margin: 0px 0rem;
-  width: 100%;
-}
-
-.flex-item-feauture {
-  margin: 0px 0rem;
-  width: 100%;
+  color: var(--white);
 }
