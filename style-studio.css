@@ -1,0 +1,50 @@
+.hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 1.0)), url("img/hero-studio-1920.jpg");
+
+}
+
+h1 {
+  color: var(--white);
+
+}
+
+.grid-table-container {
+  display: grid;
+  grid-template-columns: auto;
+  margin-bottom: 4rem;
+
+}
+
+.grid-table-row {
+  display: grid;
+  grid-template-columns: 48% 48%;
+
+}
+
+
+
+#video {
+  width: calc(300px + 30%);
+  height: calc(380px);
+
+}
+
+@media only screen and (min-width: 577px) {
+  .section-flex {
+    padding-top: 0rem;
+
+  }
+
+}
+@media only screen and (min-width: 825px) {
+  .section-flex {
+    padding-top: 0rem;
+  
+  }
+
+  .grid-table-row {
+    grid-template-columns: 25% 25% 25% 25%;
+  
+  }
+
+}

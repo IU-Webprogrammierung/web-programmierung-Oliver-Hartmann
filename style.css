@@ -5,7 +5,7 @@
   --petrol: #4f6d7a;
   --blue: #7a889a;
   --beige: #d4b996;
-  --transistion-time: 200ms;
+  --transistion-time: 300ms;
   --maxwidth: 1200px;
   --flex-item-4-width: calc((var(--maxwidth) / 4) - 2rem);
 
@@ -109,11 +109,12 @@ h1 {
 
 h1.single-title {
 color: var(--graphit);
+font-size: 2.25rem;
 }
 
 h2 {
   padding-top: 0rem;
-  padding-bottom: 2rem;
+  padding-bottom: 0rem;
   margin: 0;
   font-size: 2rem;
   text-transform: uppercase;
@@ -137,6 +138,14 @@ p {
   margin: 0;
   line-height: 1.5;
 }
+
+a {
+color: var(--graphit);
+}
+
+a:hover {
+  color: var(--blue);
+  }
 
 .bold {
   font-weight: bold;
@@ -177,7 +186,6 @@ p {
 
 
 }
-
 
 .center {
   text-align: center;
@@ -248,26 +256,48 @@ ul {
   width: 100%;
 }
 
-.grid-gallerie-row {
+/* Grid mit 4 Spalten */
+.grid-4 {
   display: grid;
   grid-template-columns: 100%;
   row-gap: 2rem;
-  column-gap: 1.5%
+  column-gap: 2%;
 
 }
 
+
+/* Grid mit 3 Spalten */
 .grid-3 {
   display: grid;
   grid-template-columns: 100%;
   row-gap: 1rem;
-  column-gap: 1.5%
+  column-gap: 2%;
 }
 
+/* Grid für 33% Bild links und 50% Text rechts */
+.grid-3350 {
+  display: grid;
+  grid-template-columns: 100%;
+  row-gap: 1rem;
+  column-gap: 2%;
+}
+
+/* Grid mit 2 Spalten */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 100%;
+  row-gap: 1rem;
+  column-gap: 2%;
+}
+
+
+/* nur 1 Spalte mit 50% für Texte */
 .single-column {
   width: 100%;
   max-width: calc(var(--maxwidth)/2);
 }
 
+/* Abschnittstrenner mit Linie */
 .line {
   height: 0.5px;
   margin-top: 4rem;
@@ -288,6 +318,7 @@ ul {
   margin-right: auto;
 }
 
+
 .line-grid {
   height: 0.5px;
   margin-top: 1rem;
@@ -295,6 +326,7 @@ ul {
   background-color: var(--graphit);
 }
 
+/* Audio Player*/
 audio {
   width: 100%;
   height: 32px;
@@ -345,12 +377,21 @@ footer {
     width: 48% !important;
   }
 
-  .grid-gallerie-row {
-    grid-template-columns: 48% 48%;
+  .grid-4 {
+    grid-template-columns: 49% 49%;
   }
   .grid-3 {
-    grid-template-columns: 48% 48%;
+    grid-template-columns: 49% 49%;
   }
+
+  .grid-3350 {
+    grid-template-columns: 49% 49%;
+  }
+
+  .grid-2 {
+    grid-template-columns: 49% 49%;
+  }
+
 
   h1 {
   
@@ -363,6 +404,7 @@ footer {
 
   h2 {
     font-size: 2rem;
+    padding-bottom: 1.5rem;
   }
 
   p {
@@ -392,13 +434,19 @@ footer {
     width: 380px;
   }
 
-  .grid-gallerie-row {
+  .grid-4 {
     margin-bottom: 4rem;
-    grid-template-columns: 32% 32% 32%;
+    grid-template-columns: 32.5% 32.5% 32.5%;
+    column-gap: 1.5%;
   }
 
   .grid-3 {
     grid-template-columns: 32% 32% 32%;
+  }
+
+  .grid-3350 {
+    grid-template-columns: 33% 50%;
+    column-gap: 5%;
   }
 
   h1.single-title {
@@ -407,6 +455,7 @@ footer {
 
   h2 {
     font-size: 2.5rem;
+    padding-bottom: 2rem;
   }
 
   h3 {
@@ -423,7 +472,7 @@ footer {
   }
 
   @media only screen and (min-width: 1025px) {
-    .grid-gallerie-row {
+    .grid-4 {
       grid-template-columns: 24% 24% 24% 24%;
     }
   }
