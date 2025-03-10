@@ -3,11 +3,6 @@
 
 }
 
-h1 {
-  color: var(--white);
-
-}
-
 .grid-table-container {
   display: grid;
   grid-template-columns: auto;
@@ -17,7 +12,7 @@ h1 {
 
 .grid-table-row {
   display: grid;
-  grid-template-columns: 48% 48%;
+  grid-template-columns: 50% 50%;
 
 }
 
@@ -28,19 +23,7 @@ h1 {
   height: calc(380px);
 
 }
-
-@media only screen and (min-width: 577px) {
-  .section-flex {
-    padding-top: 0rem;
-
-  }
-
-}
 @media only screen and (min-width: 825px) {
-  .section-flex {
-    padding-top: 0rem;
-  
-  }
 
   .grid-table-row {
     grid-template-columns: 25% 25% 25% 25%;

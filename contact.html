@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-contact.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script defer src="js/loader.js"> </script>
     <title>Contact | Insect O.</title>
@@ -18,54 +19,55 @@
     </header>
 
     <main>
-
-        <!-- Site Title-->
-        <h1>Contact</h1>
-
         <!-- Hero Bild-->
-        <img src="img/hero-about-1920.jpg" alt="artist Insect O. sitting on a bench in front of a modern glas building"
-            class="img-hero" title="Insect O.">
+        <div class="hero-outer">
+            <div class="hero-image">
+                <div class="hero-text">
+                    <h1>Contact</h1>
+                </div>
+            </div>
+        </div>
 
-        <!-- Contact information-->
-        <section aria-label="contact information">
-            <p>
-                Please use the form below for sending booking requests or press enquiries. I am also happy to talk about
-                music,
-                production and technology. Feel free to drop me a message to say <cite>Hi</cite>.
-            </p>
-        </section>
+        <div class="inner">
 
+            <!-- Contact information-->
+            <section aria-label="contact information">
+                <p>
+                    Please use the form below for sending booking requests or press enquiries. I am also happy to talk
+                    about music, production and technology. Feel free to drop me a message to say <cite>Hi</cite>.
+                </p>
+            </section>
 
-        <!-- Contact Form-->
-        <section aria-label="contact form">
-            <form>
-                <p>
-                    <label for="subject">Subject:</label><br>
-                    <select id="subject" name="subject">
-                        <option value="booking request">booking request</option>
-                        <option value="press enquiry">press enquiry</option>
-                        <option value="chat about music">chat about music or technology</option>
-                    </select>
-                </p>
-                <p>
-                    <label for="name">Name:<span>*</span></label><br>
-                    <input type="text" id="name" name="name" placeholder="Name" required>
-                </p>
-                <p>
-                    <label for="email">E-Mail:<span>*</span></label><br>
-                    <input type="email" id="email" name="email" placeholder="email@example.com" required>
-                </p>
-                <p>
-                    <label for="message">Message:<span>*</span></label><br>
-                    <textarea id="message" name="message" rows="4" cols="50" placeholder="your message"
-                        required></textarea><br><br>
-                </p>
-                <p>
-                    <input type="submit" value="Submit">
-                </p>
-            </form>
-        </section>
-
+            <!-- Contact Form-->
+            <section aria-label="contact form">
+                <form>
+                    <p>
+                        <label for="subject">Subject:</label><br>
+                        <select id="subject" name="subject">
+                            <option value="booking request">booking request</option>
+                            <option value="licencing request">licencing request</option>
+                            <option value="press enquiry">press enquiry</option>
+                            <option value="chat about music">chat about music or technology</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="name">Name:<span>*</span></label><br>
+                        <input type="text" id="name" name="name" placeholder="Name" required>
+                    </p>
+                    <p>
+                        <label for="email">E-Mail:<span>*</span></label><br>
+                        <input type="email" id="email" name="email" placeholder="email@example.com" required>
+                    </p>
+                    <p>
+                        <label for="message">Message:<span>*</span></label><br>
+                        <textarea id="message" name="message" rows="4" cols="50" placeholder="your message"
+                            required></textarea><br><br>
+                    </p>
+                    <input type="submit" value="Submit" class="button-link">
+                    <p><span>* = required</span></p>
+                </form>
+            </section>
+        </div>
     </main>
 
     <footer>
