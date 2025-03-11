@@ -6,7 +6,7 @@
 .grid-table-container {
   display: grid;
   grid-template-columns: auto;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 
 }
 
@@ -19,8 +19,11 @@
 
 
 #video {
-  width: calc(300px + 30%);
+  width: calc(160px + 48%);
   height: calc(380px);
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+
 
 }
 @media only screen and (min-width: 825px) {
