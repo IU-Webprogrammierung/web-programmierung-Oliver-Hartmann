@@ -31,42 +31,41 @@
         <div class="inner">
 
             <!-- Contact information-->
-            <section aria-label="contact information">
-                <p>
+            <article aria-label="contact information">
+                <p class="single-column">
                     Please use the form below for sending booking requests or press enquiries. I am also happy to talk
                     about music, production and technology. Feel free to drop me a message to say <cite>Hi</cite>.
                 </p>
-            </section>
+            </article>
 
             <!-- Contact Form-->
-            <section aria-label="contact form">
-                <form>
+                <form aria-label="contact form">
                     <p>
                         <label for="subject">Subject:</label><br>
-                        <select id="subject" name="subject">
-                            <option value="booking request">booking request</option>
-                            <option value="licencing request">licencing request</option>
-                            <option value="press enquiry">press enquiry</option>
-                            <option value="chat about music">chat about music or technology</option>
+                        <select id="subject" name="subject" aria-label="Select a topic">
+                            <option value="">Select a topic</option>
+                            <option value="Booking request">Booking request</option>
+                            <option value="Licencing request">Licencing request</option>
+                            <option value="Press enquiry">Press enquiry</option>
+                            <option value="Chat about music">Chat about music or technology</option>
                         </select>
                     </p>
                     <p>
                         <label for="name">Name:<span>*</span></label><br>
-                        <input type="text" id="name" name="name" placeholder="Name" required>
+                        <input type="text" id="name" name="name" placeholder="Name" required aria-required="true">
                     </p>
                     <p>
                         <label for="email">E-Mail:<span>*</span></label><br>
-                        <input type="email" id="email" name="email" placeholder="email@example.com" required>
+                        <input type="email" id="email" name="email" placeholder="email@example.com" required aria-required="true">
                     </p>
-                    <p>
+                    <p class="mtb-2">
                         <label for="message">Message:<span>*</span></label><br>
                         <textarea id="message" name="message" rows="4" cols="50" placeholder="your message"
-                            required></textarea><br><br>
+                        required aria-required="true"></textarea>
                     </p>
                     <input type="submit" value="Submit" class="button-link">
                     <p><span>* = required</span></p>
                 </form>
-            </section>
         </div>
     </main>
 

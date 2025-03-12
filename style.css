@@ -154,6 +154,13 @@ h3 {
   color: var(--graphit);
 }
 
+/* Überschrift H3 */
+h3.grid-item-title {
+  text-align: center;
+  font-size: var(--font-mobile);
+ line-height: 1.5;
+}
+
 /* Überschrift H4 */
 h4 {
   margin: 0;
@@ -187,6 +194,7 @@ address {
 a {
   color: var(--graphit);
   font-size: var(--font-mobile);
+
 }
 
 /* Link Hover */
@@ -363,6 +371,7 @@ audio {
 /* Bild */
 .img-11-s {
   width: 100%;
+  
 }
 
 /* Bild mit Untertitel */
@@ -473,6 +482,10 @@ nav.footer-social-icons {
     padding-bottom: 1.5rem;
   }
 
+  h3.grid-item-title {
+    font-size: var(--font-tablet);
+  }
+
   p {
     font-size: var(--font-tablet);
   }
@@ -551,6 +564,10 @@ nav.footer-social-icons {
 
   h3 {
     font-size: 1.5rem;
+  }
+
+  h3.grid-item-title {
+    font-size: var(--font-laptop);
   }
 
   p {
