@@ -117,7 +117,6 @@ h1 {
   padding: 0;
   line-height: 1;
   color: var(--white);
-  font-style: bold;
 }
 
 /* Seitentitel ohne Hero Bild*/
@@ -127,7 +126,6 @@ h1.single-title {
   padding-top: 2rem;
   padding-bottom: 1rem;
   margin: 0;
-  font-style: bold;
 }
 
 /* Überschrift H2 */
@@ -138,15 +136,12 @@ h2 {
   font-size: 1.5rem;
   text-transform: uppercase;
   color: var(--graphit);
-  font-style: bold;
 }
 
 /* Überschrift H2 für Textblöcke */
 h2.heading-text-only {
   padding-top: 0rem;
   padding-bottom: 1rem;
-  font-style: bold;
-
 }
 
 /* Überschrift H3 */
@@ -156,15 +151,13 @@ h3 {
   margin: 0;
   font-size: 1.25rem;
   text-transform: none;
-  font-style: bold;
   color: var(--graphit);
 }
 
 /* Überschrift H4 */
 h4 {
   margin: 0;
-  font-size: 1 rem;
-  font-style: bold;
+  font-size: 1rem;
   color: var(--graphit);
 
 }
@@ -367,34 +360,29 @@ audio {
   height: 32px;
 }
 
+/* Bild */
 .img-11-s {
   width: 100%;
 }
 
-.img-11-l {
-  width: 100%;
+/* Bild mit Untertitel */
+figure {
+  margin: 0;
+  max-width: fit-content;
 }
 
-.img-21-s {
-  width: 100%;
+/* Untertitel für Bild*/
+figcaption {
+  margin-bottom: 0rem;
 }
 
-/* Social Media Icons */
+/* Bild Social Media Icons */
 .icon-social {
   width: 24px;
   height: 24px;
   margin: 0px;
 }
 
-
-figure {
-  margin: 0;
-  max-width: fit-content;
-}
-
-figcaption {
-  margin-bottom: 0rem;
-}
 
 /* Footer Container */
 footer {
@@ -503,14 +491,13 @@ nav.footer-social-icons {
   }
 
   .mtb-1 {
-    padding-top: 0.75 rem;
-    padding-bottom: 0.75 rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
   }
 
   .mtb-2 {
     padding-top: 0px;
     padding-bottom: 2rem;
-
   }
 
   .button-link {
