@@ -5,21 +5,19 @@
   /* Textfarbe */
   --graphit: #222222;
 
-  --terra: #c17c52;
-
   /* Hover Farbe */
   --petrol: #4f6d7a;
 
+   /* NOCH NICHT VERWENDET*/
   --blue: #7a889a;
   --beige: #d4b996;
+  --terra: #c17c52;
 
   /* Animationszeit */
   --transistion-time: 300ms;
+
   /* maximale Breite der Darstellung */
-
   --maxwidth: 1200px;
-
-  --flex-item-4-width: calc((var(--maxwidth) / 4) - 2rem);
 
   /*Schriftgröße mobile */
   --font-mobile: 15px;
@@ -86,7 +84,6 @@ header {
   top: calc(500px - 5vw);
   left: 6%;
   transform: translate(-0%, -50%);
-  color: var(--white) !important;
   line-height: 1;
 }
 
@@ -163,6 +160,7 @@ h3 {
   color: var(--graphit);
 }
 
+/* Überschrift H4 */
 h4 {
   margin: 0;
   font-size: 1 rem;
@@ -227,6 +225,7 @@ a:hover {
   text-transform: uppercase;
 }
 
+/* Link als Button - Hover*/
 .button-link:hover {
   background-color: var(--petrol);
   color: var(--white);
@@ -246,6 +245,7 @@ a:hover {
   display: inline-block;
 }
 
+/* Link als Navigations-Button - Hover */
 .button-nav:hover {
   color: var(--white);
   border: 1px solid var(--petrol);
@@ -294,30 +294,11 @@ nav a:hover {
   color: var(--blue);
 }
 
-
+/* unsortierte Liste ohne Punkte */
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-}
-
-.section-flex {
-  display: flex;
-  padding-top: 0rem;
-  margin-bottom: 0rem;
-  flex-wrap: wrap;
-  column-gap: 1rem;
-  row-gap: 2rem;
-}
-
-.flex-item-3 {
-  margin: 0rem 0rem;
-  width: 100%;
-}
-
-.flex-item-feauture {
-  margin: 0px 0rem;
-  width: 100%;
 }
 
 /* Grid mit 4 Spalten */
@@ -367,7 +348,7 @@ ul {
   margin-top: 1.5rem;
   margin-bottom: 2rem;
   background-color: var(--graphit);
-  max-width: 66vw;
+  max-width: 66%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -398,11 +379,13 @@ audio {
   width: 100%;
 }
 
+/* Social Media Icons */
 .icon-social {
   width: 24px;
   height: 24px;
   margin: 0px;
 }
+
 
 figure {
   margin: 0;
@@ -413,37 +396,58 @@ figcaption {
   margin-bottom: 0rem;
 }
 
+/* Footer Container */
 footer {
-  margin-top: 4rem;
+  margin-top: 2rem;
   margin-bottom: 4rem;
   max-width: var(--maxwidth);
   margin-left: auto;
   margin-right: auto;
 }
 
+/* Footer Container Grid */
 .grid-footer {
   display: grid;
   grid-template-columns: 100%;
   row-gap: 0rem;
-  column-gap: 2%;
+  column-gap: 0rem;
 }
 
+/* Footer Navigation */
+.footer-nav {
+  display: flex;
+  padding-top: 0rem;
+  margin-bottom: 0rem;
+  flex-wrap: wrap;
+  column-gap: 2rem;
+  row-gap: 1rem;
+}
+
+/* Footer Navigationselemente */
+.footer-nav-item {
+  margin: 0rem 0rem;
+  width: 100%;
+  text-align: center;
+}
+
+/* Footer Socialmedia Icons Container */
+nav.footer-social-icons {
+  padding-top: 0rem !important;
+  text-align: center;
+}
+
+/* Footer Socialmedia Icons Element */
 .footer-social-icons a {
   margin-right: 2rem;
 }
 
+/* Footer Socialmedia Icons letztes Element ohne Abstand rechts */
+.footer-social-icons a:last-child {
+  margin-right: 0rem;
+}
+
+
 @media only screen and (min-width: 577px) {
-  .section-flex {
-    padding-top: 0rem;
-  }
-
-  .flex-item-3 {
-    width: 48% !important;
-  }
-
-  .flex-item-feature {
-    width: 48% !important;
-  }
 
   .grid-4 {
     grid-template-columns: 49% 49%;
@@ -520,29 +524,18 @@ footer {
   }
 
   .grid-footer {
-    display: grid;
-    grid-template-columns: 40%;
-    row-gap: 0rem;
-    column-gap: 2%;
+    grid-template-columns:100%;
+  }
+
+  .footer-nav-item {
+    margin: 0rem 0rem;
+    width: fit-content;
+    text-align: left;
   }
 }
 
 
 @media only screen and (min-width: 825px) {
-
-  .section-flex {
-    padding-top: 0rem;
-    column-gap: 2rem;
-
-  }
-
-  .flex-item-3 {
-    width: 365px !important;
-  }
-
-  .flex-item-feature {
-    width: 380px;
-  }
 
   .grid-4 {
     margin-bottom: 4rem;
@@ -601,13 +594,36 @@ footer {
   }
 
   footer {
-    margin-top: 8rem;
-    margin-bottom: 8rem;
+    margin-top: 3rem;
+    margin-bottom: 6rem;
   }
+
+  .grid-footer {
+    grid-template-columns:50% 50%;
+  }
+
+  nav.footer-social-icons {
+    text-align: right;
+  }
+
 }
 
 @media only screen and (min-width: 1025px) {
   .grid-4 {
     grid-template-columns: 24% 24% 24% 24%;
   }
+}
+
+  @media only screen and (min-width: 1200px) {
+    h1 {
+      font-size: 5.75rem;
+    }
+
+    .hero-text {
+      top: calc(440px);
+      left: 6%;
+      transform: translate(-0%, -50%);
+      line-height: 1;
+    }
+  
 }
