@@ -283,7 +283,7 @@ nav {
 nav a {
   color: var(--graphit);
   padding: 0rem;
-  margin-right: 2rem;
+  margin-right: 4rem;
   text-decoration: none;
   transition: var(--transistion-time);
   font-size: 18px;
@@ -401,7 +401,7 @@ audio {
 .icon-social {
   width: 24px;
   height: 24px;
-  margin: 8px;
+  margin: 0px;
 }
 
 figure {
@@ -414,8 +414,22 @@ figcaption {
 }
 
 footer {
-  margin-top: 2rem;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  max-width: var(--maxwidth);
+  margin-left: auto;
+  margin-right: auto;
+}
 
+.grid-footer {
+  display: grid;
+  grid-template-columns: 100%;
+  row-gap: 0rem;
+  column-gap: 2%;
+}
+
+.footer-social-icons a {
+  margin-right: 2rem;
 }
 
 @media only screen and (min-width: 577px) {
@@ -499,6 +513,18 @@ footer {
     margin-right: 0.75rem;
     margin-bottom: 0.75rem;
   }
+
+  footer {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+  }
+
+  .grid-footer {
+    display: grid;
+    grid-template-columns: 40%;
+    row-gap: 0rem;
+    column-gap: 2%;
+  }
 }
 
 
@@ -567,12 +593,16 @@ footer {
   .mtb-1 {
     padding-top: 1rem;
     padding-bottom: 1rem;
-
   }
 
   .button-link {
     margin-right: 1rem;
     margin-bottom: 0rem;
+  }
+
+  footer {
+    margin-top: 8rem;
+    margin-bottom: 8rem;
   }
 }
 
