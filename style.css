@@ -31,8 +31,8 @@ body {
   margin: 0px;
   background-color: var(--white);
   font-family: Arial, Helvetica, sans-serif;
-  padding-left: 2vw;
-  padding-right: 2vw;
+  padding-left: 3vw;
+  padding-right: 3vw;
 }
 
 /* Sticky Header */
@@ -40,36 +40,66 @@ header {
   background-color: var(--white);
   position: fixed;
   top: 0;
-  width: 96%;
+  width: 94%;
   z-index: 2;
 }
 
-/* Top Navigation */
+/* Top Navigation Container Mobile */
 .topnav {
-  list-style-type: none;
   padding-top: 2rem;
   padding-bottom: 2rem;
-  max-width: var(--maxwidth);
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 0rem;
+  display: grid;
+  flex-direction: column;
+  row-gap: 2rem;
+  column-gap: 4rem;
+  width: fit-content;
+}
+
+/* Top Navigation Menü Link Liste Mobile */
+#topNav {
+  display: none;
+  flex-direction: column;
+  row-gap: 2rem;
+  column-gap: 2rem;
+}
+
+/* Top Navigation Menü Link */
+
+.topnav a {
+  padding-bottom: 0rem;
+  color: var(--graphit);
+  margin-right: 0rem;
+  text-decoration: none;
+  font-size: 1.125rem;
+  text-transform: uppercase;
 }
 
 
-/* Link in Navigationsleiste */
+/* Farbe und Schriftgröße für alle Navigations Items */
 nav a {
   color: var(--graphit);
-  margin-right: 1rem;
   text-decoration: none;
   transition: var(--transistion-time);
   font-size: 1.125rem;
   text-transform: uppercase;
 }
 
-/* Link in Navigationsleiste Hover */
+/* Link in Navigations Items Hover */
 nav a:hover {
   color: var(--petrol);
+  text-decoration: underline;
 }
 
+/* Hamburger Menu Icon für Mobile Menu */
+#hamburger-icon {
+  font-size: 24px !important;
+  top: 0px;
+  position: absolute;
+  right: 0px;
+  padding-top: 2rem;
+  display: block;
+}
 
 /* Hero Container */
 .hero-outer {
@@ -443,6 +473,7 @@ nav.footer-social-icons {
   nav a {
     margin-right: 2rem;
   }
+ 
 
   .grid-4 {
     grid-template-columns: 49% 49%;
@@ -530,17 +561,48 @@ nav.footer-social-icons {
   }
 
   .footer-nav-item {
-    margin: 0rem 0rem;
     width: fit-content;
-    text-align: center;
   }
 }
 
 
 @media only screen and (min-width: 825px) {
 
+  /* Top Navigation */
+  .topnav-container {
+    flex-direction: row !important;
+    display: flex !important; 
+  }
+
+  /* Top Navigation */
+  .topnav {
+    flex-direction: row;
+    display: flex !important;
+    max-width: var(--maxwidth);
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+
+  }
+
+  #topNav {
+    display: flex !important;
+    flex-direction: row;
+    column-gap: 4rem;
+    padding-top: 0rem;
+    
+  }
+
+  .topnav a {
+    padding-bottom: 0rem;
+  }
+
   nav a {
     margin-right: 4rem;
+  }
+
+  a#hamburger-icon {
+    display: none;
   }
 
   .grid-4 {
@@ -616,12 +678,6 @@ nav.footer-social-icons {
     margin-left: 0rem;
     margin-right: auto;
     column-gap: 4rem;
-  }
-
-  .footer-nav-item {
-    margin: 0rem 0rem;
-    width: fit-content;
-    text-align: left;
   }
 
   nav.footer-social-icons {

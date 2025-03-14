@@ -3,8 +3,27 @@
 
 }
 
-#video {
-  width: calc(300px + 30%);
-  height: calc(380px);
+textarea#message {
+
+  width: 330px;
+  resize: vertical;
+
+}
+
+@media only screen and (min-width: 577px) {
+
+  textarea#message {
+    width: 500px;
+  
+  }
+
+}
+
+@media only screen and (min-width: 825px) {
+
+  textarea#message {
+    width: 750px;
+  
+  }
 
 }
