@@ -105,10 +105,6 @@ nav a:hover {
   margin-right: 3vw;
 }
 
-.bars {
-  background-image: url("img/icons/bars-solid.svg")
-}
-
 /* Hero Container */
 .hero-outer {
   margin-top: 84px;
@@ -435,6 +431,8 @@ footer {
   max-width: var(--maxwidth);
   margin-left: auto;
   margin-right: auto;
+  padding-left: 3vw;
+  padding-right: 3vw;
 }
 
 /* Footer Container Grid */
