@@ -95,14 +95,18 @@ nav a:hover {
 }
 
 /* Hamburger Menu Icon für Mobile Menu */
-#hamburger-icon {
+#hamburger-menu {
   font-size: 24px !important;
   top: 0px;
   position: absolute;
   right: 0px;
-  margin-top: 2rem;
+  margin-top: 1.8rem;
   display: block;
   margin-right: 3vw;
+}
+
+.bars {
+  background-image: url("img/icons/bars-solid.svg")
 }
 
 /* Hero Container */
@@ -611,7 +615,7 @@ nav.footer-social-icons {
     margin-right: 4rem;
   }
 
-  a#hamburger-icon {
+  a#hamburger-menu {
     display: none;
   }
 
