@@ -7,7 +7,6 @@
   display: grid;
   grid-template-columns: auto;
   margin-bottom: 2rem;
-
 }
 
 .grid-table-row {
@@ -15,7 +14,6 @@
   grid-template-columns: 50% 50%;
 
 }
-
 
 
 #video {
@@ -26,11 +24,23 @@
 
 
 }
+
+@media only screen and (min-width: 577px) {
+
+  .grid-table-container {
+    margin-bottom: 3rem;
+  }
+}
+
 @media only screen and (min-width: 825px) {
+
+  .grid-table-container {
+    margin-bottom: 4rem;
+  }
 
   .grid-table-row {
     grid-template-columns: 25% 25% 25% 25%;
-  
+
   }
 
 }
