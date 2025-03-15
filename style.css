@@ -256,11 +256,34 @@ address {
 a {
   color: var(--color-main);
   font-size: var(--font-mobile);
+  transition: var(--transistion-time);
 }
 
 /* Link Hover */
 a:hover {
   color: var(--color-highlight);
+}
+
+/* Link mit Icon */
+.link-with-icon {
+  text-decoration: none;
+  display: inline-block;
+}
+
+a.link-with-icon:hover {
+  text-decoration: underline;
+  padding-left: 4px;
+  transition: var(--transistion-time);
+}
+
+/* Icon im Button */
+i.button {
+  padding-right: 1rem;
+}
+
+/* Icon rechts neben Link */
+i.link {
+  padding-left: 0.5rem;
 }
 
 /* fett gedruckt */
@@ -408,7 +431,6 @@ audio {
 /* Bild */
 .img-11-s {
   width: 100%;
-
 }
 
 /* Bild mit Untertitel */
