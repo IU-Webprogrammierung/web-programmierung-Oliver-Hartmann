@@ -77,7 +77,6 @@ header {
 }
 
 /* Top Navigation Menü Link */
-
 .topnav a {
   padding-bottom: 0rem;
   color: var(--color-main);
@@ -122,14 +121,14 @@ nav a:hover {
   background-size: cover;
   position: sticky;
   top: 0;
-  padding-left: 3vw;
-  padding-right: 3vw;
+  padding-left: 0vw;
+  padding-right: 0vw;
 }
 
 /* Hero Bild */
 .hero-image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 1.0)), url("img/hero-home-1920.jpg");
-  height: 600px;
+  height: calc(100vw + 25px);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -141,12 +140,13 @@ nav a:hover {
 
 /* Position Hero Text */
 .hero-text {
-  text-align: left;
+  text-align: center;
   position: absolute;
-  top: calc(500px - 5vw);
-  left: 6%;
-  transform: translate(-0%, -50%);
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   line-height: 1;
+  width: 100%;
 }
 
 /* Inner Container mit Hero Bild */
@@ -584,6 +584,9 @@ nav.footer-social-icons {
 
 @media only screen and (min-width: 577px) {
 
+  .hero-image {
+    height: 600px;
+  }
   .inner {
     padding-top: 5rem;
   }
@@ -858,12 +861,6 @@ nav.footer-social-icons {
 @media only screen and (min-width: 1200px) {
   h1 {
     font-size: 5.75rem;
-  }
-
-  .hero-text {
-    top: 440px;
-    left: 6%;
-    transform: translate(-0%, -50%);
   }
 
 }
