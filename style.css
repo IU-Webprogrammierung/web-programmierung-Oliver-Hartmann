@@ -4,6 +4,7 @@
   --white: #fcfcfc;
   --graphit: #222222;
   --petrol: #4f6d7a;
+  --silver: #eeeeee;
 
   /* NOCH NICHT VERWENDET*/
   --blue: #7a889a;
@@ -13,11 +14,13 @@
   /* Hauptfarbe */
   --color-main: var(--graphit);
 
-   /* Hintergrundfarbe */
+  /* Hintergrundfarbe */
   --color-bg: var(--white);
 
-    /* Hover Farbe */
+  /* Hover Farbe */
   --color-highlight: var(--petrol);
+
+  --color-secondary-background: var(--silver);
 
   /* Animationszeit */
   --transistion-time: 300ms;
@@ -185,8 +188,8 @@ h1 {
 /* Seitentitel ohne Hero Bild*/
 h1.single-title {
   color: var(--color-main);
-  font-size: 2.25rem;
-  padding-top: 2rem;
+  font-size: 2rem;
+  padding-top: 1rem;
   padding-bottom: 1rem;
   margin: 0;
 }
@@ -222,6 +225,8 @@ h3.grid-item-title {
   text-align: center;
   font-size: var(--font-mobile);
   line-height: 1.5;
+  font-weight: 600;
+  font-weight: 400;
 }
 
 /* Überschrift H4 */
@@ -265,6 +270,12 @@ a:hover {
   color: var(--color-highlight);
 }
 
+/* Link mit Icon .............................*/
+.grid-link {
+  text-decoration: none;
+}
+
+
 /* Link mit Icon */
 .link-with-icon {
   text-decoration: none;
@@ -272,7 +283,6 @@ a:hover {
 }
 
 a.link-with-icon:hover {
-  text-decoration: underline;
   padding-left: 4px;
   transition: var(--transistion-time);
 }
@@ -285,6 +295,12 @@ i.button {
 /* Icon rechts neben Link */
 i.link {
   padding-left: 0.5rem;
+}
+
+i.grid {
+  padding-top: 0.5rem;
+  text-align: right;
+  padding-right: 1rem;
 }
 
 /* fett gedruckt */
@@ -398,6 +414,48 @@ ul {
 }
 
 
+/* Grid Feature mit 2 Spalten */
+.grid-2-feature {
+  display: grid;
+  grid-template-columns: 100%;
+  row-gap: 0rem;
+  column-gap: 2%;
+  background-color: var(--color-secondary-background);
+  padding-bottom: 1rem;
+  row-gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Content unter/neben Grid Feature */
+.grid-2-feature article {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+
+/* Container für Section Feature */
+.section-feature-container {
+  width: 100%;
+  background-color: var(--color-secondary-background);
+}
+
+/* Section Feature mit 1 Spalte */
+.section-feature {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--color-secondary-background);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* Section Feature Text unter Video */
+.section-feature p {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+
 /* nur 1 Spalte mit 50% für Texte */
 .single-column {
   width: 100%;
@@ -446,8 +504,17 @@ figure {
   max-width: fit-content;
 }
 
+/* Hintergrund Bildunterschrift im Grid */
+figure.grid {
+  background-color: var(--color-secondary-background);
+}
+
 /* Untertitel für Bild*/
 figcaption {
+  padding-top: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
   margin-bottom: 0rem;
   color: var(--color-main);
 }
@@ -458,7 +525,6 @@ figcaption {
   height: 24px;
   margin: 0px;
 }
-
 
 /* Footer Container */
 footer {
@@ -525,7 +591,7 @@ nav.footer-social-icons {
   nav a {
     margin-right: 2rem;
   }
- 
+
 
   .grid-4 {
     grid-template-columns: 49% 49%;
@@ -546,14 +612,29 @@ nav.footer-social-icons {
     grid-template-columns: 49% 49%;
   }
 
-  h1 {
+  .grid-2-feature {
+    grid-template-columns: 100%;
+    padding: 2rem;
+    row-gap: 2rem;
+  }
 
+  .grid-2-feature article {
+    padding-left: 0rem;
+    padding-right: 0rem;
+  }
+
+  .section-feature {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  h1 {
     margin-bottom: 0rem;
   }
 
   h1.single-title {
-    font-size: 2.5rem;
-    padding-top: 0rem;
+    font-size: 2rem;
+    padding-top: 1rem;
     padding-bottom: 1rem;
   }
 
@@ -628,7 +709,7 @@ nav.footer-social-icons {
   /* Top Navigation */
   .topnav-container {
     flex-direction: row !important;
-    display: flex !important; 
+    display: flex !important;
   }
 
   /* Top Navigation */
@@ -647,7 +728,7 @@ nav.footer-social-icons {
     flex-direction: row;
     column-gap: 4rem;
     padding-top: 0rem;
-    
+
   }
 
   .topnav a {
@@ -665,7 +746,7 @@ nav.footer-social-icons {
   .inner {
     padding-top: 6rem;
   }
-  
+
   .grid-4 {
     margin-bottom: 4rem;
     grid-template-columns: 32.5% 32.5% 32.5%;
@@ -679,6 +760,22 @@ nav.footer-social-icons {
   .grid-3350 {
     grid-template-columns: 40% 40%;
     column-gap: 5%;
+  }
+
+  .grid-2-feature {
+    grid-template-columns: 47.5% 47.5%;
+    padding: 3rem;
+    column-gap: 5%;
+  }
+
+  .section-feature {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .section-feature p {
+    padding-left: 0rem;
+    padding-right: 0rem;
   }
 
   h1.single-title {
@@ -722,8 +819,8 @@ nav.footer-social-icons {
   }
 
   .img-11-s {
-    min-width: 280px;
-    min-height: 280px;
+    min-width: 330px;
+    min-height: 330px;
   }
 
   .button-link {
