@@ -389,6 +389,17 @@ ul {
   margin-bottom: 0.5rem;
 }
 
+.grid-table-container {
+  display: grid;
+  grid-template-columns: auto;
+  margin-bottom: 2rem;
+}
+
+.grid-table-row {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
 /* Grid mit 3 Spalten */
 .grid-3 {
   display: grid;
@@ -595,6 +606,9 @@ nav.footer-social-icons {
     margin-right: 2rem;
   }
 
+  .grid-table-container {
+    margin-bottom: 3rem;
+  }
 
   .grid-4 {
     grid-template-columns: 49% 49%;
@@ -748,6 +762,14 @@ nav.footer-social-icons {
 
   .inner {
     padding-top: 6rem;
+  }
+
+  .grid-table-container {
+    margin-bottom: 4rem;
+  }
+
+  .grid-table-row {
+    grid-template-columns: 25% 25% 25% 25%;
   }
 
   .grid-4 {
