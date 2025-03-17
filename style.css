@@ -36,6 +36,12 @@
   --font-laptop: 17px;
 }
 
+/*++++++++++++++++++++++++++++++*/
+/*                              */
+/* Basic Layout - mobile first  */
+/*                              */
+/*++++++++++++++++++++++++++++++*/
+
 body {
   margin: 0px;
   background-color: var(--color-bg);
@@ -44,6 +50,7 @@ body {
 }
 
 /* Sticky Header */
+
 header {
   background-color: var(--color-bg);
   position: fixed;
@@ -54,6 +61,7 @@ header {
 }
 
 /* Top Navigation Container Mobile */
+
 .topnav {
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -69,6 +77,7 @@ header {
 }
 
 /* Top Navigation Menü Link Liste Mobile */
+
 #topNav {
   display: none;
   flex-direction: column;
@@ -77,6 +86,7 @@ header {
 }
 
 /* Top Navigation Menü Link */
+
 .topnav a {
   padding-bottom: 0rem;
   color: var(--color-main);
@@ -88,6 +98,7 @@ header {
 
 
 /* Farbe und Schriftgröße für alle Navigations Items */
+
 nav a {
   color: var(--color-main);
   text-decoration: none;
@@ -97,12 +108,14 @@ nav a {
 }
 
 /* Link in Navigations Items Hover */
+
 nav a:hover {
   color: var(--color-highlight);
   text-decoration: underline;
 }
 
 /* Hamburger Menu Icon für Mobile Menu */
+
 #hamburger-menu {
   font-size: 24px !important;
   top: 0px;
@@ -114,6 +127,7 @@ nav a:hover {
 }
 
 /* Hero Container */
+
 .hero-outer {
   margin-top: 84px;
   background-position: center;
@@ -126,6 +140,7 @@ nav a:hover {
 }
 
 /* Hero Bild */
+
 .hero-image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 1.0)), url("img/hero-home-1920.jpg");
   height: calc(100vw + 25px);
@@ -139,6 +154,7 @@ nav a:hover {
 }
 
 /* Position Hero Text */
+
 .hero-text {
   text-align: center;
   position: absolute;
@@ -150,6 +166,7 @@ nav a:hover {
 }
 
 /* Inner Container mit Hero Bild */
+
 .inner {
   max-width: var(--maxwidth);
   margin-left: auto;
@@ -163,6 +180,7 @@ nav a:hover {
 }
 
 /* Inner Container ohne Hero Bild */
+
 .inner-single {
   max-width: var(--maxwidth);
   margin-left: auto;
@@ -176,6 +194,7 @@ nav a:hover {
 }
 
 /* Seitentitel als Hero Text */
+
 h1 {
   text-transform: uppercase;
   font-size: calc(2rem + 5vw);
@@ -186,6 +205,7 @@ h1 {
 }
 
 /* Seitentitel ohne Hero Bild*/
+
 h1.single-title {
   color: var(--color-main);
   font-size: 2rem;
@@ -195,6 +215,7 @@ h1.single-title {
 }
 
 /* Überschrift H2 */
+
 h2 {
   padding-top: 2rem;
   padding-bottom: 1.0rem;
@@ -205,12 +226,14 @@ h2 {
 }
 
 /* Überschrift H2 für Textblöcke */
+
 h2.heading-text-only {
   padding-top: 0rem;
   padding-bottom: 1rem;
 }
 
 /* Überschrift H3 */
+
 h3 {
   padding-top: 0rem;
   padding-bottom: 0rem;
@@ -221,6 +244,7 @@ h3 {
 }
 
 /* Überschrift H3 */
+
 h3.grid-item-title {
   text-align: center;
   font-size: var(--font-mobile);
@@ -230,6 +254,7 @@ h3.grid-item-title {
 }
 
 /* Überschrift H4 */
+
 h4 {
   margin: 0;
   font-size: 1rem;
@@ -237,6 +262,7 @@ h4 {
 }
 
 /* Absatz */
+
 p {
   font-size: var(--font-mobile);
   color: var(--color-main);
@@ -247,6 +273,7 @@ p {
 }
 
 /* Adresse */
+
 address {
   font-size: var(--font-mobile);
   color: var(--color-main);
@@ -258,6 +285,7 @@ address {
 }
 
 /* Link */
+
 a {
   color: var(--color-main);
   font-size: var(--font-mobile);
@@ -266,17 +294,20 @@ a {
 }
 
 /* Link Hover */
+
 a:hover {
   color: var(--color-highlight);
 }
 
 /* Link mit Icon .............................*/
+
 .grid-link {
   text-decoration: none;
 }
 
 
 /* Link mit Icon */
+
 .link-with-icon {
   text-decoration: none;
   display: inline-block;
@@ -288,11 +319,13 @@ a.link-with-icon:hover {
 }
 
 /* Icon im Button */
+
 i.button {
   padding-right: 1rem;
 }
 
 /* Icon rechts neben Link */
+
 i.link {
   padding-left: 0.5rem;
 }
@@ -304,16 +337,19 @@ i.grid {
 }
 
 /* fett gedruckt */
+
 .bold {
   font-weight: bold;
 }
 
 /* Ausrichtung zentriert */
+
 .center {
   text-align: center;
 }
 
 /* Link als Button */
+
 .button-link {
   font-size: var(--font-mobile);
   background-color: var(--color-main);
@@ -328,12 +364,14 @@ i.grid {
 }
 
 /* Link als Button - Hover*/
+
 .button-link:hover {
   background-color: var(--color-highlight);
   color: var(--color-bg);
 }
 
 /* Link als Navigations-Button */
+
 .button-nav {
   font-size: var(--font-mobile);
   color: var(--color-main);
@@ -348,38 +386,43 @@ i.grid {
 }
 
 /* Link als Navigations-Button - Hover */
+
 .button-nav:hover {
   color: var(--white);
   border: 1px solid var(--color-highlight);
   background-color: var(--color-highlight);
 }
 
-/* kein Abstand */
+/* Spacer kein Abstand */
+
 .mtb-0 {
   padding-top: 0px;
   padding-bottom: 0px;
 }
 
-/* Abstand unten und oben klein*/
+/* Spacer Abstand unten und oben klein*/
+
 .mtb-1 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
 
-/* Abstand oben 0 und unten größer*/
+/* Spacer Abstand oben 0 und unten größer*/
 .mtb-2 {
   padding-top: 0px;
   padding-bottom: 1rem;
 }
 
 /* unsortierte Liste ohne Punkte */
+
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-/* Grid mit 4 Spalten */
+/* Grid für bis zu 4 Spalten */
+
 .grid-4 {
   display: grid;
   grid-template-columns: 100%;
@@ -389,18 +432,23 @@ ul {
   margin-bottom: 0.5rem;
 }
 
+/* Grid Container für Concert Dates */
+
 .grid-table-container {
   display: grid;
   grid-template-columns: auto;
   margin-bottom: 2rem;
 }
 
+/* Grid Items für Concert Dates */
+
 .grid-table-row {
   display: grid;
   grid-template-columns: 50% 50%;
 }
 
-/* Grid mit 3 Spalten */
+/* Grid mit bis zu 3 Spalten */
+
 .grid-3 {
   display: grid;
   grid-template-columns: 100%;
@@ -408,7 +456,8 @@ ul {
   column-gap: 2%;
 }
 
-/* Grid für 33% Bild links und 50% Text rechts */
+/* Grid für 40% Bild links und 40% Text rechts (vorher 33% und 50% */
+
 .grid-3350 {
   display: grid;
   grid-template-columns: 100%;
@@ -416,7 +465,8 @@ ul {
   column-gap: 2%;
 }
 
-/* Grid mit 2 Spalten */
+/* Grid mit bis zu 2 Spalten */
+
 .grid-2 {
   display: grid;
   grid-template-columns: 100%;
@@ -425,7 +475,8 @@ ul {
 }
 
 
-/* Grid Feature mit 2 Spalten */
+/* Grid Feature mit bis 2 Spalten */
+
 .grid-2-feature {
   display: grid;
   grid-template-columns: 100%;
@@ -438,6 +489,7 @@ ul {
 }
 
 /* Content unter/neben Grid Feature */
+
 .grid-2-feature article {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -445,12 +497,14 @@ ul {
 
 
 /* Container für Section Feature */
+
 .section-feature-container {
   width: 100%;
   background-color: var(--color-secondary-background);
 }
 
 /* Section Feature mit 1 Spalte */
+
 .section-feature {
   max-width: 600px;
   margin-left: auto;
@@ -461,6 +515,7 @@ ul {
 }
 
 /* Section Feature Text unter Video */
+
 .section-feature p {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -468,12 +523,14 @@ ul {
 
 
 /* nur 1 Spalte mit 50% für Texte */
+
 .single-column {
   width: 100%;
   max-width: calc(var(--maxwidth)/2);
 }
 
 /* Abschnittstrenner mit Linie */
+
 .line {
   height: 0.5px;
   margin-top: 1.5rem;
@@ -485,6 +542,7 @@ ul {
 }
 
 /* Abschnittstrenner mit Linie im Grid  */
+
 .line-grid {
   height: 0.5px;
   margin-top: 1rem;
@@ -492,35 +550,35 @@ ul {
   background-color: var(--color-main);
 }
 
-/* Audio Player*/
-audio {
-  width: 100%;
-  height: 32px;
-}
-
 /* Bild */
+
 .img-11-s {
   width: 100%;
   min-width: 280px;
   min-height: 280px;
 }
 
+/* Bild im Grid */
+
 .img-grid {
   width: 100%;
 }
 
 /* Bild mit Untertitel */
+
 figure {
   margin: 0;
   max-width: fit-content;
 }
 
 /* Hintergrund Bildunterschrift im Grid */
+
 figure.grid {
   background-color: var(--color-secondary-background);
 }
 
 /* Untertitel für Bild*/
+
 figcaption {
   padding-top: 1rem;
   padding-left: 1rem;
@@ -531,6 +589,7 @@ figcaption {
 }
 
 /* Bild Social Media Icons */
+
 .icon-social {
   width: 24px;
   height: 24px;
@@ -538,6 +597,7 @@ figcaption {
 }
 
 /* Footer Container */
+
 footer {
   margin-top: 2rem;
   margin-bottom: 4rem;
@@ -549,6 +609,7 @@ footer {
 }
 
 /* Footer Container Grid */
+
 .grid-footer {
   display: grid;
   grid-template-columns: 100%;
@@ -557,6 +618,7 @@ footer {
 }
 
 /* Footer Navigation */
+
 .footer-nav {
   display: flex;
   padding-top: 0rem;
@@ -569,6 +631,7 @@ footer {
 }
 
 /* Footer Navigationselemente */
+
 .footer-nav-item {
   width: 100%;
   text-align: center;
@@ -576,6 +639,7 @@ footer {
 }
 
 /* Footer Socialmedia Icons Container */
+
 nav.footer-social-icons {
   padding-top: 0rem !important;
   text-align: center;
@@ -583,24 +647,38 @@ nav.footer-social-icons {
 }
 
 /* Footer Socialmedia Icons Element */
+
 .footer-social-icons a {
   margin-right: 2rem;
 }
 
 /* Footer Socialmedia Icons letztes Element ohne Abstand rechts */
+
 .footer-social-icons a:last-child {
   margin-right: 0rem;
 }
 
 
-@media only screen and (min-width: 577px) {
+/*++++++++++++++++++++++++++++++*/
+/*                              */
+/* Layout ab 576px Viewport     */
+/*                              */
+/*++++++++++++++++++++++++++++++*/
+
+@media only screen and (min-width: 576px) {
+
+  /* Hero Image feste Höhe */
 
   .hero-image {
     height: 600px;
   }
+
+  /* inner Container Abstand nach oben */
+
   .inner {
     padding-top: 5rem;
   }
+
 
   nav a {
     margin-right: 2rem;
@@ -610,40 +688,55 @@ nav.footer-social-icons {
     margin-bottom: 3rem;
   }
 
+  /* Grid mit 2 Spalten */
+
   .grid-4 {
     grid-template-columns: 49% 49%;
     row-gap: 2rem;
     margin-bottom: 3rem;
   }
 
+ /* Grid mit 2 Spalten */
+
   .grid-3 {
     grid-template-columns: 49% 49%;
     row-gap: 1rem;
   }
 
+  /* Grid mit 2 Spalten */
+
   .grid-3350 {
     grid-template-columns: 49% 49%;
   }
+
+  /* Grid mit 2 Spalten */
 
   .grid-2 {
     grid-template-columns: 49% 49%;
   }
 
+  /* Grid Feature mit 1 Spalte und Außenabstand */
   .grid-2-feature {
     grid-template-columns: 100%;
     padding: 2rem;
     row-gap: 2rem;
   }
 
+  /* Feature Artikel ohne Abstand */
+
   .grid-2-feature article {
     padding-left: 0rem;
     padding-right: 0rem;
   }
 
+  /* Section Feature Abstand */
+
   .section-feature {
     padding-top: 3rem;
     padding-bottom: 3rem;
   }
+
+  /* Überschriften */
 
   h1 {
     margin-bottom: 0rem;
@@ -665,6 +758,8 @@ nav.footer-social-icons {
     font-size: var(--font-tablet);
   }
 
+  /* Schriftgröße Texte */
+
   p {
     font-size: var(--font-tablet);
   }
@@ -677,10 +772,14 @@ nav.footer-social-icons {
     font-size: var(--font-tablet);
   }
 
+  /* Abstand Linie */
+
   .line {
     margin-top: 3rem;
     margin-bottom: 3rem;
   }
+
+  /*Spacer */
 
   .mtb-1 {
     padding-top: 0.5rem;
@@ -692,21 +791,29 @@ nav.footer-social-icons {
     padding-bottom: 2rem;
   }
 
+  /* Mindestgroesse Bilder */
+
   .img-11-s {
     min-width: 266px;
     min-height: 266px;
   }
+
+  /* Abstand Button Link */
 
   .button-link {
     margin-right: 0.75rem;
     margin-bottom: 0.75rem;
   }
 
+  /* Abstand Footer */
+
   footer {
     margin-top: 2rem;
     margin-bottom: 6rem;
   }
 
+  /* Footer mit 1 Spalte */
+  
   .grid-footer {
     grid-template-columns: 100%;
   }
@@ -721,15 +828,24 @@ nav.footer-social-icons {
 }
 
 
-@media only screen and (min-width: 825px) {
+
+/*++++++++++++++++++++++++++++++*/
+/*                              */
+/* Layout ab 824px Viewport     */
+/*                              */
+/*++++++++++++++++++++++++++++++*/
+
+@media only screen and (min-width: 824px) {
 
   /* Top Navigation */
+
   .topnav-container {
     flex-direction: row !important;
     display: flex !important;
   }
 
-  /* Top Navigation */
+  /* Top Navigation in Reihe */
+
   .topnav {
     flex-direction: row;
     display: flex !important;
@@ -740,6 +856,8 @@ nav.footer-social-icons {
 
   }
 
+  /* Top Navigation in Reihe */
+
   #topNav {
     display: flex !important;
     flex-direction: row;
@@ -748,29 +866,42 @@ nav.footer-social-icons {
 
   }
 
+  /* Top Navigation Link ohne Abstand nach unten */
+
   .topnav a {
     padding-bottom: 0rem;
   }
+
+  /* Navigation Link Abstand nach Rechnts */
 
   nav a {
     margin-right: 4rem;
   }
 
+  /* Hamburger Menu Icon ausblenden */
+
   a#hamburger-menu {
     display: none;
   }
 
+  /* Inner Container Abstand nach oben */
   .inner {
     padding-top: 6rem;
   }
+
+  /* Concert Dates Container Abstand nach oben */
 
   .grid-table-container {
     margin-bottom: 4rem;
   }
 
+  /* Concert Dates Grid mit 4 Spalten */
+
   .grid-table-row {
     grid-template-columns: 25% 25% 25% 25%;
   }
+
+  /* Grid mit 3 Spalten */
 
   .grid-4 {
     margin-bottom: 4rem;
@@ -778,14 +909,20 @@ nav.footer-social-icons {
     column-gap: 1.5%;
   }
 
+  /* Grid mit 3 Spalten */
+
   .grid-3 {
     grid-template-columns: 32% 32% 32%;
   }
+
+  /* Section Grid mit 2 Spalten */
 
   .grid-3350 {
     grid-template-columns: 40% 40%;
     column-gap: 5%;
   }
+
+  /* Feature Grid mit 2 Spalten */
 
   .grid-2-feature {
     grid-template-columns: 47.5% 47.5%;
@@ -793,15 +930,21 @@ nav.footer-social-icons {
     column-gap: 5%;
   }
 
+  /* Section Feature Abstand nach oben und unten */
+
   .section-feature {
     padding-top: 4rem;
     padding-bottom: 4rem;
   }
 
+  /* Absatz Section Feature Abstand links und rechts */
+
   .section-feature p {
     padding-left: 0rem;
     padding-right: 0rem;
   }
+
+  /* Überschriften */
 
   h1.single-title {
     font-size: 3rem;
@@ -821,46 +964,66 @@ nav.footer-social-icons {
     font-size: var(--font-laptop);
   }
 
+  /* Schriftgroesse Absatz */
+
   p {
     font-size: var(--font-laptop);
   }
+
+  /* Schriftgroesse Adresse */
 
   address {
     font-size: var(--font-laptop);
   }
 
+  /* Schriftgroesse Link */
+
   a {
     font-size: var(--font-laptop);
   }
+
+  /* Abstand Linie */
 
   .line {
     margin-top: 6rem;
     margin-bottom: 6rem;
   }
 
+  /* Spacer */
+
   .mtb-1 {
     padding-top: 1rem;
     padding-bottom: 1rem;
   }
+
+  /* Mindestgroesse Bilder */
 
   .img-11-s {
     min-width: 330px;
     min-height: 330px;
   }
 
+  /* Abstand Link Button */
+
   .button-link {
     margin-right: 1rem;
     margin-bottom: 0rem;
   }
+
+/* Abstand Footer */
 
   footer {
     margin-top: 3rem;
     margin-bottom: 6rem;
   }
 
+  /* Footer Grid 2 Spalten */
+
   .grid-footer {
     grid-template-columns: 50% 50%;
   }
+
+  /* Abstand Footer Links */
 
   .footer-nav {
     margin-left: 0rem;
@@ -868,19 +1031,41 @@ nav.footer-social-icons {
     column-gap: 4rem;
   }
 
+  /* Social Media Icons */
+
   nav.footer-social-icons {
     text-align: right;
   }
 
 }
 
-@media only screen and (min-width: 1025px) {
+
+/*++++++++++++++++++++++++++++++*/
+/*                              */
+/* Layout ab 1024px Viewport    */
+/*                              */
+/*++++++++++++++++++++++++++++++*/
+
+@media only screen and (min-width: 1024px) {
+
+  /* Grid mit 4 Spalten */
+
   .grid-4 {
     grid-template-columns: 24% 24% 24% 24%;
   }
 }
 
+
+/*++++++++++++++++++++++++++++++*/
+/*                              */
+/* Layout ab 1200px Viewport    */
+/*                              */
+/*++++++++++++++++++++++++++++++*/
+
 @media only screen and (min-width: 1200px) {
+
+  /* Feste Fontsize h1 */
+
   h1 {
     font-size: 5.75rem;
   }
