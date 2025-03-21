@@ -560,15 +560,11 @@ section {
 
 }
 
-/* Content unter/neben Grid Feature */
-
-.grid-2-feature
 /* Container für Section Feature */
 
 .section-feature-container {
   width: 100%;
   background-color: var(--color-main);
-
 }
 
 /* Section Feature mit 1 Spalte */
@@ -599,28 +595,13 @@ section {
 
 /* Abschnittstrenner mit Linie */
 
-.line {
-  height: 0.5px;
-  margin-top: 1.5rem;
-  margin-bottom: 2rem;
-  background-color: var(--color---bg);
-  max-width: 66%;
-  margin-left: auto;
-  margin-right: auto;
-}
+.table-line {
+  border-color: var(--color-decoration);
+  border-width: 0.5px;
+  width: 100%;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 
-.line {
-  margin-top: 0rem !important;
-  margin-bottom: 0rem !important;
-}
-
-/* Abschnittstrenner mit Linie im Grid  */
-
-.line-grid {
-  height: 0.5px;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  background-color: var(--color-decoration);
 }
 
 /* Bild */
@@ -849,13 +830,6 @@ nav.footer-social-icons {
     font-size: var(--font-tablet);
   }
 
-  /* Abstand Linie */
-
-  .line {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-  }
-
   /*Spacer */
 
   .mtb-1 {
@@ -905,7 +879,6 @@ nav.footer-social-icons {
 }
 
 
-
 /*++++++++++++++++++++++++++++++*/
 /*                              */
 /* Layout ab 824px Viewport     */
@@ -930,7 +903,6 @@ nav.footer-social-icons {
     margin-left: auto;
     margin-right: auto;
     width: 100%;
-
   }
 
   /* Top Navigation in Reihe */
