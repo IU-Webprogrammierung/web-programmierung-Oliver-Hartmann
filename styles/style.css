@@ -5,6 +5,9 @@
   --graphit: #222222;
   --petrol: #4f6d7a;
   --silver: #eeeeee;
+  --black: #010101;
+  --dark-grey: #333333;
+  --light-grey: #bbbbbb;
 
   /* NOCH NICHT VERWENDET*/
   --blue: #7a889a;
@@ -12,15 +15,21 @@
   --terra: #c17c52;
 
   /* Hauptfarbe */
-  --color-main: var(--graphit);
+  --color-main: var(--white);
+
+  --color-text: var(--light-grey);
+
+  --color-main-title: var(--white);
 
   /* Hintergrundfarbe */
-  --color-bg: var(--white);
+  --color-bg: var(--black);
 
   /* Hover Farbe */
   --color-highlight: var(--petrol);
 
   --color-secondary-background: var(--silver);
+
+  --color-decoration: var(--dark-grey);
 
   /* Animationszeit */
   --transistion-time: 300ms;
@@ -31,9 +40,10 @@
   /*Schriftgröße mobile */
   --font-mobile: 15px;
   /* Schriftgröße tablet */
-  --font-tablet: 16px;
+  --font-tablet: 17px;
   /* Laptop */
-  --font-laptop: 17px;
+  --font-laptop: 18px;
+
 }
 
 /*++++++++++++++++++++++++++++++*/
@@ -197,11 +207,14 @@ nav a:hover {
 
 h1 {
   text-transform: uppercase;
-  font-size: calc(2rem + 5vw);
+  font-size: clamp(3rem, 10vw, 7rem);
   margin: 0;
   padding: 0;
   line-height: 1;
-  color: var(--color-bg);
+  color: var(--color-main-title);
+  letter-spacing: -0.02em;
+  font-family: "Roboto";
+  font-weight: 100;
 }
 
 /* Seitentitel ohne Hero Bild*/
@@ -217,12 +230,14 @@ h1.single-title {
 /* Überschrift H2 */
 
 h2 {
-  padding-top: 2rem;
   padding-bottom: 1.0rem;
   margin: 0;
-  font-size: 1.5rem;
+  font-size: clamp(2rem, 5vw, 4rem);
   text-transform: uppercase;
   color: var(--color-main);
+  letter-spacing: -0.02em;
+  font-family: "Roboto";
+  font-weight: 200;
 }
 
 /* Überschrift H2 für Textblöcke */
@@ -265,23 +280,28 @@ h4 {
 
 p {
   font-size: var(--font-mobile);
-  color: var(--color-main);
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  color: var(--color-text);
+  padding-top: 0.0rem;
+  padding-bottom: 1rem;
   margin: 0;
   line-height: 1.5;
+  letter-spacing: 0.02em;
+  font-family: "Roboto";
+  font-weight: 300;
 }
 
 /* Adresse */
 
 address {
   font-size: var(--font-mobile);
-  color: var(--color-main);
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  color: var(--color-text);
+  padding-top: 0rem;
+  padding-bottom: 1rem;
   margin: 0;
   line-height: 1.5;
-  font-style: normal;
+  font-family: "Roboto";
+  letter-spacing: 0.02em;
+  font-weight: 300;
 }
 
 /* Link */
@@ -291,6 +311,7 @@ a {
   font-size: var(--font-mobile);
   transition: var(--transistion-time);
   word-break: break-word;
+  letter-spacing: 0.02em;
 }
 
 /* Link Hover */
@@ -361,6 +382,7 @@ i.grid {
   text-decoration: none;
   transition: var(--transistion-time);
   text-transform: uppercase;
+  letter-spacing: 0.02em;
 }
 
 /* Link als Button - Hover*/
@@ -383,6 +405,7 @@ i.grid {
   transition: var(--transistion-time);
   text-transform: uppercase;
   display: inline-block;
+
 }
 
 /* Link als Navigations-Button - Hover */
@@ -461,8 +484,8 @@ ul {
 .grid-3350 {
   display: grid;
   grid-template-columns: 100%;
-  row-gap: 0rem;
-  column-gap: 2%;
+  row-gap: 2rem;
+  column-gap: 5%;
 }
 
 /* Grid mit bis zu 2 Spalten */
@@ -470,7 +493,7 @@ ul {
 .grid-2 {
   display: grid;
   grid-template-columns: 100%;
-  row-gap: 0rem;
+  row-gap: 2rem;
   column-gap: 2%;
 }
 
@@ -480,27 +503,60 @@ ul {
 .grid-2-feature {
   display: grid;
   grid-template-columns: 100%;
-  row-gap: 0rem;
   column-gap: 2%;
   background-color: var(--color-secondary-background);
   padding-bottom: 1rem;
-  row-gap: 1rem;
+  row-gap: 2rem;
   margin-bottom: 2rem;
+  border-radius: 32px;
+
+  h2 {
+    color:var(--color-bg);
+
+  }
+
+  p {
+    color:var(--color-bg);
+  }
+
+  .button-nav {
+    color:var(--color-bg);
+    border: 1px solid var(--color-bg);
+  }
+
+  .button-nav:hover {
+    color:var(--color-highlight);
+  }
+  a:hover {
+    color:var(--color-main) !important;
+  }
+
+  article {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  img {
+    max-width: 400px;
+    filter: drop-shadow(0px 10px 10px);
+    margin-left:auto;
+    margin-right: auto;
+  }
+
 }
 
 /* Content unter/neben Grid Feature */
 
-.grid-2-feature article {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
+.grid-2-feature 
 
 
 /* Container für Section Feature */
 
 .section-feature-container {
   width: 100%;
-  background-color: var(--color-secondary-background);
+  background-color: var(--color-main);
+
+  
 }
 
 /* Section Feature mit 1 Spalte */
@@ -509,17 +565,22 @@ ul {
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
-  background-color: var(--color-secondary-background);
+  background-color: var(--color-bg);
   padding-top: 2rem;
   padding-bottom: 2rem;
+
+  p {
+    padding-left: 0rem;
+    padding-right: 0rem;
+    background-color: var(--color-bg);
+    color: var(--color-main);
+
+  }
 }
 
 /* Section Feature Text unter Video */
 
-.section-feature p {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
+.section-feature 
 
 
 /* nur 1 Spalte mit 50% für Texte */
@@ -535,7 +596,7 @@ ul {
   height: 0.5px;
   margin-top: 1.5rem;
   margin-bottom: 2rem;
-  background-color: var(--color-main);
+  background-color: var(--color---bg);
   max-width: 66%;
   margin-left: auto;
   margin-right: auto;
@@ -547,7 +608,7 @@ ul {
   height: 0.5px;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  background-color: var(--color-main);
+  background-color: var(--color-decoration);
 }
 
 /* Bild */
@@ -556,6 +617,7 @@ ul {
   width: 100%;
   min-width: 280px;
   min-height: 280px;
+  border-radius: 0.5rem;
 }
 
 /* Bild im Grid */
@@ -718,7 +780,7 @@ nav.footer-social-icons {
   /* Grid Feature mit 1 Spalte und Außenabstand */
   .grid-2-feature {
     grid-template-columns: 100%;
-    padding: 2rem;
+    padding: 5%;
     row-gap: 2rem;
   }
 
@@ -749,7 +811,6 @@ nav.footer-social-icons {
   }
 
   h2 {
-    font-size: 2rem;
     padding-top: 0rem;
     padding-bottom: 1.5rem;
   }
@@ -918,7 +979,7 @@ nav.footer-social-icons {
   /* Section Grid mit 2 Spalten */
 
   .grid-3350 {
-    grid-template-columns: 40% 40%;
+    grid-template-columns: 47.5% 47.5%;
     column-gap: 5%;
   }
 
@@ -926,7 +987,6 @@ nav.footer-social-icons {
 
   .grid-2-feature {
     grid-template-columns: 47.5% 47.5%;
-    padding: 3rem;
     column-gap: 5%;
   }
 
@@ -952,7 +1012,6 @@ nav.footer-social-icons {
   }
 
   h2 {
-    font-size: 2.5rem;
     padding-bottom: 2rem;
   }
 
@@ -985,8 +1044,8 @@ nav.footer-social-icons {
   /* Abstand Linie */
 
   .line {
-    margin-top: 6rem;
-    margin-bottom: 6rem;
+    margin-top: 8rem;
+    margin-bottom: 8rem;
   }
 
   /* Spacer */
@@ -1064,10 +1123,11 @@ nav.footer-social-icons {
 
 @media only screen and (min-width: 1200px) {
 
-  /* Feste Fontsize h1 */
+  /* Feste Fontsize h1 
 
   h1 {
     font-size: 5.75rem;
   }
+    */
 
 }
