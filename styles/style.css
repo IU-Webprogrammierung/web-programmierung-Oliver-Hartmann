@@ -19,6 +19,8 @@
 
   --color-text: var(--light-grey);
 
+  --color-text-feature: var(--graphit);
+
   --color-main-title: var(--white);
 
   /* Hintergrundfarbe */
@@ -52,10 +54,16 @@
 /*                              */
 /*++++++++++++++++++++++++++++++*/
 
+@font-face {
+  font-family: "Roboto";
+  src: url("../assets/font/Roboto-VariableFont_wdth\,wght.ttf");
+}
+
 body {
   margin: 0px;
   background-color: var(--color-bg);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto";
+  font-weight: 200;
 
 }
 
@@ -92,29 +100,24 @@ header {
   display: none;
   flex-direction: column;
   row-gap: 2rem;
-  column-gap: 2rem;
+  column-gap: 4rem;
 }
 
 /* Top Navigation Menü Link */
 
 .topnav a {
-  padding-bottom: 0rem;
-  color: var(--color-main);
   margin-right: 0rem;
-  text-decoration: none;
-  font-size: 1.125rem;
-  text-transform: uppercase;
 }
-
 
 /* Farbe und Schriftgröße für alle Navigations Items */
 
 nav a {
   color: var(--color-main);
   text-decoration: none;
-  transition: var(--transistion-time);
-  font-size: 1.125rem;
+  font-size: var(--font-laptop);
   text-transform: uppercase;
+  font-weight: 200;
+  line-height: 1;
 }
 
 /* Link in Navigations Items Hover */
@@ -139,7 +142,7 @@ nav a:hover {
 /* Hero Container */
 
 .hero-outer {
-  margin-top: 84px;
+  margin-top: 82px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -182,7 +185,7 @@ nav a:hover {
   margin-left: auto;
   margin-right: auto;
   background-color: var(--color-bg);
-  padding-top: 4rem;
+  padding-top: 10%;
   position: relative;
   z-index: 1;
   padding-left: 3vw;
@@ -212,7 +215,7 @@ h1 {
   padding: 0;
   line-height: 1;
   color: var(--color-main-title);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.05em;
   font-family: "Roboto";
   font-weight: 100;
 }
@@ -220,8 +223,8 @@ h1 {
 /* Seitentitel ohne Hero Bild*/
 
 h1.single-title {
-  color: var(--color-bg);
-  font-size: clamp(2rem, 5vw, 4rem);
+  color: var(--color-main);
+  font-size: clamp(2rem, 5vw, 7rem);
   letter-spacing: -0.02em;
   font-family: "Roboto";
   font-weight: 300;
@@ -238,16 +241,10 @@ h2 {
   font-size: clamp(2rem, 5vw, 4rem);
   text-transform: uppercase;
   color: var(--color-main);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.05em;
   font-family: "Roboto";
-  font-weight: 300;
-}
-
-/* Überschrift H2 für Textblöcke */
-
-h2.heading-text-only {
-  padding-top: 0rem;
-  padding-bottom: 1rem;
+  font-weight: 200;
+  line-height: 1;
 }
 
 /* Überschrift H3 */
@@ -255,22 +252,14 @@ h2.heading-text-only {
 h3 {
   padding-top: 0rem;
   padding-bottom: 0rem;
-  margin: 0;
+  margin: 0 0 1rem 0;
   font-size: var(--font-mobile);
   text-transform: uppercase;
   color: var(--color-main);
   font-family: "Roboto";
   letter-spacing: 0.02em;
-
-}
-
-/* Überschrift H3 */
-
-h3.grid-item-title {
-  text-align: center;
-  font-size: var(--font-mobile);
-  line-height: 1.5;
   font-weight: 400;
+
 }
 
 /* Überschrift H4 */
@@ -292,7 +281,6 @@ p {
   line-height: 1.5;
   letter-spacing: 0.02em;
   font-family: "Roboto";
-  font-weight: 300;
 }
 
 /* Adresse */
@@ -300,13 +288,11 @@ p {
 address {
   font-size: var(--font-mobile);
   color: var(--color-text);
-  padding-top: 0rem;
-  padding-bottom: 1rem;
   margin: 0;
   line-height: 1.5;
   font-family: "Roboto";
   letter-spacing: 0.02em;
-  font-weight: 300;
+  text-transform: none;
 }
 
 /* Link */
@@ -376,25 +362,28 @@ i.grid {
 
 /* Link als Button */
 
-.button-link {
+.button-cta {
+  display: inline-block;
   font-size: var(--font-mobile);
-  background-color: var(--color-main);
-  color: var(--white);
+  background-color: var(--color-highlight);
+  color: var(--color-main);
   padding: 0.6rem 1.3rem;
   margin-right: 1rem;
   margin-bottom: 1rem;
-  display: inline-block;
   text-decoration: none;
   transition: var(--transistion-time);
   text-transform: uppercase;
-  letter-spacing: 0.02em;
+  border-radius: 0.5rem;
+  font-weight: 300;
+  font-family: "Roboto";
 }
 
 /* Link als Button - Hover*/
 
-.button-link:hover {
-  background-color: var(--color-highlight);
-  color: var(--color-bg);
+.button-cta:hover {
+  background-color: var(--color-main);
+  color: var(--color-text-feature);
+
 }
 
 /* Link als Navigations-Button */
@@ -404,13 +393,12 @@ i.grid {
   color: var(--color-main);
   border: 1px solid var(--color-main);
   padding: 0.6rem 1.3rem;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin: 0 1rem 1rem 0;
   text-decoration: none;
   transition: var(--transistion-time);
   text-transform: uppercase;
   display: inline-block;
-
+  border-radius: 0.5rem;
 }
 
 /* Link als Navigations-Button - Hover */
@@ -426,6 +414,7 @@ i.grid {
 .mtb-0 {
   padding-top: 0px;
   padding-bottom: 0px;
+  margin-bottom: 0px;
 }
 
 /* Spacer Abstand unten und oben klein*/
@@ -449,11 +438,12 @@ ul {
   padding: 0;
 }
 
+/* Abschnitt mit Abständen */
 
 section {
-  background-color: var(--color-bg);
-  padding-top: 8%;
-  padding-bottom: 8%;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-bottom: 10%;
 }
 
 /* Grid für bis zu 4 Spalten */
@@ -463,8 +453,6 @@ section {
   grid-template-columns: 100%;
   row-gap: 2rem;
   column-gap: 2%;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
 }
 
 /* Grid Container für Concert Dates */
@@ -472,6 +460,7 @@ section {
 .grid-table-container {
   display: grid;
   grid-template-columns: auto;
+  row-gap: 1rem;
   margin-bottom: 0rem;
 }
 
@@ -480,9 +469,14 @@ section {
 .grid-table-row {
   display: grid;
   grid-template-columns: 50% 50%;
-  row-gap: 1rem;
   padding: 0;
+
 }
+
+section.grid-table-row {
+  margin-bottom: 0px;
+}
+
 
 /* Grid mit bis zu 3 Spalten */
 
@@ -511,7 +505,6 @@ section {
   column-gap: 2%;
 }
 
-
 /* Grid Feature mit bis 2 Spalten */
 
 .grid-2-feature {
@@ -521,25 +514,29 @@ section {
   background-color: var(--color-secondary-background);
   padding-bottom: 1rem;
   row-gap: 2rem;
-  margin-bottom: 2rem;
-  border-radius: 32px;
+  margin-bottom: 10%;
+
+  h1 {
+    color: var(--color-text-feature);
+  }
 
   h2 {
-    color: var(--color-bg);
-
+    color: var(--color-text-feature);
+    ;
   }
 
   p {
-    color: var(--color-bg);
+    color: var(--color-text-feature);
   }
 
   .button-nav {
     color: var(--color-bg);
-    border: 1px solid var(--color-bg);
+    border-color: var(--color-bg);
   }
 
   .button-nav:hover {
     color: var(--color-highlight);
+    border-color: var(--color-highlight);
   }
 
   a:hover {
@@ -564,7 +561,7 @@ section {
 
 .section-feature-container {
   width: 100%;
-  background-color: var(--color-main);
+  background-color: var(--color-bg);
 }
 
 /* Section Feature mit 1 Spalte */
@@ -573,15 +570,10 @@ section {
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
-  background-color: var(--color-bg);
-  padding-top: 2rem;
-  padding-bottom: 2rem;
 
   p {
     padding-left: 0rem;
     padding-right: 0rem;
-    background-color: var(--color-bg);
-    color: var(--color-main);
 
   }
 }
@@ -601,7 +593,6 @@ section {
   width: 100%;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-
 }
 
 /* Bild */
@@ -629,7 +620,7 @@ figure {
 /* Hintergrund Bildunterschrift im Grid */
 
 figure.grid {
-  background-color: var(--color-secondary-background);
+  border-radius: 0.5rem;
 }
 
 /* Untertitel für Bild*/
@@ -640,7 +631,20 @@ figcaption {
   padding-right: 1rem;
   padding-bottom: 1rem;
   margin-bottom: 0rem;
-  color: var(--color-main);
+  color: var(--color-text);
+  text-transform: uppercase;
+  line-height: 1.5;
+
+  /* Überschrift H3 */
+
+  .grid-item-title {
+    text-align: center;
+    font-size: var(--font-mobile);
+    line-height: 1.5;
+    font-weight: 400;
+    font-family: "Roboto";
+  }
+
 }
 
 /* Bild Social Media Icons */
@@ -654,8 +658,7 @@ figcaption {
 /* Footer Container */
 
 footer {
-  margin-top: 2rem;
-  margin-bottom: 4rem;
+  margin-bottom: 10%;
   max-width: var(--maxwidth);
   margin-left: auto;
   margin-right: auto;
@@ -728,13 +731,6 @@ nav.footer-social-icons {
     height: 600px;
   }
 
-  /* inner Container Abstand nach oben */
-
-  .inner {
-    padding-top: 5rem;
-  }
-
-
   nav a {
     margin-right: 2rem;
   }
@@ -748,7 +744,6 @@ nav.footer-social-icons {
   .grid-4 {
     grid-template-columns: 49% 49%;
     row-gap: 2rem;
-    margin-bottom: 3rem;
   }
 
   /* Grid mit 2 Spalten */
@@ -771,6 +766,7 @@ nav.footer-social-icons {
   }
 
   /* Grid Feature mit 1 Spalte und Außenabstand */
+
   .grid-2-feature {
     grid-template-columns: 100%;
     padding: 5%;
@@ -784,13 +780,6 @@ nav.footer-social-icons {
     padding-right: 0rem;
   }
 
-  /* Section Feature Abstand */
-
-  .section-feature {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-  }
-
   /* Überschriften */
 
   h1 {
@@ -799,7 +788,7 @@ nav.footer-social-icons {
 
   h1.single-title {
     font-size: 2rem;
-    padding-top: 1rem;
+    padding-top: 0rem;
     padding-bottom: 1rem;
   }
 
@@ -830,6 +819,10 @@ nav.footer-social-icons {
     font-size: var(--font-tablet);
   }
 
+  .button-cta {
+    font-size: var(--font-tablet);
+  }
+
   /*Spacer */
 
   .mtb-1 {
@@ -847,20 +840,6 @@ nav.footer-social-icons {
   .img-11-s {
     min-width: 266px;
     min-height: 266px;
-  }
-
-  /* Abstand Button Link */
-
-  .button-link {
-    margin-right: 0.75rem;
-    margin-bottom: 0.75rem;
-  }
-
-  /* Abstand Footer */
-
-  footer {
-    margin-top: 2rem;
-    margin-bottom: 6rem;
   }
 
   /* Footer mit 1 Spalte */
@@ -933,11 +912,6 @@ nav.footer-social-icons {
     display: none;
   }
 
-  /* Inner Container Abstand nach oben */
-  .inner {
-    padding-top: 6rem;
-  }
-
   /* Concert Dates Container Abstand nach oben */
 
   .grid-table-container {
@@ -953,7 +927,6 @@ nav.footer-social-icons {
   /* Grid mit 3 Spalten */
 
   .grid-4 {
-    margin-bottom: 4rem;
     grid-template-columns: 32.5% 32.5% 32.5%;
     column-gap: 1.5%;
   }
@@ -976,13 +949,6 @@ nav.footer-social-icons {
   .grid-2-feature {
     grid-template-columns: 47.5% 47.5%;
     column-gap: 5%;
-  }
-
-  /* Section Feature Abstand nach oben und unten */
-
-  .section-feature {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
   }
 
   /* Absatz Section Feature Abstand links und rechts */
@@ -1043,20 +1009,6 @@ nav.footer-social-icons {
     min-height: 330px;
   }
 
-  /* Abstand Link Button */
-
-  .button-link {
-    margin-right: 1rem;
-    margin-bottom: 0rem;
-  }
-
-  /* Abstand Footer */
-
-  footer {
-    margin-top: 3rem;
-    margin-bottom: 6rem;
-  }
-
   /* Footer Grid 2 Spalten */
 
   .grid-footer {
@@ -1093,22 +1045,4 @@ nav.footer-social-icons {
   .grid-4 {
     grid-template-columns: 24% 24% 24% 24%;
   }
-}
-
-
-/*++++++++++++++++++++++++++++++*/
-/*                              */
-/* Layout ab 1200px Viewport    */
-/*                              */
-/*++++++++++++++++++++++++++++++*/
-
-@media only screen and (min-width: 1200px) {
-
-  /* Feste Fontsize h1 
-
-  h1 {
-    font-size: 5.75rem;
-  }
-    */
-
 }
