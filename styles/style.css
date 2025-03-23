@@ -927,8 +927,8 @@ nav.footer-social-icons {
   /* Grid mit 3 Spalten */
 
   .grid-4 {
-    grid-template-columns: 32.5% 32.5% 32.5%;
-    column-gap: 1.5%;
+    grid-template-columns: 32% 32% 32%;
+    column-gap: 2%;
   }
 
   /* Grid mit 3 Spalten */
@@ -1043,6 +1043,6 @@ nav.footer-social-icons {
   /* Grid mit 4 Spalten */
 
   .grid-4 {
-    grid-template-columns: 24% 24% 24% 24%;
+    grid-template-columns: 23.5% 23.5% 23.5% 23.5% 
   }
 }
