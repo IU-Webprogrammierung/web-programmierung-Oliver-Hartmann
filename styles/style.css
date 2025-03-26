@@ -650,8 +650,7 @@ figcaption {
 /* Bild Social Media Icons */
 
 .icon-social {
-  width: 24px;
-  height: 24px;
+font-size: 20px;
   margin: 0px;
 }
 
