@@ -39,7 +39,7 @@
                     about music, production and technology. Feel free to drop me a message to say <cite>Hi</cite>.
                 </p>
 
-            <!-- Contact Form-->
+                <!-- Contact Form-->
                 <form aria-label="contact form">
                     <p>
                         <label for="subject">Subject:</label><br>
@@ -57,24 +57,31 @@
                     </p>
                     <p>
                         <label for="email">E-Mail:<span>*</span></label><br>
-                        <input type="email" id="email" name="email" placeholder="email@example.com" required aria-required="true">
+                        <input type="email" id="email" name="email" placeholder="email@example.com" required
+                            aria-required="true">
                     </p>
                     <p class="mtb-2">
                         <label for="message">Message:<span>*</span></label><br>
-                        <textarea id="message" name="message" rows="4" cols="50" placeholder="your message"
-                        required aria-required="true"></textarea>
+                        <textarea id="message" name="message" rows="4" cols="50" placeholder="your message" required
+                            aria-required="true"></textarea>
                     </p>
                     <input type="submit" value="Submit" class="button-cta">
                     <p><span>* = required</span></p>
                 </form>
             </section>
+
+            <!--Back to Top Button - wird durch JavaScript erzeugt -->
+            <button id="toTopButton" title="scroll to top"><i></i></button>
+
         </div>
     </main>
 
+    <!-- Footer wird von loader.js eingefügt -->
     <footer>
     </footer>
 
-    <script src="js/mobilemenu.js"></script> 
+    <!-- JavaScript script.js wird von loader.js eingefügt -->
+    <script id="script"></script>
 
 </body>
 

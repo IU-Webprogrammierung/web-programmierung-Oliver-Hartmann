@@ -64,8 +64,11 @@ body {
   background-color: var(--color-bg);
   font-family: "Roboto";
   font-weight: 200;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
 
 }
+
 
 /* Sticky Header */
 
@@ -713,6 +716,32 @@ nav.footer-social-icons {
 
 .footer-social-icons a:last-child {
   margin-right: 0rem;
+}
+
+#toTopButton {
+  display: none; /* Hidden by default */
+  height: 44px;
+  width: 44px;
+  position: fixed; /* Fixed/sticky position */
+  bottom: 1rem; /* Place the button at the bottom of the page */
+  right: 3vw; /* Place the button 3vw from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  padding-top: 2px;
+  text-align: center;
+  border: solid 2px ; /* Remove borders */
+  border-radius: 50%; /* rund */
+  background-color: var(--color-decoration); /* Set a background color */
+  color: var(--color-text); /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  font-size: 16px; /* Increase font size */
+  opacity: 0.8;
+  transition: var(--transistion-time);
+  transition-property: background-color;
+}
+
+#toTopButton:hover {
+  background-color: var(--color-highlight); /* Add highlight color on hover */
+  opacity: 1;
 }
 
 
