@@ -1,12 +1,16 @@
 .inner-single {
-padding-top:83px;
-margin-top: 10%;
+  padding-top: 83px;
+  margin-top: 2rem;
+
+  @media only screen and (min-width: 824px) {
+    margin-top: 5rem;
+  }
 }
 
 h1 {
-  padding-top: 2rem ;
+  padding-top: 2rem;
   padding-bottom: 3rem;
-  line-height: 1.5;
+  line-height: 1;
   letter-spacing: 0;
 }
 
@@ -16,50 +20,47 @@ h2 {
   line-height: 1.5;
   padding-bottom: 1rem;
   letter-spacing: 0;
-  font-weight: 300;
+  font-weight: 100;
 
 }
 
 h3 {
-  font-size: 1.25rem;
+  font-size: clamp(var(--font-mobile), 2.5vw, var(--font-laptop));
   text-transform: none;
   line-height: 1.5;
-  padding-bottom: 1rem;
+  padding: 0;
+  margin: 0;
   letter-spacing: 0;
-  font-weight: 300;
-}
-h4 {
-  font-size: var(--font-laptop);
-  line-height: 1.5;
-  font-weight: 300;
+  font-weight: 100;
 }
 
-.grid-3350 {
-  row-gap: 0rem;
-  column-gap: 2%;
+h4 {
+  font-size: clamp(var(--font-mobile), 2.5vw, var(--font-laptop));
+  line-height: 1.5;
+  font-weight: 100;
 }
 
 ol {
   color: var(--color-text);
   font-size: var(--font-laptop);
 
-  }
+}
 
-@media only screen and (min-width: 577px) {
+@media only screen and (min-width: 576px) {
   h1 {
     padding-top: 3rem;
     padding-bottom: 3rem;
   }
 
 
-ol {
-  font-size: var(--font-tablet);
+  ol {
+    font-size: var(--font-tablet);
 
   }
 
 }
 
-@media only screen and (min-width: 825px) {
+@media only screen and (min-width: 824px) {
 
   h1 {
     padding-top: 4rem;
@@ -68,7 +69,11 @@ ol {
 
   ol {
     font-size: var(--font-laptop);
-  
-    }
+
+  }
+
+  section {
+    margin-bottom: 5rem;
+  }
 
 }
