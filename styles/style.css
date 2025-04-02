@@ -75,29 +75,30 @@ body {
 /* Sticky Header mit Menü */
 
 header {
-  background-color: var(--color-bg);
+
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 2;
 
+
   /* Top Navigation Container Mobile */
 
   .topnavbar {
+    background-color: var(--color-bg);
     padding-top: 2rem;
     padding-bottom: 2rem;
     margin-left: 0rem;
-    display: grid;
-    row-gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0rem;
     column-gap: 4rem;
-    width: fit-content;
     padding-left: var(--side-margin);
     padding-right: var(--side-margin);
-    transition-property: color;
+    width: fit-content;
 
     @media only screen and (min-width: 824px) {
       flex-direction: row;
-      display: flex !important;
       max-width: var(--maxwidth);
       margin-left: auto;
       margin-right: auto;
@@ -106,6 +107,7 @@ header {
 
     a {
       font-size: var(--font-laptop) !important;
+      width: fit-content;
     }
 
   }
@@ -113,27 +115,32 @@ header {
   /* Top Navigation Menü Link Liste Mobile */
 
   #topnavmenu {
-    display: none;
+    display: flex;
     flex-direction: column;
     row-gap: 2rem;
     column-gap: 4rem;
-    padding-left: 2rem;
-    min-height: 33vh;
+    width: 100vw;
+    visibility: hidden;
+    transition: var(--transistion-time);
+    transition-property: padding-top;
+    padding-top: 0rem;
+    height: 0;
+
+    a {
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
     @media only screen and (min-width: 824px) {
       display: flex !important;
       flex-direction: row !important;
-      column-gap: 4rem;
-      padding-top: 0rem;
-      padding-left: 0rem;
-      min-height: auto;
+      padding-top: 0rem !important;
+      width: fit-content;
+      visibility: visible !important;
+      transition: 0ms;
+      height: auto;
     }
-  }
-
-  /* Top Navigation Menü Link 
-
-  .topnav a {
-    margin-right: 0rem;
   }
 
   /* Hamburger Menu Icon für Mobile Menu */
@@ -750,11 +757,15 @@ nav.link-list {
 
 .img-grid {
   width: 100%;
+
 }
+
+
 
 /* Bild mit Untertitel */
 
 figure {
+
   margin: 0;
   max-width: fit-content;
 }
@@ -762,6 +773,24 @@ figure {
 /* Hintergrund Bildunterschrift im Grid */
 
 figure.grid {
+ 
+  a {
+    position: relative;
+  }
+    i {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50%;
+      border: 2px solid white;
+      width: fit-content;
+  }
+
+  img:hover {
+    opacity: 0.5;
+    transition-duration: 500ms;
+  }
 
   p {
     padding-bottom: 0;
