@@ -106,7 +106,7 @@ header {
     }
 
     a {
-      font-size: var(--font-laptop) !important;
+      font-size: var(--font-laptop);
       width: fit-content;
     }
 
@@ -133,8 +133,7 @@ header {
     }
 
     @media only screen and (min-width: 824px) {
-      display: flex !important;
-      flex-direction: row !important;
+      flex-direction: row;
       padding-top: 0rem !important;
       width: fit-content;
       visibility: visible !important;
