@@ -26,7 +26,7 @@ scrollToTopBtn.getElementsByTagName("i")[0].classList.add("fa-solid", "fa-angle-
 
 // Button anzeigen, wenn nach unten gescrollt wird
 window.addEventListener("scroll", () => {
-  if (window.scrollY > 300) { // Zeige den Button, wenn mehr als 300px gescrollt wurde
+  if (window.scrollY > 200) { // Zeige den Button, wenn mehr als 300px gescrollt wurde
     scrollToTopBtn.style.display = "block";
   } else {
     scrollToTopBtn.style.display = "none";

@@ -160,17 +160,16 @@ header {
 
 }
 
-
 /* Schriftgestaltung für alle Navigations Items*/
 
 nav a {
   text-decoration: none;
   text-transform: uppercase;
-  font-weight: 200;
+  font-weight: 100;
   line-height: 1;
+  transition-duration: var(--transistion-time);
   transition-property: color;
 }
-
 
 
 /*++++++++++++++++++++++++++++++*/
@@ -396,11 +395,6 @@ a {
   }
 }
 
-/* Link mit Icon .............................*/
-
-.grid-link {
-  text-decoration: none;
-}
 
 /* Link mit Icon */
 
@@ -410,7 +404,8 @@ a {
 
   &:hover {
     padding-left: 4px;
-    transition: var(--transistion-time);
+    transition-duration: var(--transistion-time);
+    transition-timing-function: ease-in-out;
   }
 }
 
@@ -455,18 +450,33 @@ a {
 .button-nav {
   color: var(--color-main);
   border: 1px solid var(--color-main);
-  padding: 0.5em 1em;
-  margin: 0;
+  padding: 0.75em 0.75em;
+  margin: 0 0 0 0;
   text-decoration: none;
-  transition: var(--transistion-time);
+  transition-duration: var(--transistion-time);
+  transition-timing-function: ease-in-out;
   text-transform: uppercase;
   display: inline-block;
   border-radius: 0.5rem;
+  line-height: 1;
+
+  i {
+    padding: 0 1rem 0 0.5rem;
+    transition-duration: var(--transistion-time);
+    transition-timing-function: ease-in-out;
+    opacity: 0.8;
+  }
 
   &:hover {
     color: var(--white);
     border: 1px solid var(--color-highlight);
     background-color: var(--color-highlight);
+
+    i {
+      transition-duration: var(--transistion-time);
+      transition-timing-function: ease-in-out;
+      opacity: 1;
+    }
   }
 }
 
@@ -494,6 +504,19 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  width: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 1rem;
+  row-gap: 1rem;
+
+  li {
+    width: fit-content;
+
+    a {
+      margin-top: 0rem;
+    }
+  }
 }
 
 /*++++++++++++++++++++++++++++++*/
@@ -597,6 +620,10 @@ section {
   column-gap: 5%;
   justify-content: center;
 
+  .button-nav {
+    margin-top: 0.5rem;
+  }
+
   @media only screen and (min-width: 576px) {
     grid-template-columns: 47.5% 47.5%;
 
@@ -619,6 +646,12 @@ section {
 
   &.grid-text-only {
     row-gap: 1rem;
+  }
+
+  @media only screen and (min-width: 576px) {
+    .button-nav {
+      margin-top: 5%;
+    }
   }
 }
 
@@ -648,6 +681,7 @@ section {
   .button-nav {
     color: var(--color-bg);
     border-color: var(--color-bg);
+    margin-top: 0.5rem;
   }
 
   .button-nav:hover {
@@ -687,6 +721,10 @@ section {
       margin-top: auto;
       margin-bottom: auto
     }
+    .button-nav {
+      margin-top: 5%;
+    }
+    
   }
 }
 
@@ -728,6 +766,7 @@ section {
   margin-bottom: 0.5rem;
 }
 
+/*
 nav.link-list {
   display: flex;
   gap: 1rem;
@@ -738,6 +777,7 @@ nav.link-list {
     width: fit-content;
   }
 }
+  */
 
 /*++++++++++++++++++++++++++++++*/
 /*                              */
@@ -760,73 +800,101 @@ nav.link-list {
 }
 
 
-
 /* Bild mit Untertitel */
 
 figure {
-
   margin: 0;
   max-width: fit-content;
 }
 
+
+
+/* Link mit Icon .............................*/
+
+.grid-link {
+  text-decoration: none;
+}
+
+
 /* Hintergrund Bildunterschrift im Grid */
 
 figure.grid {
- 
-  a {
-    position: relative;
-  }
-    i {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 50%;
-      border: 2px solid white;
-      width: fit-content;
-  }
 
-  img:hover {
-    opacity: 0.5;
-    transition-duration: 500ms;
-  }
-
-  p {
+  p,
+  h3, img {
     padding-bottom: 0;
+    padding-left: 0;
+    transition-duration: var(--transistion-time);
+    transition-timing-function: ease-in-out;
+
   }
-}
 
-/* Untertitel für Bild*/
+  &:hover {
+   
+    p,
+    h3 {
+  
+     color: var(--color-highlight);
+     letter-spacing: 0.01em;
+     line-height: 1.2;
 
-figcaption {
-  padding: 1rem;
-  margin-bottom: 0rem;
-  color: var(--color-text);
-  text-transform: uppercase;
-  line-height: 1.2;
-
-  /* Überschrift H3 */
-
-  h3 {
-    text-align: center;
-    font-size: var(--font-mobile);
-    line-height: 1.2;
-    font-weight: 200;
-    font-family: "Roboto";
-    margin: 0;
-
-    @media only screen and (min-width: 576px) {
-      font-size: var(--font-tablet);
     }
+    img {
+      opacity: 0.7;
+    }
+    
+  }
+
+  /* Untertitel für Bild*/
+
+  figcaption {
+    padding: 1rem 0.5rem 1rem 0.5rem;
+    margin: 0rem;
+    color: var(--color-text);
+    text-transform: uppercase;
+    min-height: 2rem;
 
     @media only screen and (min-width: 824px) {
-      font-size: var(--font-laptop);
+      height: 4rem;
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
     }
+
+    @media only screen and (min-width: 1024px) {
+      height: 5rem;
+      padding-left: 0.25rem;
+      padding-right: 0.25rem;
+    }
+
+    /* Überschrift H3 */
+
+    h3 {
+      text-align: center;
+      font-size: var(--font-mobile);
+      line-height: 1.3;
+      font-weight: 200;
+      font-family: "Roboto";
+      margin: 0;
+
+      @media only screen and (min-width: 576px) {
+        font-size: var(--font-tablet);
+      }
+
+      @media only screen and (min-width: 824px) {
+        font-size: var(--font-laptop);
+      }
+    }
+
+    p {
+      text-align: center;
+      font-weight: 200;
+      line-height: 1.3;
+    }
+
+
+
   }
-  p {
-    text-align: center;
-    font-weight: 100;
-  }
+
 
 }
 
@@ -834,10 +902,11 @@ figcaption {
 
 i {
 
-  /* Icon im Button  links */
-
+  /* Icon im Button  links 
   &.button {
-    padding-right: 1rem;
+    padding: 0 1rem 0 0.5rem;
+    transition-duration: var(--transistion-time);
+    transition-timing-function: ease-in-out;
   }
 
   /* Icon rechts neben Link */
@@ -967,25 +1036,20 @@ footer {
   width: 44px;
   position: fixed;
   /* Fixed/sticky position */
-  bottom: 1rem;
+  bottom: 2rem;
   /* Place the button at the bottom of the page */
   right: 3vw;
-  /* Place the button 3vw from the right */
   z-index: 99;
-  /* Make sure it does not overlap */
   padding-top: 2px;
   text-align: center;
   border: solid 2px;
   border-radius: 50%;
   /* rund */
   background-color: var(--color-decoration);
-  /* Set a background color */
   color: var(--color-text);
-  /* Text color */
   cursor: pointer;
   /* Add a mouse pointer on hover */
-  font-size: 16px;
-  /* Increase font size */
+  font-size: var(--font-mobile);
   opacity: 0.8;
   /* leicht transparent */
   transition: var(--transistion-time);
@@ -993,8 +1057,8 @@ footer {
 
   &:hover {
     background-color: var(--color-highlight);
-    /* Add highlight color on hover */
     opacity: 1;
-    /* ohne Transparenz */
-  }
+    border-color: var(--color-highlight);
+    color: var(--color-main);
+}
 }
