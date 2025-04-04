@@ -1,22 +1,21 @@
 /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
 function mobileMenu() {
-  var x = document.getElementById("topnavmenu");
+  var menu = document.getElementById("topnavmenu");
+  var ham =  document.getElementById("hamburger-icon");
+  const isExpanded = ham.getAttribute('ariaExpanded') === 'true';
 
-  if (x.style.visibility === "visible") {
-    x.style.visibility = "hidden";
-    x.style.paddingTop = "0rem";
-    x.style.height = "0";
-    document.getElementById("hamburger-icon").classList.remove("fa-xmark")
-    document.getElementById("hamburger-icon").classList.add("fa-bars")
-    document.getElementById("hamburger-icon").style.fontSize = "24px";
+  if(isExpanded) {
+    menu.classList.remove("visible")
+    ham.classList.remove("fa-xmark")
+    ham.classList.add("fa-bars")
+    ham.style.fontSize = "24px";
+    ham.setAttribute("ariaExpanded", "false");
   } else {
-
-    x.style.visibility= "visible";
-    x.style.paddingTop = "2rem";
-    x.style.height = "auto";
-    document.getElementById("hamburger-icon").classList.remove("fa-bars")
-    document.getElementById("hamburger-icon").classList.add("fa-xmark")
-    document.getElementById("hamburger-icon").style.fontSize = "28px";
+    menu.classList.add("visible")
+    ham.classList.remove("fa-bars")
+    ham.classList.add("fa-xmark")
+    ham.style.fontSize = "28px";
+    ham.setAttribute("ariaExpanded", "true");
   }
 }
 

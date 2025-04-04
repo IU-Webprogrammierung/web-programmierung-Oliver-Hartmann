@@ -93,6 +93,7 @@ header {
     flex-direction: column;
     row-gap: 0rem;
     column-gap: 4rem;
+
     padding-left: var(--side-margin);
     padding-right: var(--side-margin);
     width: fit-content;
@@ -108,6 +109,7 @@ header {
     a {
       font-size: var(--font-laptop);
       width: fit-content;
+
     }
 
   }
@@ -121,25 +123,62 @@ header {
     column-gap: 4rem;
     width: 100vw;
     visibility: hidden;
-    transition: var(--transistion-time);
-    transition-property: padding-top;
     padding-top: 0rem;
-    height: 0;
+    max-height: 0;
+    overflow: hidden;
 
-    a {
-      width: fit-content;
-      margin-left: auto;
-      margin-right: auto;
-    }
+    transition:
+      opacity var(--transistion-time) ease-in-out,
+      transform var(--transistion-time) ease-in-out,
+      max-height var(--transistion-time) ease-in-out,
+      padding-top var(--transistion-time) ease-in-out,
+      visibility 0s linear var(--transistion-time),
+      scale var(--transistion-time) ease-in-out,
+      color var(--transistion-time) ease-in-out;
+
 
     @media only screen and (min-width: 824px) {
       flex-direction: row;
-      padding-top: 0rem !important;
       width: fit-content;
-      visibility: visible !important;
-      transition: 0ms;
-      height: auto;
+      visibility: visible;
+      transition: none;
+      max-height: none;
     }
+
+    @media only screen and (max-width: 823px) {
+
+      transform: translateY(-32px);
+      padding-top: 0rem;
+      opacity: 0;
+      max-height: 0;
+
+      li {
+        width: 100%;
+        text-align: center;
+      }
+
+      a {
+        transform: translateX(var(--side-margin));
+      }
+
+
+      &.visible {
+        visibility: visible;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+        max-height: 500px;
+        transform: translateY(0);
+        opacity: 1;
+        transition:
+          opacity var(--transistion-time) ease-in-out,
+          transform var(--transistion-time) ease-in-out,
+          max-height var(--transistion-time) ease-in-out,
+          padding-top var(--transistion-time) ease-in-out,
+          visibility 0s linear 0s;
+      }
+
+    }
+
   }
 
   /* Hamburger Menu Icon für Mobile Menu */
@@ -152,6 +191,7 @@ header {
     margin-top: 1.8rem;
     display: block;
     margin-right: var(--side-margin);
+    border: none;
 
     @media only screen and (min-width: 824px) {
       display: none;
@@ -165,10 +205,19 @@ header {
 nav a {
   text-decoration: none;
   text-transform: uppercase;
-  font-weight: 100;
+  font-weight: 200;
   line-height: 1;
-  transition-duration: var(--transistion-time);
-  transition-property: color;
+  transition:
+    color var(--transistion-time) ease-in-out,
+    border-color var(--transistion-time) ease-in-out,
+    scale var(--transistion-time) ease-in-out;
+  border-bottom: 1px solid var(--color-bg);
+
+  &:hover {
+    color: var(--color-highlight);
+    border-color: var(--color-highlight);
+  }
+
 }
 
 
@@ -368,6 +417,15 @@ nav a,
 
 }
 
+/* focus 
+a:focus, button:focus {
+  outline: 2px solid #0365e4;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+  */
+
+
 /* Absatz */
 
 p {
@@ -387,14 +445,19 @@ address {
 
 a {
   color: var(--color-main);
-  transition: var(--transistion-time);
+  transition:
+    color var(--transistion-time) ease-in-out,
+    border-color var(--transistion-time) ease-in-out;
+
   word-break: break-word;
+  border-bottom: 1px solid var(--color-main);
+  text-decoration: none;
 
   &:hover {
     color: var(--color-highlight);
+    border-color: var(--color-highlight);
   }
 }
-
 
 /* Link mit Icon */
 
@@ -402,10 +465,16 @@ a {
   text-decoration: none;
   display: inline-block;
 
+  i {
+    transition: padding-left var(--transistion-time) ease-in-out;
+  }
+
+
   &:hover {
-    padding-left: 4px;
-    transition-duration: var(--transistion-time);
-    transition-timing-function: ease-in-out;
+    i {
+      padding-left: 1rem;
+    }
+
   }
 }
 
@@ -453,18 +522,20 @@ a {
   padding: 0.75em 0.75em;
   margin: 0 0 0 0;
   text-decoration: none;
-  transition-duration: var(--transistion-time);
-  transition-timing-function: ease-in-out;
   text-transform: uppercase;
   display: inline-block;
   border-radius: 0.5rem;
   line-height: 1;
 
+  transition:
+    background-color var(--transistion-time) ease-in-out,
+    border-color var(--transistion-time) ease-in-out,
+    color var(--transistion-time) ease-in-out;
+
   i {
     padding: 0 1rem 0 0.5rem;
-    transition-duration: var(--transistion-time);
-    transition-timing-function: ease-in-out;
     opacity: 0.8;
+    transition: opacity var(--transistion-time) ease-in-out;
   }
 
   &:hover {
@@ -473,8 +544,6 @@ a {
     background-color: var(--color-highlight);
 
     i {
-      transition-duration: var(--transistion-time);
-      transition-timing-function: ease-in-out;
       opacity: 1;
     }
   }
@@ -721,10 +790,11 @@ section {
       margin-top: auto;
       margin-bottom: auto
     }
+
     .button-nav {
       margin-top: 5%;
     }
-    
+
   }
 }
 
@@ -766,19 +836,6 @@ section {
   margin-bottom: 0.5rem;
 }
 
-/*
-nav.link-list {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-
-  a {
-    display: block;
-    width: fit-content;
-  }
-}
-  */
-
 /*++++++++++++++++++++++++++++++*/
 /*                              */
 /*     Bilder & Icons           */
@@ -799,7 +856,6 @@ nav.link-list {
 
 }
 
-
 /* Bild mit Untertitel */
 
 figure {
@@ -808,41 +864,43 @@ figure {
 }
 
 
-
 /* Link mit Icon .............................*/
 
 .grid-link {
   text-decoration: none;
+  border: none;
 }
-
 
 /* Hintergrund Bildunterschrift im Grid */
 
 figure.grid {
 
+  a{
+    border: none;
+  }
+
   p,
-  h3, img {
+  h3,
+  img {
     padding-bottom: 0;
     padding-left: 0;
-    transition-duration: var(--transistion-time);
-    transition-timing-function: ease-in-out;
-
+    transition:
+    color var(--transistion-time) ease-in-out,
+    opacity var(--transistion-time) ease-in-out,
+    font-size var(--transistion-time) ease-in-out;
   }
 
   &:hover {
-   
+
     p,
     h3 {
-  
-     color: var(--color-highlight);
-     letter-spacing: 0.01em;
-     line-height: 1.2;
-
+      color: var(--color-highlight);
     }
+
     img {
       opacity: 0.7;
     }
-    
+
   }
 
   /* Untertitel für Bild*/
@@ -852,19 +910,6 @@ figure.grid {
     margin: 0rem;
     color: var(--color-text);
     text-transform: uppercase;
-    min-height: 2rem;
-
-    @media only screen and (min-width: 824px) {
-      height: 4rem;
-      padding-left: 0.75rem;
-      padding-right: 0.75rem;
-    }
-
-    @media only screen and (min-width: 1024px) {
-      height: 5rem;
-      padding-left: 0.25rem;
-      padding-right: 0.25rem;
-    }
 
     /* Überschrift H3 */
 
@@ -891,23 +936,13 @@ figure.grid {
       line-height: 1.3;
     }
 
-
-
   }
-
 
 }
 
 /* Icons */
 
 i {
-
-  /* Icon im Button  links 
-  &.button {
-    padding: 0 1rem 0 0.5rem;
-    transition-duration: var(--transistion-time);
-    transition-timing-function: ease-in-out;
-  }
 
   /* Icon rechts neben Link */
 
@@ -966,11 +1001,16 @@ footer {
     display: flex;
     padding-top: 0rem;
     margin-bottom: 0rem;
-    flex-wrap: wrap;
+    flex-direction: column;
     column-gap: 2rem;
     row-gap: 1rem;
     margin-left: auto;
     margin-right: auto;
+    align-items: center;
+   
+    @media only screen and (min-width: 576px) {
+      flex-direction: row;
+    }
 
     @media only screen and (min-width: 824px) {
       margin-left: 0rem;
@@ -982,9 +1022,10 @@ footer {
   /* Footer Navigationselemente */
 
   .footer-nav-item {
-    width: 100%;
+    width: fit-content;
     text-align: center;
-    margin-right: 0rem;
+    font-weight: 200;
+
 
     @media only screen and (min-width: 576px) {
       width: fit-content;
@@ -994,12 +1035,16 @@ footer {
   /* Footer Socialmedia Icons Container */
 
   .footer-social-icons {
-    padding-top: 0rem !important;
+
     text-align: center;
     display: flex;
     margin-left: auto;
     margin-right: auto;
     gap: 2rem;
+
+    a {
+      border: none;
+    }
 
     @media only screen and (min-width: 824px) {
       margin-right: 0;
@@ -1009,16 +1054,24 @@ footer {
   /* Bild Social Media Icons */
 
   .icon-social {
-    font-size: 20px;
+    font-size: 24px;
     margin: 0px;
+    transition:
+      scale var(--transistion-time) ease-in-out,
+      color var(--transistion-time) ease-in-out;
 
+    &:hover {
+      scale: 1.2;
+      color: var(--color-highlight);
+    }
+/*
     @media only screen and (min-width: 576px) {
-      font-size: 21px;
+      font-size: 23px;
     }
 
     @media only screen and (min-width: 824px) {
-      font-size: 22px;
-    }
+      font-size: 24px;
+    }*/
   }
 
 }
@@ -1053,12 +1106,12 @@ footer {
   opacity: 0.8;
   /* leicht transparent */
   transition: var(--transistion-time);
-  transition-property: background-color;
+
 
   &:hover {
     background-color: var(--color-highlight);
     opacity: 1;
     border-color: var(--color-highlight);
     color: var(--color-main);
-}
+  }
 }
