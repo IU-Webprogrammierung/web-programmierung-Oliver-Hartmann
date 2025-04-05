@@ -1,35 +1,23 @@
-.inner-single {
-  padding-top: 83px;
-  margin-top: 2rem;
-
-  @media only screen and (min-width: 824px) {
-    margin-top: 5rem;
-  }
-}
-
-h1 {
-  padding-top: 2rem;
-  padding-bottom: 3rem;
+h1.single-title {
   line-height: 1;
   letter-spacing: 0;
+  padding-left: var(--side-padding);
+  padding-right: var(--side-padding);
+  margin-bottom: 2rem;
 }
 
 h2 {
   font-size: 1.5rem;
   text-transform: none;
   line-height: 1.5;
-  padding-bottom: 1rem;
   letter-spacing: 0;
   font-weight: 100;
-
 }
 
 h3 {
   font-size: clamp(var(--font-mobile), 2.5vw, var(--font-laptop));
   text-transform: none;
   line-height: 1.5;
-  padding: 0;
-  margin: 0;
   letter-spacing: 0;
   font-weight: 100;
 }
@@ -40,31 +28,68 @@ h4 {
   font-weight: 100;
 }
 
+h2, h3, h4 {
+  margin-bottom: 1rem;
+  padding-bottom: 0rem;
+}
+
+p {
+  margin-bottom: 1.5em;
+}
+
+address {
+  color: var(--color-text);
+  margin-bottom: 1.5em;
+
+  p {
+    margin: 0;
+  }
+
+  ul {
+    display: block;
+  }
+}
+
 ol {
   color: var(--color-text);
   font-size: var(--font-laptop);
 
 }
 
-@media only screen and (min-width: 576px) {
-  h1 {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-  }
+article {
+  margin-bottom: 2rem;
+}
 
+@media only screen and (min-width: 576px) {
+
+  article {
+    margin-bottom: 3rem;
+  }
 
   ol {
     font-size: var(--font-tablet);
 
+  }
+  h1.single-title {
+    margin-bottom: 2.5rem;
+  }
+
+  h2, h3, h4 {
+    margin-bottom: 1rem;
+    padding-bottom: 0rem;
   }
 
 }
 
 @media only screen and (min-width: 824px) {
 
-  h1 {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+  h1.single-title {
+    margin-bottom: 5rem;
+  }
+
+h2, h3, h4 {
+    margin-bottom: 1.5rem;
+    padding-bottom: 0rem;
   }
 
   ol {
@@ -73,6 +98,10 @@ ol {
   }
 
   section {
+    margin-bottom: 5rem;
+  }
+
+  article {
     margin-bottom: 5rem;
   }
 

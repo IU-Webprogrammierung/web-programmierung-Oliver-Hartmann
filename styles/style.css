@@ -47,6 +47,7 @@
 
   /* Seitenabstand */
   --side-margin: 3vw;
+  --side-padding: 0.75rem;
 
   /*Schriftgröße mobile */
   --font-mobile: 15px;
@@ -87,12 +88,12 @@ header {
   top: 0;
   width: 100%;
   z-index: 2;
+  background-color: var(--color-bg);
 
 
   /* Top Navigation Container Mobile */
 
   .topnavbar {
-    background-color: var(--color-bg);
     padding-top: 2rem;
     padding-bottom: 2rem;
     margin-left: 0rem;
@@ -101,8 +102,8 @@ header {
     row-gap: 0rem;
     column-gap: 4rem;
 
-    padding-left: var(--side-margin);
-    padding-right: var(--side-margin);
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
     width: fit-content;
 
     @media only screen and (min-width: 824px) {
@@ -168,7 +169,6 @@ header {
         transform: translateX(var(--side-margin));
       }
 
-
       &.visible {
         visibility: visible;
         padding-top: 5rem;
@@ -183,9 +183,7 @@ header {
           padding-top var(--transistion-time) ease-in-out,
           visibility 0s linear 0s;
       }
-
     }
-
   }
 
   /* Hamburger Menu Icon für Mobile Menu */
@@ -237,32 +235,25 @@ nav a {
 /* Hero Container */
 
 .hero-outer {
-  margin-top: 91px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: sticky;
-  top: 91px;
-  padding-left: 0vw;
-  padding-right: 0vw;
+  top: 92px;
 }
 
 /* Hero Bild */
 
 .hero-image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 1.0)), url("../img/hero-home-1920.jpg");
-  height: calc(100vw + 24px);
+  /*height: clamp(calc(100vw + 24px));*/
+  height: clamp(360px, 800vw, 80dvh);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-
-  @media only screen and (min-width: 576px) {
-    height: 600px;
-  }
 
 }
 
@@ -271,44 +262,65 @@ nav a {
 .hero-text {
   text-align: center;
   position: absolute;
-  bottom: 10%;
+  bottom: 5%;
   left: 50%;
   transform: translate(-50%, -50%);
   line-height: 1;
   width: 100%;
+
+  p {
+    padding-bottom: 0rem;
+  }
 }
 
 /* Inner Container mit Hero Bild */
 
-.inner {
-  max-width: var(--maxwidth);
-  margin-left: auto;
-  margin-right: auto;
+.outer {
+
   background-color: var(--color-bg);
   padding-top: 2rem;
   position: relative;
   z-index: 1;
-  
-  padding-left: var(--side-margin);
-  padding-right: var(--side-margin);
 
   @media only screen and (min-width: 824px) {
     padding-top: 5rem;
   }
 }
 
+.outer-feature {
+  background-color: var(--color-secondary-background);
+  padding-top: 0rem;
+  position: relative;
+  z-index: 1;
+  margin-top: 93px;
+
+  section {
+    margin-bottom: 0rem;
+  }
+
+/*
+  @media only screen and (min-width: 1200px) {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+    */
+}
+
 /* Inner Container ohne Hero Bild */
 
-.inner-single {
-  max-width: var(--maxwidth);
+.outer-single {
   background-color: var(--color-bg);
+  max-width: var(--maxwidth);
   margin-left: auto;
   margin-right: auto;
   position: relative;
   z-index: 1;
-  padding-top: 91px;
-  padding-left: var(--side-margin);
-  padding-right: var(--side-margin);
+  top: 92px;
+  padding-top: 2rem;
+
+  @media only screen and (min-width: 824px) {
+    padding-top: 5rem;
+  }
 }
 
 
@@ -329,8 +341,6 @@ h1 {
   color: var(--color-main);
   text-transform: uppercase;
   font-size: clamp(3rem, 10vw, 7rem);
-  margin: 0;
-  padding: 0;
   line-height: 1;
   color: var(--color-main-title);
   letter-spacing: -0.05em;
@@ -345,13 +355,12 @@ h1.single-title {
   font-size: clamp(2rem, 5vw, 3.5rem);
   letter-spacing: -0.05em;
   font-weight: 100;
-  padding: 0;
-  margin: 0;
   line-height: 1;
-  padding-bottom: 2rem;
+  padding-left: var(--side-padding);
+  padding-right: var(--side-padding);
 
   @media only screen and (min-width: 824px) {
-    padding-bottom: 5rem;
+    margin-bottom: 5rem;
   }
 }
 
@@ -359,8 +368,7 @@ h1.single-title {
 
 h2 {
   color: var(--color-main);
-  padding: 0 0 1rem 0;
-  margin: 0;
+  margin: 0 0 1rem 0;
   font-size: clamp(2rem, 5vw, 4rem);
   text-transform: uppercase;
   letter-spacing: -0.02em;
@@ -369,23 +377,24 @@ h2 {
   line-height: 1;
 
   @media only screen and (min-width: 576px) {
-    padding-bottom: 2rem;
+    margin-bottom: 2rem;
   }
 
   @media only screen and (min-width: 824px) {
-    padding-bottom: 3rem;
+    margin-bottom: 3rem;
   }
 
+  /*
   &.heading-text-only {
     padding: 0rem;
   }
+    */
 }
 
 /* Überschrift H3 */
 
 h3 {
   color: var(--color-main);
-  padding: 0;
   margin: 0 0 1rem 0;
   text-transform: uppercase;
   font-family: "Roboto";
@@ -397,7 +406,6 @@ h3 {
 
 h4 {
   color: var(--color-main);
-  margin: 0;
 }
 
 /* Schrift */
@@ -409,7 +417,7 @@ h3,
 h3.grid-item-title,
 h4,
 nav a,
-.button-nav {
+.button-nav, li {
   font-size: var(--font-mobile);
   line-height: 1.5;
   letter-spacing: 0.02em;
@@ -447,6 +455,10 @@ p {
 address {
   color: var(--color-text);
   margin: 0;
+
+  p {
+    padding: 0;
+  }
 }
 
 /* Link */
@@ -476,7 +488,6 @@ a {
   i {
     transition: padding-left var(--transistion-time) ease-in-out;
   }
-
 
   &:hover {
     i {
@@ -528,7 +539,6 @@ a {
   color: var(--color-main);
   border: 1px solid var(--color-main);
   padding: 0.75em 0.75em;
-  margin: 0 0 0 0;
   text-decoration: none;
   text-transform: uppercase;
   display: inline-block;
@@ -605,9 +615,13 @@ ul {
 /* Abschnitt mit Abständen */
 
 section {
-  padding-top: 0;
-  padding-bottom: 0;
+  max-width: var(--maxwidth);
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 2rem;
+    
+  padding-left: var(--side-padding);
+  padding-right: var(--side-padding);
 
   @media only screen and (min-width: 576px) {
     margin-bottom: 5rem;
@@ -677,7 +691,23 @@ section {
 
 .columns-3 {
   columns: 1 auto;
-  column-gap: 2rem;
+  column-gap: 5%;
+
+  p {
+    padding-bottom: 1.5em;
+  }
+
+  article {
+    break-inside: avoid;
+  }
+
+  article {
+
+    p:last-child {
+      padding-bottom: 0rem;
+    }
+  }
+
 
   @media only screen and (min-width: 576px) {
     columns: 2 auto;
@@ -688,13 +718,39 @@ section {
   }
 }
 
+
+.columns-2 {
+  columns: 1 auto;
+  column-gap: 5%;
+
+  p {
+    margin-bottom: 1.5em;
+    padding-bottom: 0;
+  }
+
+  p:last-child {
+    padding-bottom: 0rem;
+    margin-bottom: 0em;
+  }
+
+
+  @media only screen and (min-width: 576px) {
+    columns: 2 auto;
+  }
+
+  @media only screen and (min-width: 824px) {
+    columns: 2 auto;
+  }
+}
+
+
 /* Grid mit bis zu 2 Spalten */
 
 .grid-2 {
   display: grid;
   grid-template-columns: 100%;
   row-gap: 2rem;
-  column-gap: 5%;
+  column-gap: 10%;
   justify-content: center;
 
   .button-nav {
@@ -703,6 +759,7 @@ section {
 
   @media only screen and (min-width: 576px) {
     grid-template-columns: 47.5% 47.5%;
+    column-gap: 5%;
 
     .grid-image-right {
       grid-column: 2;
@@ -719,16 +776,16 @@ section {
       margin-top: auto;
       margin-bottom: auto
     }
-  }
 
-  &.grid-text-only {
-    row-gap: 1rem;
-  }
-
-  @media only screen and (min-width: 576px) {
     .button-nav {
       margin-top: 5%;
     }
+  }
+
+  @media only screen and (min-width: 1200px) {
+    grid-template-columns: 45% 45%;
+    column-gap: 10%;
+
   }
 }
 
@@ -738,12 +795,17 @@ section {
   display: grid;
   grid-template-columns: 100%;
   background-color: var(--color-secondary-background);
-  padding: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   row-gap: 2rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
 
   h1 {
     color: var(--color-text-feature);
-    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   h2 {
@@ -753,6 +815,10 @@ section {
 
   p {
     color: var(--color-text-feature);
+  }
+
+  ul {
+    display: block;
   }
 
   .button-nav {
@@ -783,27 +849,37 @@ section {
 
   @media only screen and (min-width: 824px) {
     padding-top: 5rem;
-    padding-right: 5%;
+    /*padding-right: 10%;*/
     padding-bottom: 5rem;
-    padding-left: 5%;
+   /* padding-left: 10%;*/
     grid-template-columns: 47.5% 47.5%;
     column-gap: 5%;
 
     h1 {
-      padding-bottom: 2rem;
+      margin-bottom: 2rem;
     }
 
-    article {
-      height: fit-content;
-      margin-top: auto;
-      margin-bottom: auto
-    }
 
     .button-nav {
       margin-top: 5%;
     }
 
   }
+
+  @media only screen and (min-width: 1200px) {
+    grid-template-columns: 45% 45%;
+    column-gap: 10%;
+
+  }
+
+  /*
+  @media only screen and (min-width: 1200px) {
+    padding-right: 10%;
+    padding-left: 10%;
+
+  }*/
+
+
 }
 
 /* Container für Section Feature */
@@ -815,7 +891,7 @@ section {
   /* Section Feature mit 1 Spalte */
 
   .section-feature {
-    max-width: calc(var(--maxwidth)/2);
+    max-width: calc(var(--maxwidth)/1.5);
     margin-left: auto;
     margin-right: auto;
 
@@ -825,13 +901,6 @@ section {
 
     }
   }
-
-  /* Section Feature Text unter Video 
-
-  .single-column {
-    width: 100%;
-    max-width: calc(var(--maxwidth)/2);
-  }*/
 }
 
 /* Abschnittstrenner mit Linie */
@@ -961,9 +1030,21 @@ i {
 }
 
 .spotify-player {
-
     box-sizing: content-box;
 
+}
+
+.video {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  margin-bottom: 1rem;
+  box-sizing: content-box;
+}
+
+.video-sq {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  box-sizing: content-box;
 }
 
 
@@ -980,8 +1061,8 @@ footer {
   max-width: var(--maxwidth);
   margin-left: auto;
   margin-right: auto;
-  padding-left: var(--side-margin);
-  padding-right: var(--side-margin);
+  padding-left: var(--side-padding);
+  padding-right: var(--side-padding);
 
   @media only screen and (min-width: 576px) {
     padding-bottom: 5rem;
@@ -1013,8 +1094,6 @@ footer {
 
   .footer-nav {
     display: flex;
-    padding-top: 0rem;
-    margin-bottom: 0rem;
     flex-direction: column;
     column-gap: 2rem;
     row-gap: 1rem;
@@ -1078,14 +1157,6 @@ footer {
       scale: 1.2;
       color: var(--color-highlight);
     }
-/*
-    @media only screen and (min-width: 576px) {
-      font-size: 23px;
-    }
-
-    @media only screen and (min-width: 824px) {
-      font-size: 24px;
-    }*/
   }
 
 }
@@ -1120,7 +1191,6 @@ footer {
   opacity: 0.8;
   /* leicht transparent */
   transition: var(--transistion-time);
-
 
   &:hover {
     background-color: var(--color-highlight);

@@ -31,7 +31,7 @@
             </div>
         </div>
 
-        <div class="inner">
+        <div class="outer">
 
             <!-- Concert Dates-->
             <section aria-label="concert dates" id="concert-dates">
@@ -57,7 +57,7 @@
             <div class="section-feature-container">
                 <section aria-label="performing Landscapes audio-visual show" class="section-feature">
                     <h2>Landscapes Live AV</h2>
-                    <iframe id="video" src="https://www.youtube.com/embed/mm6zJkIH-jk?si=jAAu_P2UiAGGepmk"
+                    <iframe id="video" class="video" src="https://www.youtube.com/embed/mm6zJkIH-jk?si=jAAu_P2UiAGGepmk"
                         title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -65,10 +65,8 @@
                         Landscapes Live A/V is an audio-visual live performance by sound artist Insect O. and video
                         artist highpitchedblack. The performance is an improvisation on modular synthesizers. The
                         artists are exploring rhythm structures and sound fields to create new landscapes – both in
-                        sound and on
-                        video.</p>
-                    <p>
-                        The A/V show has been performed at DAVE pres. Kulturschaufenster in the city of Dresden.
+                        sound and on video. The A/V show has been performed at DAVE pres. Kulturschaufenster in the city
+                        of Dresden.
                     </p>
                 </section>
             </div>
@@ -76,65 +74,85 @@
             <!-- Impresson Gallery -->
             <section aria-label="impressions of concerts">
                 <h2>Impressions</h2>
-                <div class="grid-4">
-                    <figure class="grid">
-                        <img src="img/live/live-1.jpg" alt="artist Insect O. on his mordular synthesizer"
-                            class="img-grid">
-                        <figcaption class="center">
-                            <h3>Landscapes Live AV</h3>
-                        </figcaption>
-                    </figure>
-                    <figure class="grid">
-                        <img src="img/live/live-2.jpg" alt="visual artist highpitchedblack looking at laptop screen"
-                            class="img-grid">
-                        <figcaption class="center">
-                            <h3>Landscapes Live AV</h3>
-                        </figcaption>
-                    </figure>
-                    <figure class="grid">
-                        <img src="img/live/live-3.jpg" alt="artist Insect O. performing on his synthesizers"
-                            class="img-grid">
-                        <figcaption class="center">
-                            <h3>Live At 20 Years Etui Records</h3>
-                        </figcaption>
-                    </figure>
-                    <figure class="grid">
-                        <img src="img/live/live-4.jpg" alt="behind Insect O. performing on his synthesizers"
-                            class="img-grid">
-                        <figcaption class="center">
-                            <h3>Live At 20 Years Etui Records</h3>
-                        </figcaption>
-                    </figure>
-                    <figure class="grid">
-                        <img src="img/live/live-5.jpg"
-                            alt="Insect O. performing with other artists on modular synthesizers" class="img-grid">
-                        <figcaption class="center">
-                            <h3>DAVE Live Jam</h3>
-                        </figcaption>
-                    </figure>
-                    <figure class="grid">
-                        <img src="img/live/live-6.jpg" alt="artist Insect O. on his modular synthesizers"
-                            class="img-grid">
-                        <figcaption class="center">
-                            <h3>DAVE Live Jam</h3>
-                        </figcaption>
-                    </figure>
-                    <figure class="grid">
-                        <img src="img/live/live-7.jpg"
-                            alt="concert hall with synthesizer artists and a big screen with visuals" class="img-grid">
-                        <figcaption class="center">
-                            <h3>DAVE Live Jam</h3>
-                        </figcaption>
-                    </figure>
-                    <figure class="grid">
-                        <img src="img/live/live-8.jpg" alt="Insect O. performing a concert" class="img-grid">
-                        <figcaption class="center">
-                            <h3>DAVE Live Jam</h3>
-                        </figcaption>
-                    </figure>
-                </div>
-                <h3>Photo Credits</h3>
-                <p>Daniel Madlung, Reinhard Spunkner, Roberto Krebs</p>
+                <ul class="grid-4">
+                    <li>
+                        <figure class="grid">
+                            <img src="img/live/live-1.jpg" alt="artist Insect O. on his mordular synthesizer"
+                                class="img-grid">
+                            <figcaption class="center">
+                                <h3>Landscapes Live AV</h3>
+                            </figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure class="grid">
+                            <img src="img/live/live-2.jpg" alt="visual artist highpitchedblack looking at laptop screen"
+                                class="img-grid">
+                            <figcaption class="center">
+                                <h3>Landscapes Live AV</h3>
+                            </figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure class="grid">
+                            <img src="img/live/live-3.jpg" alt="artist Insect O. performing on his synthesizers"
+                                class="img-grid">
+                            <figcaption class="center">
+                                <h3>Live At 20 Years Etui Records</h3>
+                            </figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure class="grid">
+                            <img src="img/live/live-4.jpg" alt="behind Insect O. performing on his synthesizers"
+                                class="img-grid">
+                            <figcaption class="center">
+                                <h3>Live At 20 Years Etui Records</h3>
+                            </figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure class="grid">
+                            <img src="img/live/live-5.jpg"
+                                alt="Insect O. performing with other artists on modular synthesizers" class="img-grid">
+                            <figcaption class="center">
+                                <h3>DAVE Live Jam</h3>
+                            </figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure class="grid">
+                            <img src="img/live/live-6.jpg" alt="artist Insect O. on his modular synthesizers"
+                                class="img-grid">
+                            <figcaption class="center">
+                                <h3>DAVE Live Jam</h3>
+                            </figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure class="grid">
+                            <img src="img/live/live-7.jpg"
+                                alt="concert hall with synthesizer artists and a big screen with visuals"
+                                class="img-grid">
+                            <figcaption class="center">
+                                <h3>DAVE Live Jam</h3>
+                            </figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <figure class="grid">
+                            <img src="img/live/live-8.jpg" alt="Insect O. performing a concert" class="img-grid">
+                            <figcaption class="center">
+                                <h3>DAVE Live Jam</h3>
+                            </figcaption>
+                        </figure>
+                    </li>
+                    <li>
+                        <h3>Photo Credits</h3>
+                        <p>Daniel Madlung, Reinhard Spunkner, Roberto Krebs</p>
+                    </li>
+                </ul>
+
             </section>
         </div>
     </main>
