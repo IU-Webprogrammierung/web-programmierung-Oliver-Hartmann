@@ -57,6 +57,13 @@
 
 }
 
+* {
+  box-sizing: border-box;
+padding: 0;
+margin: 0;
+}
+
+
 /*++++++++++++++++++++++++++++++*/
 /*                              */
 /*     Body & Header            */
@@ -281,6 +288,7 @@ nav a {
   padding-top: 2rem;
   position: relative;
   z-index: 1;
+  
   padding-left: var(--side-margin);
   padding-right: var(--side-margin);
 
@@ -838,7 +846,7 @@ section {
 
 /*++++++++++++++++++++++++++++++*/
 /*                              */
-/*     Bilder & Icons           */
+/*     Bilder & Icons & Videos  */
 /*                              */
 /*++++++++++++++++++++++++++++++*/
 
@@ -949,6 +957,12 @@ i {
   &.link {
     padding-left: 0.5rem;
   }
+
+}
+
+.spotify-player {
+
+    box-sizing: content-box;
 
 }
 
