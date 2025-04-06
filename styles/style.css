@@ -60,8 +60,8 @@
 
 * {
   box-sizing: border-box;
-padding: 0;
-margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 
@@ -114,9 +114,11 @@ header {
       width: 100%;
     }
 
-    a {
+    a,
+    li {
       font-size: var(--font-laptop);
       width: fit-content;
+      line-height: 1;
 
     }
 
@@ -232,46 +234,43 @@ nav a {
 /*                              */
 /*++++++++++++++++++++++++++++++*/
 
-/* Hero Container */
-
-.hero-outer {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: sticky;
-  top: 92px;
-}
 
 /* Hero Bild */
 
 .hero-image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 1.0)), url("../img/hero-home-1920.jpg");
-  /*height: clamp(calc(100vw + 24px));*/
-  height: clamp(360px, 800vw, 80dvh);
+  height: clamp(360px, 80vw, 80dvh);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
+  position: sticky;
   margin-left: auto;
   margin-right: auto;
+  top: 82px;
 
-}
+  /* Position Hero Text */
 
-/* Position Hero Text */
+  .hero-text {
+    text-align: center;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1;
+    width: 100%;
 
-.hero-text {
-  text-align: center;
-  position: absolute;
-  bottom: 5%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  line-height: 1;
-  width: 100%;
+    p {
+      padding-bottom: 0rem;
+    }
 
-  p {
-    padding-bottom: 0rem;
+    @media only screen and (max-height: 400px) {
+      bottom: 20%;
+    }
   }
+
 }
+
+
 
 /* Inner Container mit Hero Bild */
 
@@ -281,6 +280,7 @@ nav a {
   padding-top: 2rem;
   position: relative;
   z-index: 1;
+  top: 82px;
 
   @media only screen and (min-width: 824px) {
     padding-top: 5rem;
@@ -292,18 +292,11 @@ nav a {
   padding-top: 0rem;
   position: relative;
   z-index: 1;
-  margin-top: 93px;
+  top: 82px;
 
   section {
     margin-bottom: 0rem;
   }
-
-/*
-  @media only screen and (min-width: 1200px) {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-  }
-    */
 }
 
 /* Inner Container ohne Hero Bild */
@@ -383,12 +376,6 @@ h2 {
   @media only screen and (min-width: 824px) {
     margin-bottom: 3rem;
   }
-
-  /*
-  &.heading-text-only {
-    padding: 0rem;
-  }
-    */
 }
 
 /* Überschrift H3 */
@@ -417,7 +404,8 @@ h3,
 h3.grid-item-title,
 h4,
 nav a,
-.button-nav, li {
+.button-nav,
+li {
   font-size: var(--font-mobile);
   line-height: 1.5;
   letter-spacing: 0.02em;
@@ -618,17 +606,17 @@ section {
   max-width: var(--maxwidth);
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 2rem;
-    
+  padding-bottom: 2rem;
+
   padding-left: var(--side-padding);
   padding-right: var(--side-padding);
 
   @media only screen and (min-width: 576px) {
-    margin-bottom: 5rem;
+    padding-bottom: 5rem;
   }
 
   @media only screen and (min-width: 824px) {
-    margin-bottom: 10rem;
+    padding-bottom: 10rem;
   }
 }
 
@@ -836,10 +824,13 @@ section {
     color: var(--color-main) !important;
   }
 
+
+/*
   article {
     padding-left: 0rem;
     padding-right: 0rem;
   }
+    */
 
   img {
     filter: drop-shadow(0px 10px 10px);
@@ -851,7 +842,7 @@ section {
     padding-top: 5rem;
     /*padding-right: 10%;*/
     padding-bottom: 5rem;
-   /* padding-left: 10%;*/
+    /* padding-left: 10%;*/
     grid-template-columns: 47.5% 47.5%;
     column-gap: 5%;
 
@@ -952,7 +943,7 @@ figure {
 
 figure.grid {
 
-  a{
+  a {
     border: none;
   }
 
@@ -962,9 +953,9 @@ figure.grid {
     padding-bottom: 0;
     padding-left: 0;
     transition:
-    color var(--transistion-time) ease-in-out,
-    opacity var(--transistion-time) ease-in-out,
-    font-size var(--transistion-time) ease-in-out;
+      color var(--transistion-time) ease-in-out,
+      opacity var(--transistion-time) ease-in-out,
+      font-size var(--transistion-time) ease-in-out;
   }
 
   &:hover {
@@ -1030,7 +1021,7 @@ i {
 }
 
 .spotify-player {
-    box-sizing: content-box;
+  box-sizing: content-box;
 
 }
 
@@ -1063,6 +1054,8 @@ footer {
   margin-right: auto;
   padding-left: var(--side-padding);
   padding-right: var(--side-padding);
+  position: relative;
+  top: 82px;
 
   @media only screen and (min-width: 576px) {
     padding-bottom: 5rem;
@@ -1100,7 +1093,7 @@ footer {
     margin-left: auto;
     margin-right: auto;
     align-items: center;
-   
+
     @media only screen and (min-width: 576px) {
       flex-direction: row;
     }
@@ -1148,6 +1141,7 @@ footer {
 
   .icon-social {
     font-size: 24px;
+    line-height: 1.5;
     margin: 0px;
     transition:
       scale var(--transistion-time) ease-in-out,
