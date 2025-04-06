@@ -114,8 +114,7 @@ header {
       width: 100%;
     }
 
-    a,
-    li {
+   a, li  {
       font-size: var(--font-laptop);
       width: fit-content;
       line-height: 1;
@@ -153,6 +152,8 @@ header {
       visibility: visible;
       transition: none;
       max-height: none;
+      overflow: visible;
+      height: fit-content;
     }
 
     @media only screen and (max-width: 823px) {
@@ -216,8 +217,7 @@ nav a {
   line-height: 1;
   transition:
     color var(--transistion-time) ease-in-out,
-    border-color var(--transistion-time) ease-in-out,
-    scale var(--transistion-time) ease-in-out;
+    border-color var(--transistion-time) ease-in-out;
   border-bottom: 1px solid var(--color-bg);
 
   &:hover {
@@ -424,13 +424,13 @@ li {
 
 }
 
-/* focus 
-a:focus, button:focus {
-  outline: 2px solid #0365e4;
-  outline-offset: 4px;
-  border-radius: 4px;
+/* Fokus */
+button:focus, a:focus {
+  outline: 3px solid #f39c12; /* Beispiel für benutzerdefinierten Fokus */
+  z-index: 9999;
+  border-radius: 1px;
 }
-  */
+
 
 
 /* Absatz */

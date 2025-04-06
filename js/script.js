@@ -21,7 +21,7 @@ function mobileMenu() {
 
 // ---- Scroll To Top Button ----
 const scrollToTopBtn = document.getElementById("toTopButton");
-scrollToTopBtn.getElementsByTagName("i")[0].classList.add("fa-solid", "fa-angle-up");
+scrollToTopBtn.getElementsByTagName("i")[0].classList.add("fa", "fa-angle-up");
 
 // Button anzeigen, wenn nach unten gescrollt wird
 window.addEventListener("scroll", () => {
