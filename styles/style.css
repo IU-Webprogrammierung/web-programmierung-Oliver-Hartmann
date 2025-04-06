@@ -875,12 +875,14 @@ section {
 .img-11-s {
   width: 100%;
   border-radius: 0.5rem;
+  aspect-ratio: 1 / 1;
 }
 
 /* Bild im Grid */
 
 .img-grid {
   width: 100%;
+  aspect-ratio: 1 / 1;
 
 }
 
