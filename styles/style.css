@@ -114,7 +114,8 @@ header {
       width: 100%;
     }
 
-   a, li  {
+    a,
+    li {
       font-size: var(--font-laptop);
       width: fit-content;
       line-height: 1;
@@ -191,8 +192,7 @@ header {
 
   /* Hamburger Menu Icon für Mobile Menu */
 
-  #hamburger-menu {
-    font-size: 24px !important;
+  #hamburger-icon {
     top: 0px;
     position: absolute;
     right: 0px;
@@ -200,6 +200,42 @@ header {
     display: block;
     margin-right: var(--side-margin);
     border: none;
+
+    &.hamburger .line {
+      width: 24px;
+      height: 2px;
+      background-color: var(--color-main);
+      display: block;
+      margin: 5px auto;
+      -webkit-transition: all var(--transistion-time) ease-in-out;
+      -o-transition: all var(--transistion-time) ease-in-out;
+      transition: all var(--transistion-time) ease-in-out;
+      
+    }
+
+    .hamburger:hover {
+      cursor: pointer;
+    }
+
+    &.is-active .line:nth-child(2) {
+      opacity: 0;
+    }
+
+    &.is-active .line:nth-child(1) {
+      -webkit-transform: translateY(-4px) rotate(45deg);
+      -ms-transform: translateY(0px) rotate(45deg);
+      -o-transform: translateY(0px) rotate(45deg);
+      transform: translateY(7px) rotate(-45deg);
+    }
+
+    &.is-active .line:nth-child(3) {
+      -webkit-transform: translateY(0px) rotate(-45deg);
+      -ms-transform: translateY(0px) rotate(-45deg);
+      -o-transform: translateY(0px) rotate(-45deg);
+      transform: translateY(-7px) rotate(45deg);
+    }
+
+
 
     @media only screen and (min-width: 824px) {
       display: none;
@@ -425,8 +461,10 @@ li {
 }
 
 /* Fokus */
-button:focus-visible, a:focus-visible{
-  outline: 3px solid #f39c12; /* Beispiel für benutzerdefinierten Fokus */
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid #f39c12;
+  /* Beispiel für benutzerdefinierten Fokus */
   z-index: 9999;
   border-radius: 1px;
 }
@@ -680,7 +718,8 @@ section {
 
 /* 3 Spalten für Text */
 
-.columns-2, .columns-3 {
+.columns-2,
+.columns-3 {
   columns: 1 auto;
   column-gap: 5%;
   orphans: 2;
@@ -689,6 +728,7 @@ section {
   article {
     break-inside: avoid;
   }
+
   p:last-child {
     padding-bottom: 0rem;
   }

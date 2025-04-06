@@ -6,18 +6,16 @@ function mobileMenu() {
 
   if(isExpanded) {
     menu.classList.remove("visible")
-    ham.classList.remove("fa-xmark")
-    ham.classList.add("fa-bars")
-    ham.style.fontSize = "24px";
     ham.setAttribute("ariaExpanded", "false");
+    ham.classList.remove("is-active")
+
   } else {
     menu.classList.add("visible")
-    ham.classList.remove("fa-bars")
-    ham.classList.add("fa-xmark")
-    ham.style.fontSize = "28px";
     ham.setAttribute("ariaExpanded", "true");
+    ham.classList.add("is-active")
   }
 }
+
 
 // ---- Scroll To Top Button ----
 const scrollToTopBtn = document.getElementById("toTopButton");
