@@ -259,6 +259,21 @@ nav a {
     line-height: 1;
     width: 100%;
 
+
+    /* Seitentitel als Hero Text */
+
+    h1 {
+      color: var(--color-main);
+      text-transform: uppercase;
+      font-size: clamp(3rem, 10vw, 7rem);
+      line-height: 1;
+      color: var(--color-main-title);
+      letter-spacing: -0.05em;
+      font-family: "Roboto";
+      font-weight: 100;
+    }
+
+
     p {
       padding-bottom: 0rem;
     }
@@ -308,7 +323,7 @@ nav a {
   margin-right: auto;
   position: relative;
   z-index: 1;
-  top: 92px;
+  top: 82px;
   padding-top: 2rem;
 
   @media only screen and (min-width: 824px) {
@@ -328,18 +343,6 @@ nav a {
   src: url("../assets/font/Roboto-VariableFont_wdth\,wght.ttf");
 }
 
-/* Seitentitel als Hero Text */
-
-h1 {
-  color: var(--color-main);
-  text-transform: uppercase;
-  font-size: clamp(3rem, 10vw, 7rem);
-  line-height: 1;
-  color: var(--color-main-title);
-  letter-spacing: -0.05em;
-  font-family: "Roboto";
-  font-weight: 100;
-}
 
 /* Seitentitel ohne Hero Bild*/
 
@@ -434,7 +437,7 @@ a:focus, button:focus {
 
 p {
   color: var(--color-text);
-  padding: 0 0 1rem 0;
+  padding: 0 0 1.5em 0;
   margin: 0;
 }
 
@@ -677,57 +680,29 @@ section {
 
 /* 3 Spalten für Text */
 
-.columns-3 {
+.columns-2, .columns-3 {
   columns: 1 auto;
   column-gap: 5%;
-
-  p {
-    padding-bottom: 1.5em;
-  }
+  orphans: 2;
+  widows: 2;
 
   article {
     break-inside: avoid;
   }
-
-  article {
-
-    p:last-child {
-      padding-bottom: 0rem;
-    }
+  p:last-child {
+    padding-bottom: 0rem;
   }
-
 
   @media only screen and (min-width: 576px) {
     columns: 2 auto;
-  }
-
-  @media only screen and (min-width: 824px) {
-    columns: 3 auto;
   }
 }
 
 
-.columns-2 {
-  columns: 1 auto;
-  column-gap: 5%;
-
-  p {
-    margin-bottom: 1.5em;
-    padding-bottom: 0;
-  }
-
-  p:last-child {
-    padding-bottom: 0rem;
-    margin-bottom: 0em;
-  }
-
-
-  @media only screen and (min-width: 576px) {
-    columns: 2 auto;
-  }
+.columns-3 {
 
   @media only screen and (min-width: 824px) {
-    columns: 2 auto;
+    columns: 3 auto;
   }
 }
 
@@ -824,14 +799,6 @@ section {
     color: var(--color-main) !important;
   }
 
-
-/*
-  article {
-    padding-left: 0rem;
-    padding-right: 0rem;
-  }
-    */
-
   img {
     filter: drop-shadow(0px 10px 10px);
     margin-left: auto;
@@ -862,13 +829,6 @@ section {
     column-gap: 10%;
 
   }
-
-  /*
-  @media only screen and (min-width: 1200px) {
-    padding-right: 10%;
-    padding-left: 10%;
-
-  }*/
 
 
 }
@@ -1048,7 +1008,7 @@ i {
 /* Footer Container */
 
 footer {
-  padding: 0rem 0 2rem 0;
+  padding-bottom: 2rem;
   max-width: var(--maxwidth);
   margin-left: auto;
   margin-right: auto;
