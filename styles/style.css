@@ -425,7 +425,7 @@ li {
 }
 
 /* Fokus */
-button:focus, a:focus {
+button:focus-visible, a:focus-visible{
   outline: 3px solid #f39c12; /* Beispiel für benutzerdefinierten Fokus */
   z-index: 9999;
   border-radius: 1px;
