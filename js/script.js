@@ -45,23 +45,24 @@ scrollToTopBtn.addEventListener("click", () => {
 
 if (document.getElementById("concert-dates") != null) {
 
+  let myArr;
+  let myObj;
+  let myArrLenght;
 
   // Start mit dem Laden der Daten für die Tabelle
   loadData();
 
   // JSON Daten für die Tabelle laden
   async function loadData() {
-    let myArr;
-    let myObj;
-    let myArrLenght;
 
     // Prüfung ob beim Laden und Erzeugen des HTML der Tabellendaten ein Fehler auftritt
     try {
       // Datei mit Daten laden und parsen
       const response = await fetch("data/concert-dates.json");
       const myObj = await response.json();
-      // Funktion onlyText zum löschen von Sonderzeichen aufrufen
-      myArr = onlyText(myObj);
+      
+      // geladene Daten in myArr Array übergeben
+      myArr = myObj;
 
     }
     // Bei Auftreten eines Fehlers, Meldung in das DOM schreiben und mainnavi ausblenden
@@ -70,63 +71,65 @@ if (document.getElementById("concert-dates") != null) {
       return
     }
 
-    myArrLenght = myArr.length;
     writeHtmlTable(myArr)
-    return myArr;
   }
 
-
+  // HTML mit den Daten erzeugen
   function writeHtmlTable(myArr) {
 
     let x = 0;
     let htmlTable = "";
-    // Tabellenkopf erzeugen
 
+    // Überschrift und Container erzeugen erzeugen
     htmlTable = "<h2>Concerts</h2>";
     htmlTable += "<article class='grid-table-container'>";
-    
     htmlTable += "<div class='grid-table-row'>";
     htmlTable += "<h3>Date</h3><h3>Show</h3><h3>City</h3><h3>Venu</h3><h3>Ticket</h3></div>";
     htmlTable += "<hr class='table-line'></hr>";
 
-    // Array auslesen und Tabellenfelder erzeugen
-    for (x = 0; x < myArr.length; x++) {
-      htmlTable += "<div class='grid-table-row'>";
-      htmlTable += "<p>" + myArr[x].date + "</p>";
-      htmlTable += "<p>" + myArr[x].show + "</p>";
-      htmlTable += "<p>" + myArr[x].city + "</p>";
-      htmlTable += "<p>" + myArr[x].venu + "</p>";
 
-      if (myArr[x].ticket[0] == "url") (
-        htmlTable += "<p><a href='" + myArr[x].ticket[1] + "' class='button-cta' aria-label='buy ticket for Insect O. " + myArr[x].show + " at " + myArr[x].venu + "'>Ticket</a></p>"
+    // Prüfung, ob Einträge in den Daten vorhanden sind. Wenn nicht, Meldung ausgeben.
+    if (myArr.length == 0) (
+      htmlTable += "<p>No dates yet. Do you want to send a booking request?"
+    )
 
-      )
-      else if (myArr[x].ticket[0] == "door") (
-        htmlTable += "<p>at the door</p>"
-      )
+    else
 
-      else htmlTable += "<p>coming soon</p>"
+      // Wenn ja, Array auslesen und Tabellenfelder erzeugen
+      for (x = 0; x < myArr.length; x++) {
+        htmlTable += "<div class='grid-table-row'>";
+        htmlTable += "<p>" + myArr[x].date + "</p>";
+        htmlTable += "<p>" + myArr[x].show + "</p>";
+        htmlTable += "<p>" + myArr[x].city + "</p>";
+        htmlTable += "<p>" + myArr[x].venu + "</p>";
 
-      htmlTable += "</div>";
-      htmlTable += "<hr class='table-line'>";
-    }
-    htmlTable += "</div>";
+        // Wenn Ticket vom Typ url dann Buy Ticket Button erzeugen
+        if (myArr[x].ticket.type == "url") (
+          htmlTable += "<p><a href='" + myArr[x].ticket.url + "' class='button-cta' aria-label='buy ticket for Insect O. " + myArr[x].show + " at " + myArr[x].venu + "'>Buy Ticket<i class='fa-solid fa-arrow-right link' aria-hidden='true'></i></a></p>"
+
+        )
+
+        // Wenn Ticket vom Typ door dann Text ausgeben
+        else if (myArr[x].ticket.type == "door") (
+          htmlTable += "<p>at the door</p>"
+        )
+
+        // Text Coming Soon wenn etwas anderes angegeben ist
+        else htmlTable += "<p>coming soon</p>"
+
+        htmlTable += "</div>";
+        htmlTable += "<hr class='table-line'>";
+      }
+
+
+    // article schließen
     htmlTable += "</article>";
+
+    // Booking Request button erzeigen
     htmlTable += "<a href='contact.html' class='button-nav'>send booking request</a>";
 
     // erzeugtes HTML im DOM aktuallisieren
     document.getElementById("concert-dates").innerHTML = htmlTable;
   };
-
-  // Sonderzeichnen aus den Datenfelder company und country entfernen damit kein Code aus den geladenen Daten eingeschleußt werden kann
-  function onlyText(myObj) {
-    for (let i = 0; i < myObj.length; i++) {
-      myObj[i].date = myObj[i].date.replace(/(<|>|!|§|$|%)/g, "");
-      myObj[i].show = myObj[i].show.replace(/(<|>|!|§|$|%)/g, "");
-      myObj[i].city = myObj[i].city.replace(/(<|>|!|§|$|%)/g, "");
-      myObj[i].venu = myObj[i].venu.replace(/(<|>|!|§|$|%)/g, "");
-    }
-    return myObj
-  }
 
 }

@@ -692,9 +692,7 @@ section {
   row-gap: 0.5rem;
   margin-bottom: 1rem;
 
-  .button-cta {
-    margin-top: 1rem;
-  }
+ 
 
   /* Grid Items für Concert Dates */
 
@@ -702,9 +700,17 @@ section {
     display: grid;
     grid-template-columns: 50% 50%;
     padding: 0;
+    align-items: center;
+
+    .button-cta {
+      margin-top: 1rem;
+      line-height: 1;
+      padding: 0.8rem;
+    }
 
     @media only screen and (min-width: 824px) {
       grid-template-columns: 20% 20% 20% 20% 20%;
+
       .button-cta {
         margin-top: 0rem;
       }
@@ -713,14 +719,13 @@ section {
 
   section.grid-table-row {
     margin-bottom: 0rem;
-    justify-content: center;
+
   }
 
   h3,
   p {
     margin: 0em;
     padding: 0rem;
-    align-self: center;
 
   }
 
