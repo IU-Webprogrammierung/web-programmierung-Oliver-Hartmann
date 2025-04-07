@@ -62,13 +62,11 @@ if (document.getElementById("concert-dates") != null) {
       const myObj = await response.json();
       // Funktion onlyText zum löschen von Sonderzeichen aufrufen
       myArr = onlyText(myObj);
-      console.log("myArr:", myArr);
 
     }
     // Bei Auftreten eines Fehlers, Meldung in das DOM schreiben und mainnavi ausblenden
     catch (error) {
       document.getElementById("concert-dates").innerHTML = "<p>Error loading data. Please try again later.</p>"
-      console.log(error);
       return
     }
 
@@ -86,6 +84,7 @@ if (document.getElementById("concert-dates") != null) {
 
     htmlTable = "<h2>Concerts</h2>";
     htmlTable += "<article class='grid-table-container'>";
+    
     htmlTable += "<div class='grid-table-row'>";
     htmlTable += "<h3>Date</h3><h3>Show</h3><h3>City</h3><h3>Venu</h3><h3>Ticket</h3></div>";
     htmlTable += "<hr class='table-line'></hr>";
@@ -97,13 +96,22 @@ if (document.getElementById("concert-dates") != null) {
       htmlTable += "<p>" + myArr[x].show + "</p>";
       htmlTable += "<p>" + myArr[x].city + "</p>";
       htmlTable += "<p>" + myArr[x].venu + "</p>";
-      htmlTable += "<p>" + myArr[x].ticket + "</p>";
+
+      if (myArr[x].ticket[0] == "url") (
+        htmlTable += "<p><a href='" + myArr[x].ticket[1] + "' class='button-cta' aria-label='buy ticket for Insect O. " + myArr[x].show + " at " + myArr[x].venu + "'>Ticket</a></p>"
+
+      )
+      else if (myArr[x].ticket[0] == "door") (
+        htmlTable += "<p>at the door</p>"
+      )
+
+      else htmlTable += "<p>coming soon</p>"
+
       htmlTable += "</div>";
       htmlTable += "<hr class='table-line'>";
     }
     htmlTable += "</div>";
     htmlTable += "</article>";
-
     htmlTable += "<a href='contact.html' class='button-nav'>send booking request</a>";
 
     // erzeugtes HTML im DOM aktuallisieren
@@ -117,7 +125,6 @@ if (document.getElementById("concert-dates") != null) {
       myObj[i].show = myObj[i].show.replace(/(<|>|!|§|$|%)/g, "");
       myObj[i].city = myObj[i].city.replace(/(<|>|!|§|$|%)/g, "");
       myObj[i].venu = myObj[i].venu.replace(/(<|>|!|§|$|%)/g, "");
-      myObj[i].ticket = myObj[i].ticket.replace(/(<|>|!|§|$|%)/g, "");
     }
     return myObj
   }

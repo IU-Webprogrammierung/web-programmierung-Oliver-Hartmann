@@ -547,13 +547,14 @@ a {
   display: inline-block;
   background-color: var(--color-highlight);
   color: var(--color-main);
-  padding: 0.5em 1em;
+  padding: 0.5em 0.5em;
   margin: 0;
   text-decoration: none;
   transition: var(--transistion-time);
   text-transform: uppercase;
   border-radius: 0.5rem;
   font-weight: 200;
+  border: none;
 
   &:hover {
     background-color: var(--color-main);
@@ -691,6 +692,10 @@ section {
   row-gap: 0.5rem;
   margin-bottom: 1rem;
 
+  .button-cta {
+    margin-top: 1rem;
+  }
+
   /* Grid Items für Concert Dates */
 
   .grid-table-row {
@@ -700,17 +705,23 @@ section {
 
     @media only screen and (min-width: 824px) {
       grid-template-columns: 20% 20% 20% 20% 20%;
+      .button-cta {
+        margin-top: 0rem;
+      }
     }
   }
 
   section.grid-table-row {
     margin-bottom: 0rem;
+    justify-content: center;
   }
 
   h3,
   p {
-    margin: 0rem;
+    margin: 0em;
     padding: 0rem;
+    align-self: center;
+
   }
 
 }

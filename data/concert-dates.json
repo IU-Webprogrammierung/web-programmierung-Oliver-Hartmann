@@ -1,23 +1,26 @@
 [
-    {
-       "date": "2025-05-24",
-       "show": "DJ",
-       "city": "Dresden",
-       "venu": "Sektor Evolution",
-       "ticket": "coming soon"
-    },
-    {
+   {
+      "date": "2025-05-24",
+      "show": "DJ",
+      "city": "Dresden",
+      "venu": "Sektor Evolution",
+      "ticket": ["coming soon"]
+   },
+   {
       "date": "2025-11-07",
       "show": "Live",
       "city": "Dresden",
       "venu": "Dave Festival",
-      "ticket": "coming soon"
+      "ticket": ["door"]
    },
    {
       "date": "2026-03-12",
       "show": "Live",
       "city": "Prag",
       "venu": "Pragtonal",
-      "ticket": "coming soon"
+      "ticket": [
+         "url",
+         "https://www.dave-festival.de"
+      ]
    }
- ]
+]
