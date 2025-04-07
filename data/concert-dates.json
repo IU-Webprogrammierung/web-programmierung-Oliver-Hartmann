@@ -2,15 +2,22 @@
     {
        "date": "2025-05-24",
        "show": "DJ",
-       "city": "Dren",
+       "city": "Dresden",
        "venu": "Sektor Evolution",
        "ticket": "coming soon"
     },
     {
-      "date": "2025-11-b7",
+      "date": "2025-11-07",
       "show": "Live",
       "city": "Dresden",
       "venu": "Dave Festival",
-      "ticket": "coming so1o1on"
+      "ticket": "coming soon"
+   },
+   {
+      "date": "2026-03-12",
+      "show": "Live",
+      "city": "Prag",
+      "venu": "Pragtonal",
+      "ticket": "coming soon"
    }
  ]
