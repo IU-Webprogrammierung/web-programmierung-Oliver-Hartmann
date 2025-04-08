@@ -93,7 +93,7 @@ header {
 
   /* Top Navigation Container Mobile */
 
-  .topnavbar {
+  #topnavbar {
     padding-top: 2rem;
     padding-bottom: 2rem;
     margin-left: 0rem;

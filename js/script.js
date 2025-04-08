@@ -16,7 +16,6 @@ function mobileMenu() {
   }
 }
 
-
 // ---- Scroll To Top Button ----
 const scrollToTopBtn = document.getElementById("toTopButton");
 scrollToTopBtn.getElementsByTagName("i")[0].classList.add("fa", "fa-angle-up");
@@ -60,7 +59,7 @@ if (document.getElementById("concert-dates") != null) {
       // Datei mit Daten laden und parsen
       const response = await fetch("data/concert-dates.json");
       const myObj = await response.json();
-      
+
       // geladene Daten in myArr Array übergeben
       myArr = myObj;
 
