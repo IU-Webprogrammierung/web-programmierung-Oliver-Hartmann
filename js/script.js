@@ -1,22 +1,57 @@
-/* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
+
+// Umschalten zwischen Anzeige / Verbergen von Menu bei Click auf Hamburger Icon
+
 function mobileMenu() {
   var menu = document.getElementById("topnavmenu");
-  var ham = document.getElementById("hamburger-icon");
-  const isExpanded = ham.getAttribute('ariaExpanded') === 'true';
+  var hamburger = document.getElementById("hamburger-icon");
+  const isExpanded = hamburger.getAttribute('ariaExpanded') === 'true';
 
   if (isExpanded) {
     menu.classList.remove("visible")
-    ham.setAttribute("ariaExpanded", "false");
-    ham.classList.remove("is-active")
+    hamburger.setAttribute("ariaExpanded", "false");
+    hamburger.classList.remove("is-active")
 
   } else {
     menu.classList.add("visible")
-    ham.setAttribute("ariaExpanded", "true");
-    ham.classList.add("is-active")
+    hamburger.setAttribute("ariaExpanded", "true");
+    hamburger.classList.add("is-active")
   }
 }
 
+
+fetch("components/header.html")
+  .then(res => res.text())
+  .then(html => {
+    document.querySelector("header").innerHTML = html;
+
+    // Jetzt ist der Header im DOM – also kann der Code sicher laufen:
+    highlightActiveLink();
+  });
+
+  fetch("components/footer.html")
+  .then(res => res.text())
+  .then(html => {
+    document.querySelector("footer").innerHTML = html;
+  });
+
+
+
+
+function highlightActiveLink() {
+  let path = window.location.pathname;
+  let page = path.split("/").pop();
+  let menu = document.getElementById("topnavbar");
+
+  let links = menu.getElementsByTagName("a");
+
+  if (page === "music.html") links[1].classList.add("active");
+  if (page === "live.html") links[2].classList.add("active");
+  if (page === "studio.html") links[3].classList.add("active");
+  if (page === "about.html") links[4].classList.add("active");
+}
+
 // ---- Scroll To Top Button ----
+
 const scrollToTopBtn = document.getElementById("toTopButton");
 scrollToTopBtn.getElementsByTagName("i")[0].classList.add("fa", "fa-angle-up");
 
@@ -30,13 +65,13 @@ window.addEventListener("scroll", () => {
 });
 
 // Smooth Scroll nach oben
+
 scrollToTopBtn.addEventListener("click", () => {
   window.scrollTo({
     top: 0,
     behavior: "smooth"
   });
 });
-
 
 
 // ---- concert dates ----

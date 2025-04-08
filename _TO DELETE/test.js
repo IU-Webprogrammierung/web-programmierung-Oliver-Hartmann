@@ -15,3 +15,33 @@
   }
 
   */
+
+
+
+// Menu Links aktiv setzen
+/*
+document.addEventListener("DOMContentLoaded", function () {
+if (document.getElementById("main").classList.contains("subpage")) {
+  fetch("../components/header.html")
+    .then(res => res.text())
+    .then(html => {
+      document.querySelector("header").innerHTML = html;
+
+      console.log(html);
+
+      // Jetzt ist der Header im DOM – also kann der Code sicher laufen:
+      highlightActiveLink();
+    });
+
+} else {
+  fetch("components/header.html")
+    .then(res => res.text())
+    .then(html => {
+      document.querySelector("header").innerHTML = html;
+
+      // Jetzt ist der Header im DOM – also kann der Code sicher laufen:
+      highlightActiveLink();
+    });
+}
+});
+  */
