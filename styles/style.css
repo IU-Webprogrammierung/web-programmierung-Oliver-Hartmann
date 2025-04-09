@@ -211,7 +211,7 @@ header {
       -webkit-transition: all var(--transistion-time) ease-in-out;
       -o-transition: all var(--transistion-time) ease-in-out;
       transition: all var(--transistion-time) ease-in-out;
-      
+
     }
 
     .hamburger:hover {
@@ -468,11 +468,14 @@ li {
 
 /* Fokus */
 button:focus-visible,
-a:focus-visible, input:focus-visible, textarea:focus-visible{
+a:focus-visible,
+a:focus-visible figure,
+input:focus-visible,
+textarea:focus-visible {
   outline: 3px solid #f39c12;
-  /* Beispiel für benutzerdefinierten Fokus */
   z-index: 9999;
   border-radius: 1px;
+  overflow: visible;
 }
 
 
@@ -698,7 +701,7 @@ section {
   row-gap: 0.5rem;
   margin-bottom: 1rem;
 
- 
+
 
   /* Grid Items für Concert Dates */
 
@@ -956,12 +959,15 @@ figure {
 }
 
 
-/* Link mit Icon .............................*/
+/* Link mit Icon .............................
 
 .grid-link {
   text-decoration: none;
   border: none;
 }
+*/
+
+
 
 /* Hintergrund Bildunterschrift im Grid */
 
