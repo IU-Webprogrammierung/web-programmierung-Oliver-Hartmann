@@ -468,7 +468,7 @@ li {
 
 /* Fokus */
 button:focus-visible,
-a:focus-visible {
+a:focus-visible, input:focus-visible, textarea:focus-visible{
   outline: 3px solid #f39c12;
   /* Beispiel für benutzerdefinierten Fokus */
   z-index: 9999;
