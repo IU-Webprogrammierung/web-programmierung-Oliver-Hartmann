@@ -1,3 +1,34 @@
+/*
+function subpageMenu() {
+
+  // console.log(document.getElementsByTagName("header")[0].getElementsByTagName("a"))
+
+  let menu = document.getElementsByTagName("header")[0];
+  let menuItems = menu.getElementsByTagName("a");
+
+  console.log(menuItems);
+
+  let menuItemsCount = menuItems.length - 1;
+
+  console.log(menuItemsCount)
+
+  for (let l = 0; l < menuItemsCount; l++) {
+    let originalHref = menuItems[l].getAttribute("href");
+    menuItems[l].setAttribute("href", "../" + originalHref);
+    console.log(menuItems[l].getAttribute("href"));
+  }
+
+}
+*/
+
+
+
+
+
+
+
+
+
 /* changing links in the menu when subpage is loadad
 
   let main = document.querySelector("main");
