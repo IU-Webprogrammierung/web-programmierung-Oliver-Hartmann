@@ -294,7 +294,7 @@ nav a {
   .hero-text {
     text-align: center;
     position: absolute;
-    bottom: 10dvh;
+    bottom: 24%;
     left: 50%;
     transform: translate(-50%, -50%);
     line-height: 1;

@@ -5,3 +5,10 @@
         background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 1.0)), url("../assets/images/hero/large/hero-home-l.webp");
     }
 }
+
+.hero-image {
+
+    .hero-text {
+        bottom: 12%;
+    }
+}
