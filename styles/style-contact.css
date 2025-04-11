@@ -25,6 +25,13 @@ input, select, textarea {
   margin-bottom: 2rem;
   resize: vertical;
   display: block;
+  font-weight: var(--font-weight);
+
+  &.button-cta {
+    width: fit-content;
+    padding: 0.5em;
+    cursor: pointer;
+  }
 }
 
 label {

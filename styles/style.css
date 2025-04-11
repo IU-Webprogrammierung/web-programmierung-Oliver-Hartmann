@@ -36,7 +36,7 @@
 
   /* Font Weigth */
 
-  --font-weight: 300;
+  --font-weight: 200;
 
   /* Animationszeit */
   --transistion-time: 300ms;
@@ -60,24 +60,24 @@
 }
 
 .dark-mode {
-     /* Hauptfarbe */
-     --color-main: var(--white);
-     --color-main-title: var(--white);
-     --color-hero-text: var(--light-grey);
-     --color-text: var(--light-grey);
-   
-     /* Hintergrundfarbe */
-     --color-background: var(--black);
-   
-     /* Hover Farbe */
-     --color-highlight: var(--petrol);
-   
-     /* Farbe für Feature Bereich */
-     --color-text-feature: var(--dark-grey);
-     --color-feature-background: var(--silver);
-   
-     /* Farbe für Dekorationen / Tabellen*/
-     --color-decoration: var(--dark-grey);
+  /* Hauptfarbe */
+  --color-main: var(--white);
+  --color-main-title: var(--white);
+  --color-hero-text: var(--light-grey);
+  --color-text: var(--light-grey);
+
+  /* Hintergrundfarbe */
+  --color-background: var(--black);
+
+  /* Hover Farbe */
+  --color-highlight: var(--petrol);
+
+  /* Farbe für Feature Bereich */
+  --color-text-feature: var(--dark-grey);
+  --color-feature-background: var(--silver);
+
+  /* Farbe für Dekorationen / Tabellen*/
+  --color-decoration: var(--dark-grey);
 }
 
 
@@ -169,16 +169,16 @@ header {
       visibility 0s linear var(--transistion-time),
       color var(--transistion-time) ease-in-out;
 
-      #darkModeToggler {
-        color: var(--color-main);
-        border-bottom: none;
-        transition: 
+    #darkModeToggler {
+      color: var(--color-main);
+      border-bottom: none;
+      transition:
         color var(--transistion-time) ease-in-out;
-      }
-  
-      #darkModeToggler:hover {
-        color: var(--color-highlight);
-      }
+    }
+
+    #darkModeToggler:hover {
+      color: var(--color-highlight);
+    }
 
 
     @media only screen and (min-width: 824px) {
@@ -480,10 +480,15 @@ h3.grid-item-title,
 h4,
 nav a,
 .button-nav,
-li {
+li,
+input,
+label,
+select,
+textarea {
   font-size: var(--font-mobile);
   line-height: 1.5;
   letter-spacing: 0.02em;
+  font-family: 'Roboto';
 
   @media only screen and (min-width: 576px) {
     font-size: var(--font-tablet);
@@ -593,26 +598,26 @@ h2.center {
 
 .button-cta {
   display: inline-block;
-  background-color: var(--color-highlight);
-  color: var(--white);
-  ;
   padding: 0.5em 0.5em;
   margin: 0;
   text-decoration: none;
   text-transform: uppercase;
   border-radius: 0.5rem;
-  font-weight: 200;
   border: none;
+  background-color: var(--color-main);
+  color: var(--color-background);
+  filter: drop-shadow(3px 3px 3px var(--color-highlight));
 
   transition:
-  background-color var(--transistion-time) ease-in-out,
-  border-color var(--transistion-time) ease-in-out,
-  color var(--transistion-time) ease-in-out;
+    background-color var(--transistion-time) ease-in-out,
+    border-color var(--transistion-time) ease-in-out,
+    color var(--transistion-time) ease-in-out,
+    filter var(--transistion-time) ease-in-out;
 
   &:hover {
-    background-color: var(--color-main);
-    color: var(--color-background);
-    ;
+    background-color: var(--color-highlight);
+    color: var(--white);
+    filter: none;
 
   }
 }
