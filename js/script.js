@@ -125,7 +125,7 @@ function darkModeToggler() {
     disableDarkMode();
     setTimeout(() => {
       root.style.setProperty('--transistion-time', '200ms');
-    }, 300);
+    }, 200);
   }
 }
 
@@ -328,25 +328,29 @@ loadMore.addEventListener("click", function () {
   } else {
 
     // if its not true
+    // smooth scroll to the start of the grid
 
-    for (let i = 0; i < gridItems.length; i++) {
+    document.querySelector("#grid-4").scrollIntoView({
+      behavior: "smooth"
+    })
 
-      // remove class to show all items from li tags of all grid elements
+    // wait 400ms for scrooling to be finished
 
-      gridItems[i].classList.remove("all-grid-items");
+    setTimeout(() => {
+      for (let i = 0; i < gridItems.length; i++) {
 
-      // seit showAll to false
+        // then remove class to show all items from li tags of all grid elements
 
-      isShowAll = false;
+        gridItems[i].classList.remove("all-grid-items");
 
-      // change button text
-      loadMore.innerText = "show more";
+        // seit showAll to false
 
-      // smooth scroll to the start of the grid
-      
-      document.querySelector("#grid-4").scrollIntoView({
-        behavior: "smooth"
-      })
-    }
+        isShowAll = false;
+
+        // change button text
+        loadMore.innerText = "show more";
+
+      }
+    }, 400);
   }
 });

@@ -81,7 +81,6 @@
 }
 
 
-
 * {
   box-sizing: border-box;
   padding: 0;
@@ -358,7 +357,6 @@ nav a {
   }
 
 }
-
 
 
 /* Inner Container mit Hero Bild */
@@ -741,19 +739,19 @@ section {
     grid-template-columns: 23.5% 23.5% 23.5% 23.5%
   }
 
-
   /* show no entries in the grid */
 
   li {
     display: none;
   }
 
-/* show all entries in the grid */
+  /* show all entries in the grid */
   .all-grid-items {
     display: list-item;
   }
 
- +#load-more-button {
+  /* show more button */
+  +#load-more-button {
     display: inline;
     margin: 1rem 0;
   }
@@ -778,7 +776,31 @@ section {
 
     +#load-more-button {
       display: none;
-  
+
+    }
+
+  }
+
+  /* setup transition for hover*/
+
+  a figure {
+    scale: 1;
+    transition:
+      scale var(--transistion-time) ease-in-out;
+  }
+
+  /* scale figure when its a link on hover */
+
+  a:hover figure {
+
+    scale: 1.02;
+
+    @media only screen and (min-width: 576px) {
+      scale: 1.03;
+    }
+
+    @media only screen and (min-width: 824px) {
+      scale: 1.04;
     }
 
   }
@@ -787,36 +809,12 @@ section {
 
   figure.grid {
 
-    a {
-      border: none;
-    }
-
     p,
-    h3,
-    img {
+    h3 {
       padding-bottom: 0;
       padding-left: 0;
-      transition:
-        scale var(--transistion-time) ease-in-out;
     }
 
-    &:hover {
-
-      img {
-        scale: 1.02;
-
-        @media only screen and (min-width: 576px) {
-          scale: 1.03;
-        }
-
-        @media only screen and (min-width: 824px) {
-          scale: 1.04;
-        }
-
-      }
-
-
-    }
 
     /* Untertitel für Bild*/
 
@@ -1116,7 +1114,6 @@ figure {
   margin: 0;
   max-width: fit-content;
 }
-
 
 
 /* Icons */
