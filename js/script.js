@@ -73,6 +73,49 @@ function highlightActiveLink() {
 }
 
 
+// Dark Mode Toggler
+
+let darkMode = localStorage.getItem("darkMode");
+const darkModeToggle = document.querySelector("darkModeToggler");
+
+const enableDarkMode = () => {
+  document.body.classList.add("dark-mode");
+  localStorage.setItem("darkMode", "enabled");
+}
+
+const disableDarkMode = () => {
+  document.body.classList.remove("dark-mode");
+  localStorage.setItem("darkMode", null);
+}
+
+if (darkMode === "enabled") {
+  enableDarkMode();
+}
+
+function darkModeToggler() {
+
+  darkMode = localStorage.getItem("darkMode");
+  if (darkMode !== "enabled") {
+    const root = document.documentElement;
+    root.style.setProperty('--transistion-time', '0');
+    enableDarkMode();
+    console.log(darkMode)
+    setTimeout(() => {
+     root.style.setProperty('--transistion-time', '200ms');
+    }, 400);
+  } else {
+    const root = document.documentElement;
+   root.style.setProperty('--transistion-time', '0');
+    disableDarkMode();
+    console.log(darkMode);
+    setTimeout(() => {
+      root.style.setProperty('--transistion-time', '200ms');
+    }, 300);
+    
+  }
+
+}
+
 
 // Umschalten zwischen Anzeige / Verbergen von Menu bei Click auf Hamburger Icon
 
