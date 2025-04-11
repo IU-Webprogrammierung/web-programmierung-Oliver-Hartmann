@@ -1,12 +1,12 @@
 /* Variablen Definitionen */
 :root {
   /* Farbthema */
-  --white: #fcfcfc;
+  --white: #fafafa;
   --graphit: #222222;
   --petrol: #4f6d7a;
-  --silver: #eeeeee;
-  --black: #010101;
-  --dark-grey: #333333;
+  --silver: #e9e9e9;
+  --black: #030303;
+  --dark-grey: #333;
   --light-grey: #bbbbbb;
 
   /* NOCH NICHT VERWENDET*/
@@ -16,21 +16,21 @@
 
   /* Hauptfarbe */
   --color-main: var(--white);
-
+  --color-main-title: var(--white);
   --color-text: var(--light-grey);
 
-  --color-text-feature: var(--graphit);
-
-  --color-main-title: var(--white);
 
   /* Hintergrundfarbe */
-  --color-bg: var(--black);
+  --color-background: var(--black);
 
   /* Hover Farbe */
   --color-highlight: var(--petrol);
 
-  --color-secondary-background: var(--silver);
+  /* Farbe für Feature Bereich */
+  --color-text-feature: var(--dark-grey);
+  --color-feature-background: var(--silver);
 
+    /* Farbe für Dekorationen / Tabellen*/
   --color-decoration: var(--dark-grey);
 
   /* Animationszeit */
@@ -73,7 +73,7 @@
 
 body {
   margin: 0px;
-  background-color: var(--color-bg);
+  background-color: var(--color-background);
   font-family: "Roboto";
   font-weight: 200;
   overflow-y: scroll;
@@ -88,7 +88,7 @@ header {
   top: 0;
   width: 100%;
   z-index: 2;
-  background-color: var(--color-bg);
+  background-color: var(--color-background);
 
 
   /* Top Navigation Container Mobile */
@@ -255,7 +255,7 @@ nav a {
   transition:
     color var(--transistion-time) ease-in-out,
     border-color var(--transistion-time) ease-in-out;
-  border-bottom: 1px solid var(--color-bg);
+  border-bottom: 1px solid var(--color-background);
 
   &:hover {
     color: var(--color-main);
@@ -332,7 +332,7 @@ nav a {
 
 .outer {
 
-  background-color: var(--color-bg);
+  background-color: var(--color-background);
   padding-top: 2rem;
   position: relative;
   z-index: 1;
@@ -344,7 +344,7 @@ nav a {
 }
 
 .outer-feature {
-  background-color: var(--color-secondary-background);
+  background-color: var(--color-feature-background);
   padding-top: 0rem;
   position: relative;
   z-index: 1;
@@ -358,7 +358,7 @@ nav a {
 /* Inner Container ohne Hero Bild */
 
 .outer-single {
-  background-color: var(--color-bg);
+  background-color: var(--color-background);
   max-width: var(--maxwidth);
   margin-left: auto;
   margin-right: auto;
@@ -564,7 +564,6 @@ h2.center {
 .button-cta {
   display: inline-block;
   background-color: var(--color-highlight);
-  color: var(--color-main);
   padding: 0.5em 0.5em;
   margin: 0;
   text-decoration: none;
@@ -576,7 +575,6 @@ h2.center {
 
   &:hover {
     background-color: var(--color-main);
-    color: var(--color-text-feature);
 
   }
 }
@@ -831,7 +829,7 @@ section {
 .grid-2-feature {
   display: grid;
   grid-template-columns: 100%;
-  background-color: var(--color-secondary-background);
+  background-color: var(--color-feature-background);
   padding-top: 2rem;
   padding-bottom: 2rem;
   row-gap: 2rem;
@@ -850,7 +848,7 @@ section {
     ;
   }
 
-  p {
+  p, li {
     color: var(--color-text-feature);
   }
 
@@ -859,18 +857,14 @@ section {
   }
 
   .button-nav {
-    color: var(--color-bg);
-    border-color: var(--color-bg);
+    color: var(--color-text-feature);
+    border-color: var(--color-text-feature);
     margin-top: 0.5rem;
   }
 
   .button-nav:hover {
-    color: var(--color-highlight);
+    color: var(--color-main);
     border-color: var(--color-highlight);
-  }
-
-  a:hover {
-    color: var(--color-main) !important;
   }
 
   img {
@@ -911,7 +905,7 @@ section {
 
 .section-feature-container {
   width: 100%;
-  background-color: var(--color-bg);
+  background-color: var(--color-background);
 
   /* Section Feature mit 1 Spalte */
 
