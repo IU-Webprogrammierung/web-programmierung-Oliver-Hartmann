@@ -1,25 +1,33 @@
-// Funktionen aufrufen
+// call functions
 
-// Header und Footer laden
+// load header and foot
+
 loadHeaderAndFooter();
 
-// Scroll to Top Button anlegen
+// call scroll to top button
+
 scrollToTop();
 
-// Concert Dates laden und einfügen
+// call concert dates
+
 concertDates();
 
+
 //
-// Funktionen
+// functions
 //
-// Header und Footer laden
+
+
+//--- load header and functions ---
+
 function loadHeaderAndFooter() {
 
-  // Prüfen ob Subpage geladen (Single Release)
+  // check if subpage (single release) is loaded
 
   isSubpage = document.getElementsByTagName("main")[0].classList.contains("subpage");
 
-  // Wenn ja, dann Header und Footer mit angepassten relativen Pfaden laden
+  // if so, load special header and footer html
+
   if (isSubpage) {
 
     headerPath = "../components/subpage-header.html";
@@ -29,7 +37,8 @@ function loadHeaderAndFooter() {
 
   } else {
 
-    // Sonst Standard Header und Footer laden
+    // if not, load standard header and footer html
+
     headerPath = "components/header.html";
     footerPath = "components/footer.html";
     loadHeader(headerPath);
@@ -37,20 +46,20 @@ function loadHeaderAndFooter() {
   }
 }
 
-// header.html laden
+// --- load header.html ---
+
 function loadHeader(headerPath) {
   fetch(headerPath)
     .then(res => res.text())
     .then(html => {
       document.querySelector("header").innerHTML = html;
-
-      // Jetzt ist der Header im DOM – also kann der Code sicher laufen:
       highlightActiveLink();
     });
 
 }
 
-// footer.html laden
+// --- load footer.html ---
+
 function loadFooter(footerPath) {
   fetch(footerPath)
     .then(res => res.text())
@@ -59,7 +68,7 @@ function loadFooter(footerPath) {
     });
 }
 
-// Klasse Active im Menu Item abhängig von geladener Page setzen
+// --- set active class for menu itmes ---
 
 function highlightActiveLink() {
   let path = window.location.pathname;
@@ -73,24 +82,32 @@ function highlightActiveLink() {
 }
 
 
-// Dark Mode Toggler
+// --- Dark Mode Toggler ---
 
 let darkMode = localStorage.getItem("darkMode");
 const darkModeToggle = document.querySelector("darkModeToggler");
+
+// enable dark mode
 
 const enableDarkMode = () => {
   document.body.classList.add("dark-mode");
   localStorage.setItem("darkMode", "enabled");
 }
 
+// disable dark mode
+
 const disableDarkMode = () => {
   document.body.classList.remove("dark-mode");
   localStorage.setItem("darkMode", null);
 }
 
+// check if dark mode is enabled
+
 if (darkMode === "enabled") {
   enableDarkMode();
 }
+
+// --- function to toggle between light and dark mode ---
 
 function darkModeToggler() {
 
@@ -99,7 +116,6 @@ function darkModeToggler() {
     const root = document.documentElement;
     root.style.setProperty('--transistion-time', '0');
     enableDarkMode();
-    console.log(darkMode)
     setTimeout(() => {
      root.style.setProperty('--transistion-time', '200ms');
     }, 400);
@@ -107,30 +123,28 @@ function darkModeToggler() {
     const root = document.documentElement;
    root.style.setProperty('--transistion-time', '0');
     disableDarkMode();
-    console.log(darkMode);
     setTimeout(() => {
       root.style.setProperty('--transistion-time', '200ms');
     }, 300);
-    
   }
-
 }
 
-
-// Umschalten zwischen Anzeige / Verbergen von Menu bei Click auf Hamburger Icon
+// --- toggle mobile menu with hamburger icon ---
 
 function mobileMenu() {
   var menu = document.getElementById("topnavmenu");
   var hamburger = document.getElementById("hamburger-icon");
   const isExpanded = hamburger.getAttribute('ariaExpanded') === 'true';
 
-  // Mobile Menu nicht sichbar
+  // mobile menu not visibale
+
   if (isExpanded) {
     menu.classList.remove("visible")
     hamburger.setAttribute("ariaExpanded", "false");
     hamburger.classList.remove("is-active")
 
-    // Mobile Menu sichbar
+    // mobile menu visible
+
   } else {
     menu.classList.add("visible")
     hamburger.setAttribute("ariaExpanded", "true");
@@ -138,24 +152,24 @@ function mobileMenu() {
   }
 }
 
-
-// ---- Scroll To Top Button ----
+// --- Scroll To Top Button ---
 
 function scrollToTop() {
 
   const scrollToTopBtn = document.getElementById("toTopButton");
   scrollToTopBtn.getElementsByTagName("i")[0].classList.add("fa", "fa-angle-up");
 
-  // Button anzeigen, wenn nach unten gescrollt wird
+  // show botton after scrolling 200px down
+
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 200) { // Zeige den Button, wenn mehr als 300px gescrollt wurde
+    if (window.scrollY > 200) {
       scrollToTopBtn.style.display = "block";
     } else {
       scrollToTopBtn.style.display = "none";
     }
   });
 
-  // Smooth Scroll nach oben
+  // smooth scroll to top
 
   scrollToTopBtn.addEventListener("click", () => {
     window.scrollTo({
@@ -167,34 +181,40 @@ function scrollToTop() {
 }
 
 
-// Concert Dates
-// zu erst prüfen ob der container mit id concert-dates vorhanden ist
+// --- Concert Dates ---
 
 function concertDates() {
 
+// check if id concert-dates is loaded
+  // if so, run function
   if (document.getElementById("concert-dates") != null) {
 
     let myArr;
     let myObj;
     let myArrLenght;
 
-    // Start mit dem Laden der Daten für die Tabelle
+    // start to load data for table
     loadData();
 
-    // JSON Daten für die Tabelle laden
+    // load json data
     async function loadData() {
 
-      // Prüfung ob beim Laden und Erzeugen des HTML der Tabellendaten ein Fehler auftritt
+      // check if an error occurs while loading
+
       try {
-        // Datei mit Daten laden und parsen
+
+        // load and parse concert-dates.json
+
         const response = await fetch("data/concert-dates.json");
         const myObj = await response.json();
 
-        // geladene Daten in myArr Array übergeben
+        // set json data to an array
+
         myArr = myObj;
 
       }
-      // Bei Auftreten eines Fehlers, Meldung in das DOM schreiben und mainnavi ausblenden
+
+      // if an error occured, write error message to html
       catch (error) {
         document.getElementById("concert-dates").innerHTML = "<p>Error loading data. Please try again later.</p>"
         return
@@ -203,27 +223,32 @@ function concertDates() {
       writeHtmlTable(myArr)
     }
 
-    // HTML mit den Daten erzeugen
+    // construct html from the loaded date
+
     function writeHtmlTable(myArr) {
 
       let x = 0;
       let htmlTable = "";
 
-      // Überschrift und Container erzeugen erzeugen
+      // construct headings and container
+
       htmlTable = "<h2>Concerts</h2>";
       htmlTable += "<article class='grid-table-container'>";
       htmlTable += "<div class='grid-table-row'>";
       htmlTable += "<h3>Date</h3><h3>Show</h3><h3>City</h3><h3>Venu</h3><h3>Ticket</h3></div>";
       htmlTable += "<hr class='table-line'></hr>";
 
-      // Prüfung, ob Einträge in den Daten vorhanden sind. Wenn nicht, Meldung ausgeben.
+      // chech if array has no entries
+      // if so, write a message into html
+
       if (myArr.length == 0) (
         htmlTable += "<p>No dates yet. Do you want to send a booking request?"
       )
 
       else
 
-        // Wenn ja, Array auslesen und Tabellenfelder erzeugen
+        // if arrays has entries, construct html from array
+
         for (x = 0; x < myArr.length; x++) {
           htmlTable += "<div class='grid-table-row'>";
           htmlTable += "<p>" + myArr[x].date + "</p>";
@@ -231,31 +256,38 @@ function concertDates() {
           htmlTable += "<p>" + myArr[x].city + "</p>";
           htmlTable += "<p>" + myArr[x].venu + "</p>";
 
-          // Wenn Ticket vom Typ url dann Buy Ticket Button erzeugen
+          //chech if ticket type is url
+          // if you, construct a cta button with link inside
           if (myArr[x].ticket.type == "url") (
             htmlTable += "<p><a href='" + myArr[x].ticket.url + "' class='button-cta' aria-label='buy ticket for Insect O. " + myArr[x].show + " at " + myArr[x].venu + "'>Buy Ticket<i class='fa-solid fa-arrow-right link' aria-hidden='true'></i></a></p>"
 
           )
 
-          // Wenn Ticket vom Typ door dann Text ausgeben
+          // if type is door, write door
           else if (myArr[x].ticket.type == "door") (
             htmlTable += "<p>at the door</p>"
           )
 
-          // Text Coming Soon wenn etwas anderes angegeben ist
+          // if its any other type, write coming soon
+
           else htmlTable += "<p>coming soon</p>"
+
+          // close html containers
 
           htmlTable += "</div>";
           htmlTable += "<hr class='table-line'>";
         }
 
-      // article schließen
+      // close article
+
       htmlTable += "</article>";
 
-      // Booking Request button erzeigen
+      // construct button for booking request
+
       htmlTable += "<a href='contact.html' class='button-nav'>send booking request</a>";
 
-      // erzeugtes HTML im DOM aktuallisieren
+      // write constructed html into DOM
+
       document.getElementById("concert-dates").innerHTML = htmlTable;
     };
   }
