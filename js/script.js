@@ -73,7 +73,7 @@ function loadFooter(footerPath) {
 function highlightActiveLink() {
   let path = window.location.pathname;
   let page = path.split("/").pop();
-  let menu = document.getElementById("topnavbar");
+  let menu = document.getElementById("topnav-bar");
   let links = menu.getElementsByTagName("a");
   if (page === "music.html") links[1].classList.add("active");
   if (page === "live.html") links[2].classList.add("active");
@@ -132,7 +132,7 @@ function darkModeToggler() {
 // --- toggle mobile menu with hamburger icon ---
 
 function mobileMenu() {
-  var menu = document.getElementById("topnavmenu");
+  var menu = document.getElementById("topnav-menu");
   var hamburger = document.getElementById("hamburger-icon");
   const isExpanded = hamburger.getAttribute('ariaExpanded') === 'true';
 

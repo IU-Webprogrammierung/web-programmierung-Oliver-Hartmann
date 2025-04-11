@@ -117,7 +117,7 @@ header {
 
   /* Top Navigation Container Mobile */
 
-  #topnavbar {
+  #topnav-bar {
     padding-top: 2rem;
     padding-bottom: 2rem;
     margin-left: 0rem;
@@ -150,7 +150,7 @@ header {
 
   /* Top Navigation Menü Link Liste Mobile */
 
-  #topnavmenu {
+  #topnav-menu {
     display: flex;
     flex-direction: column;
     row-gap: 2rem;
