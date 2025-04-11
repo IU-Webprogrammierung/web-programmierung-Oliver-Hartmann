@@ -741,6 +741,120 @@ section {
     grid-template-columns: 23.5% 23.5% 23.5% 23.5%
   }
 
+
+  /* show no entries in the grid */
+
+  li {
+    display: none;
+  }
+
+/* show all entries in the grid */
+  .all-grid-items {
+    display: list-item;
+  }
+
+ +#load-more-button {
+    display: inline;
+    margin: 1rem 0;
+  }
+
+  /* Bis 575px: nur das erste */
+  li:nth-of-type(1) {
+    display: list-item;
+  }
+
+  /* 576px bis 823px: erstes & zweites */
+  @media (min-width: 576px) and (max-width: 823px) {
+    li:nth-of-type(-n+2) {
+      display: list-item;
+    }
+  }
+
+  /* Ab 824px: alle */
+  @media (min-width: 824px) {
+    li {
+      display: list-item;
+    }
+
+    +#load-more-button {
+      display: none;
+  
+    }
+
+  }
+
+  /* Hintergrund Bildunterschrift im Grid */
+
+  figure.grid {
+
+    a {
+      border: none;
+    }
+
+    p,
+    h3,
+    img {
+      padding-bottom: 0;
+      padding-left: 0;
+      transition:
+        scale var(--transistion-time) ease-in-out;
+    }
+
+    &:hover {
+
+      img {
+        scale: 1.02;
+
+        @media only screen and (min-width: 576px) {
+          scale: 1.03;
+        }
+
+        @media only screen and (min-width: 824px) {
+          scale: 1.04;
+        }
+
+      }
+
+
+    }
+
+    /* Untertitel für Bild*/
+
+    figcaption {
+      padding: 1rem 0.5rem 1rem 0.5rem;
+      margin: 0rem;
+      color: var(--color-text);
+      text-transform: uppercase;
+
+      /* Überschrift H3 */
+
+      h3 {
+        text-align: center;
+        font-size: var(--font-mobile);
+        line-height: 1.3;
+        font-weight: 300;
+        margin: 0;
+
+        @media only screen and (min-width: 576px) {
+          font-size: var(--font-tablet);
+        }
+
+        @media only screen and (min-width: 824px) {
+          font-size: var(--font-laptop);
+        }
+      }
+
+      p {
+        text-align: center;
+        font-weight: 200;
+        line-height: 1.3;
+      }
+
+    }
+
+  }
+
+
 }
 
 /* Grid Container für Concert Dates */
@@ -1004,73 +1118,6 @@ figure {
 }
 
 
-/* Hintergrund Bildunterschrift im Grid */
-
-figure.grid {
-
-  a {
-    border: none;
-  }
-
-  p,
-  h3,
-  img {
-    padding-bottom: 0;
-    padding-left: 0;
-    transition:
-      color var(--transistion-time) ease-in-out,
-      opacity var(--transistion-time) ease-in-out,
-      font-size var(--transistion-time) ease-in-out;
-  }
-
-  &:hover {
-
-    p,
-    h3 {
-      color: var(--color-highlight);
-    }
-
-    img {
-      opacity: 0.7;
-    }
-
-  }
-
-  /* Untertitel für Bild*/
-
-  figcaption {
-    padding: 1rem 0.5rem 1rem 0.5rem;
-    margin: 0rem;
-    color: var(--color-text);
-    text-transform: uppercase;
-
-    /* Überschrift H3 */
-
-    h3 {
-      text-align: center;
-      font-size: var(--font-mobile);
-      line-height: 1.3;
-      font-weight: 300;
-      margin: 0;
-
-      @media only screen and (min-width: 576px) {
-        font-size: var(--font-tablet);
-      }
-
-      @media only screen and (min-width: 824px) {
-        font-size: var(--font-laptop);
-      }
-    }
-
-    p {
-      text-align: center;
-      font-weight: 200;
-      line-height: 1.3;
-    }
-
-  }
-
-}
 
 /* Icons */
 

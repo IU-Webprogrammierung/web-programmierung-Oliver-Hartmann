@@ -117,11 +117,11 @@ function darkModeToggler() {
     root.style.setProperty('--transistion-time', '0');
     enableDarkMode();
     setTimeout(() => {
-     root.style.setProperty('--transistion-time', '200ms');
+      root.style.setProperty('--transistion-time', '200ms');
     }, 400);
   } else {
     const root = document.documentElement;
-   root.style.setProperty('--transistion-time', '0');
+    root.style.setProperty('--transistion-time', '0');
     disableDarkMode();
     setTimeout(() => {
       root.style.setProperty('--transistion-time', '200ms');
@@ -185,7 +185,7 @@ function scrollToTop() {
 
 function concertDates() {
 
-// check if id concert-dates is loaded
+  // check if id concert-dates is loaded
   // if so, run function
   if (document.getElementById("concert-dates") != null) {
 
@@ -292,3 +292,61 @@ function concertDates() {
     };
   }
 }
+
+
+// --- Load More Button ---
+
+
+// get selectors as variables
+const loadMore = document.querySelector("#load-more-button");
+const grid = document.querySelector(".grid-4");
+const gridItems = grid.getElementsByTagName("li");
+var isShowAll = false;
+
+// add eventlistener to load more button
+
+loadMore.addEventListener("click", function () {
+
+  // check if showAll is not true
+
+  if (!isShowAll) {
+
+    // if so, add class to show all grid items to the li tags of all grid elementes
+
+    for (let i = 0; i < gridItems.length; i++) {
+      gridItems[i].classList.add("all-grid-items");
+
+      // set showAll to true
+
+      isShowAll = true;
+
+      // change button text
+
+      loadMore.innerText = "show less";
+    }
+
+  } else {
+
+    // if its not true
+
+    for (let i = 0; i < gridItems.length; i++) {
+
+      // remove class to show all items from li tags of all grid elements
+
+      gridItems[i].classList.remove("all-grid-items");
+
+      // seit showAll to false
+
+      isShowAll = false;
+
+      // change button text
+      loadMore.innerText = "show more";
+
+      // smooth scroll to the start of the grid
+      
+      document.querySelector("#grid-4").scrollIntoView({
+        behavior: "smooth"
+      })
+    }
+  }
+});
