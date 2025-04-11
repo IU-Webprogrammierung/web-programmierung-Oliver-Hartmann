@@ -498,6 +498,10 @@ textarea {
 
 }
 
+#home {
+  font-weight: 300;
+}
+
 /* Fokus */
 button:focus-visible,
 a:focus-visible,
