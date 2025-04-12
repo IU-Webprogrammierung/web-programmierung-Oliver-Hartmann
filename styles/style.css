@@ -165,16 +165,6 @@ header {
       visibility 0s linear var(--transistion-time),
       color var(--transistion-time) ease-in-out;
 
-    #darkModeToggler {
-      color: var(--color-main);
-      border-bottom: none;
-      transition:
-        color var(--transistion-time) ease-in-out;
-    }
-
-    #darkModeToggler:hover {
-      color: var(--color-highlight);
-    }
 
 
     @media only screen and (min-width: 824px) {
@@ -220,11 +210,23 @@ header {
     }
   }
 
-#darkModeToggler {
-  background-color: var(--color-background);
-  border: none;
-  font-size: var(--font-laptop);
-}
+
+  #darkModeToggler {
+    color: var(--color-main);
+    background-color: var(--color-background);
+    padding-top: 2px;
+    border: none;
+    cursor: pointer;
+    font-size: var(--font-laptop);
+    transition:
+      color var(--transistion-time) ease-in-out,
+      rotate var(--transistion-time) ease-in-out;
+  }
+
+  #darkModeToggler:hover {
+
+    rotate: 90deg;
+  }
 
   /* Hamburger Menu Icon für Mobile Menu */
 
@@ -652,7 +654,7 @@ h2.center {
     padding: 0 0.5em 0 0.5em;
     opacity: 0.8;
     transition: opacity var(--transistion-time) ease-in-out,
-    padding var(--transistion-time) ease-in-out;
+      padding var(--transistion-time) ease-in-out;
   }
 
 
@@ -770,7 +772,8 @@ section {
 
   /* show more button */
   +#load-more-button {
-cursor: pointer;;
+    cursor: pointer;
+    ;
     margin: 1rem 0;
   }
 
@@ -898,13 +901,13 @@ cursor: pointer;;
 
       i {
         transition:
-        padding var(--transistion-time) ease-in-out;
+          padding var(--transistion-time) ease-in-out;
       }
 
       &:hover {
         padding-right: 0.5rem;
 
-        i{
+        i {
           padding-left: 0.8rem;
         }
       }
