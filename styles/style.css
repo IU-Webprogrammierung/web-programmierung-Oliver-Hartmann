@@ -220,6 +220,12 @@ header {
     }
   }
 
+#darkModeToggler {
+  background-color: var(--color-background);
+  border: none;
+  font-size: var(--font-laptop);
+}
+
   /* Hamburger Menu Icon für Mobile Menu */
 
   #hamburger-icon {
@@ -230,6 +236,8 @@ header {
     display: block;
     margin-right: var(--side-margin);
     border: none;
+    background-color: var(--color-background);
+
 
     &.hamburger .line {
       width: 24px;
