@@ -294,63 +294,72 @@ function concertDates() {
 }
 
 
-// --- Load More Button ---
-
+// --- Show More Button ---
 
 // get selectors as variables
-const loadMore = document.querySelector("#load-more-button");
-const grid = document.querySelector(".grid-4");
-const gridItems = grid.getElementsByTagName("li");
 var isShowAll = false;
+const loadMoreBtn = document.querySelector("#load-more-button");
+const grid = document.querySelector(".grid-4");
 
-// add eventlistener to load more button
+// - check if page contains the grid-4 with itmes
 
-loadMore.addEventListener("click", function () {
+if (grid) {
 
-  // check if showAll is not true
+  // get grid-4 items as a collection
 
-  if (!isShowAll) {
+  gridItems = grid.querySelectorAll("li");
 
-    // if so, add class to show all grid items to the li tags of all grid elementes
+  // add eventlistener to load more button
 
-    for (let i = 0; i < gridItems.length; i++) {
-      gridItems[i].classList.add("all-grid-items");
+  loadMoreBtn.addEventListener("click", function () {
 
-      // set showAll to true
+    // check if showAll is not true
 
-      isShowAll = true;
+    if (!isShowAll) {
 
-      // change button text
+      // if so, add class to show all grid items to the li tags of all grid elementes
 
-      loadMore.innerText = "show less";
-    }
-
-  } else {
-
-    // if its not true
-    // smooth scroll to the start of the grid
-
-    document.querySelector("#grid-4").scrollIntoView({
-      behavior: "smooth"
-    })
-
-    // wait 400ms for scrooling to be finished
-
-    setTimeout(() => {
       for (let i = 0; i < gridItems.length; i++) {
+        gridItems[i].classList.add("all-grid-items");
 
-        // then remove class to show all items from li tags of all grid elements
+        // set showAll to true
 
-        gridItems[i].classList.remove("all-grid-items");
-
-        // seit showAll to false
-
-        isShowAll = false;
+        isShowAll = true;
 
         // change button text
-        loadMore.innerText = "show more";
 
+        loadMoreBtn.innerText = "show less";
       }
-    }, 400);
-  }
-});
+
+    } else {
+
+      // if its not true
+      // smooth scroll to the start of the grid
+      
+      // scroll down for to not get hidden by topnavbar
+      
+      const yOffset = -83; 
+      const y = document.querySelector("#grid-4").getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
+
+      // wait 400ms for scrooling to be finished
+
+      setTimeout(() => {
+        for (let i = 0; i < gridItems.length; i++) {
+
+          // then remove class to show all items from li tags of all grid elements
+
+          gridItems[i].classList.remove("all-grid-items");
+
+          // seit showAll to false
+
+          isShowAll = false;
+
+          // change button text
+          loadMoreBtn.innerText = "show more";
+
+        }
+      }, 400);
+    }
+  });
+}
