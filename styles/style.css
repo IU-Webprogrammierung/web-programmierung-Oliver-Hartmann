@@ -607,20 +607,19 @@ h2.center {
   border: none;
   background-color: var(--color-main);
   color: var(--color-background);
-  filter: drop-shadow(3px 3px 3px var(--color-highlight));
+  font-weight: var(--font-weight);
 
   transition:
     background-color var(--transistion-time) ease-in-out,
-    border-color var(--transistion-time) ease-in-out,
     color var(--transistion-time) ease-in-out,
-    filter var(--transistion-time) ease-in-out;
+    padding var(--transistion-time) ease-in-out;
 
   &:hover {
     background-color: var(--color-highlight);
     color: var(--white);
-    filter: none;
-
   }
+
+
 }
 
 /* Link als Navigations-Button */
@@ -641,7 +640,7 @@ h2.center {
     color var(--transistion-time) ease-in-out;
 
   i {
-    padding: 0 1rem 0 0.5rem;
+    padding: 0 0.5em 0 0.5em;
     opacity: 0.8;
     transition: opacity var(--transistion-time) ease-in-out;
   }
@@ -755,7 +754,7 @@ section {
 
   /* show more button */
   +#load-more-button {
-    display: inline;
+cursor: pointer;;
     margin: 1rem 0;
   }
 
@@ -880,6 +879,19 @@ section {
       margin-top: 1rem;
       line-height: 1;
       padding: 0.8rem;
+
+      i {
+        transition:
+        padding var(--transistion-time) ease-in-out;
+      }
+
+      &:hover {
+        padding-right: 0.5rem;
+
+        i{
+          padding-left: 0.8rem;
+        }
+      }
     }
 
     @media only screen and (min-width: 824px) {
