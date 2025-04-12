@@ -109,9 +109,8 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 2;
   background-color: var(--color-background);
-
+  z-index: 100;
 
   /* Top Navigation Container Mobile */
 
@@ -123,7 +122,6 @@ header {
     flex-direction: column;
     row-gap: 0rem;
     column-gap: 4rem;
-
     padding-left: 0.75rem;
     padding-right: 0.75rem;
     width: fit-content;
@@ -318,6 +316,7 @@ nav a {
   margin-left: auto;
   margin-right: auto;
   top: 82px;
+  z-index: -10;
 
   /* Position Hero Text */
 
@@ -365,7 +364,7 @@ nav a {
   background-color: var(--color-background);
   padding-top: 2rem;
   position: relative;
-  z-index: 1;
+  z-index: 10;
   top: 82px;
 
   @media only screen and (min-width: 824px) {
@@ -377,7 +376,7 @@ nav a {
   background-color: var(--color-feature-background);
   padding-top: 0rem;
   position: relative;
-  z-index: 1;
+  z-index: 10;
   top: 82px;
 
   section {
