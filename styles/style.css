@@ -1,84 +1,100 @@
-/* Variablen Definitionen */
+/*++++++++++++++++++++++*/
+/*                      */
+/* variable definitions */
+/*                      */
+/*++++++++++++++++++++++*/
+
 :root {
-  /* Farbthema */
+  /* theme colors */
   --white: #fafafa;
-  --graphit: #222222;
   --petrol: #4f6d7a;
   --silver: #e9e9e9;
   --black: #030303;
   --dark-grey: #222;
   --light-grey: #bbbbbb;
+  --color-focus: #f39c12;
 
-  /* NOCH NICHT VERWENDET*/
-  --blue: #7a889a;
-  --beige: #d4b996;
-  --terra: #c17c52;
+  /*++++++++++++++++++++++*/
+  /*                      */
+  /*     light mode       */
+  /*                      */
+  /*++++++++++++++++++++++*/
 
-  /* Hauptfarbe */
+  /* text colors */
   --color-main: var(--black);
   --color-main-title: var(--white);
   --color-hero-text: var(--light-grey);
   --color-text: var(--dark-grey);
 
 
-  /* Hintergrundfarbe */
+  /* background color */
   --color-background: var(--white);
 
-  /* Hover Farbe */
+  /* hover color */
   --color-highlight: var(--petrol);
 
-  /* Farbe für Feature Bereich */
+  /* colors for feature section */
   --color-text-feature: var(--black);
   --color-feature-background: var(--silver);
 
-  /* Farbe für Dekorationen / Tabellen*/
+  /* color for decoration */
   --color-decoration: var(--light-grey);
 
-  /* Font Weigth */
+
+  /* other variables */
+
+  /* font weight */
   --font-weight: 200;
 
-  /* Animationszeit */
+  /* animation duration */
   --transistion-time: 300ms;
 
-  /* maximale Breite der Darstellung */
+  /* maximal width for content */
   --maxwidth: 1200px;
 
-  /* Seitenabstand */
-  --side-margin: 3vw;
-  --side-padding: 0.75rem;
+  /* side spaceing for content */
+  --side-padding: 16px;
 
-  /*Schriftgröße mobile */
-  --font-mobile: 15px;
+  /* fontsize mobile */
+  --font-mobile: 1rem;
 
-  /* Schriftgröße tablet */
-  --font-tablet: 17px;
+  /* fontsize tablet */
+  --font-tablet: 1.05rem;
 
-  /* Laptop */
-  --font-laptop: 18px;
+  /* fontsize laptop */
+  --font-laptop: 1.1rem;
 
 }
 
+/*++++++++++++++++++++++++++++++*/
+/*                              */
+/*    darkmode colors           */
+/*                              */
+/*++++++++++++++++++++++++++++++*/
+
 .dark-mode {
-  /* Hauptfarbe */
+  /* color for text */
   --color-main: var(--white);
   --color-main-title: var(--white);
   --color-hero-text: var(--light-grey);
   --color-text: var(--light-grey);
 
-  /* Hintergrundfarbe */
+  /* background color */
   --color-background: var(--black);
 
-  /* Hover Farbe */
+  /* hover color */
   --color-highlight: var(--petrol);
 
-  /* Farbe für Feature Bereich */
+  /* colors for feature section */
   --color-text-feature: var(--white);
   --color-feature-background: var(--dark-grey);
 
-  /* Farbe für Dekorationen / Tabellen*/
+  /* color for decoration */
   --color-decoration: var(--dark-grey);
 }
 
+
+/* remove all margins and paddings by default */
 
 * {
   box-sizing: border-box;
@@ -102,7 +118,7 @@ body {
   scroll-behavior: smooth;
 }
 
-/* Sticky Header mit Menü */
+/* Sticky Header with menu */
 
 header {
 
@@ -112,7 +128,7 @@ header {
   background-color: var(--color-background);
   z-index: 100;
 
-  /* Top Navigation Container Mobile */
+  /* Top Navigation container mobile */
 
   #topnav-bar {
     padding-top: 2rem;
@@ -122,9 +138,11 @@ header {
     flex-direction: column;
     row-gap: 0rem;
     column-gap: 4rem;
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+    padding-left: var(--side-padding);
+    padding-right: var(--side-padding);
     width: fit-content;
+
+    /* Top navigation container laptop */
 
     @media only screen and (min-width: 824px) {
       flex-direction: row;
@@ -133,6 +151,8 @@ header {
       margin-right: auto;
       width: 100%;
     }
+
+    /* navigation links inside */
 
     a,
     li {
@@ -144,7 +164,7 @@ header {
 
   }
 
-  /* Top Navigation Menü Link Liste Mobile */
+  /* Top Navigation menu link liste mobile */
 
   #topnav-menu {
     display: flex;
@@ -165,7 +185,7 @@ header {
       visibility 0s linear var(--transistion-time),
       color var(--transistion-time) ease-in-out;
 
-
+    /* Top Navigation menu link liste desktop */
 
     @media only screen and (min-width: 824px) {
       flex-direction: row;
@@ -177,10 +197,15 @@ header {
       height: fit-content;
     }
 
+    /* Top Navigation menu link liste mobile */
+
     @media only screen and (max-width: 823px) {
+
+      /* mobile menu default hidden */
 
       transform: translateY(-32px);
       padding-top: 0rem;
+      padding-right: var(--side-padding);
       opacity: 0;
       max-height: 0;
 
@@ -189,14 +214,12 @@ header {
         text-align: center;
       }
 
-      a {
-        transform: translateX(var(--side-margin));
-      }
+      /* mobile menu visible */
 
       &.visible {
         visibility: visible;
-        padding-top: 5rem;
-        padding-bottom: 5rem;
+        padding-top: 10dvh;
+        padding-bottom: 10dvh;
         max-height: 500px;
         transform: translateY(0);
         opacity: 1;
@@ -210,6 +233,7 @@ header {
     }
   }
 
+  /* dark mode toggler */
 
   #darkModeToggler {
     color: var(--color-main);
@@ -223,12 +247,13 @@ header {
       rotate var(--transistion-time) ease-in-out;
   }
 
+  /* dark mode toggler hover anmiation */
   #darkModeToggler:hover {
 
     rotate: 90deg;
   }
 
-  /* Hamburger Menu Icon für Mobile Menu */
+  /* hamburger icon for mobile menu */
 
   #hamburger-icon {
     top: 0px;
@@ -236,10 +261,11 @@ header {
     right: 0px;
     margin-top: 1.8rem;
     display: block;
-    margin-right: var(--side-margin);
+    margin-right: var(--side-padding);
     border: none;
     background-color: var(--color-background);
 
+    /* animation for hamburger icon */
 
     &.hamburger .line {
       width: 24px;
@@ -256,6 +282,8 @@ header {
     .hamburger:hover {
       cursor: pointer;
     }
+
+    /* draw hamburger icons with lines */
 
     &.is-active .line:nth-child(2) {
       opacity: 0;
@@ -275,7 +303,7 @@ header {
       transform: translateY(-7px) rotate(45deg);
     }
 
-
+    /* hamburger icon hidden on laptop */
 
     @media only screen and (min-width: 824px) {
       display: none;
@@ -284,7 +312,7 @@ header {
 
 }
 
-/* Schriftgestaltung für alle Navigations Items*/
+/* text design for all navigation items in header and footer */
 
 nav a {
   text-decoration: none;
@@ -302,20 +330,17 @@ nav a {
 
   &.active {
     border-bottom: 4px solid var(--color-main);
-
   }
-
 }
 
 
 /*++++++++++++++++++++++++++++++*/
 /*                              */
-/*    Hero Section              */
+/*    hero section              */
 /*                              */
 /*++++++++++++++++++++++++++++++*/
 
-
-/* Hero Bild */
+/* hero image */
 
 .hero-image {
   height: clamp(360px, 80vw, 80dvh);
@@ -328,7 +353,7 @@ nav a {
   top: 82px;
   z-index: -10;
 
-  /* Position Hero Text */
+  /* position hero text */
 
   .hero-text {
     text-align: center;
@@ -339,8 +364,7 @@ nav a {
     line-height: 1;
     width: 100%;
 
-
-    /* Seitentitel als Hero Text */
+    /* page title as hero text */
 
     h1 {
       color: var(--color-main);
@@ -353,21 +377,20 @@ nav a {
       font-weight: 100;
     }
 
-
+    /* second line hero text */
     p {
       color: var(--color-hero-text);
       padding-bottom: 0rem;
     }
 
     @media only screen and (max-height: 400px) {
-      bottom: 20%;
+      bottom: 30%;
     }
   }
 
 }
 
-
-/* Inner Container mit Hero Bild */
+/* outer container for content with hero section */
 
 .outer {
 
@@ -382,6 +405,8 @@ nav a {
   }
 }
 
+/* outer container for feature section */
+
 .outer-feature {
   background-color: var(--color-feature-background);
   padding-top: 0rem;
@@ -394,7 +419,7 @@ nav a {
   }
 }
 
-/* Inner Container ohne Hero Bild */
+/* outer container for page without hero section */
 
 .outer-single {
   background-color: var(--color-background);
@@ -414,9 +439,11 @@ nav a {
 
 /*++++++++++++++++++++++++++++++*/
 /*                              */
-/*     Schrift                  */
+/*     font                     */
 /*                              */
 /*++++++++++++++++++++++++++++++*/
+
+/* custom font face */
 
 @font-face {
   font-family: "Roboto";
@@ -424,7 +451,7 @@ nav a {
 }
 
 
-/* Seitentitel ohne Hero Bild*/
+/* pagetitle headline without a hero section */
 
 h1.single-title {
   color: var(--color-main);
@@ -441,7 +468,7 @@ h1.single-title {
   }
 }
 
-/* Überschrift H2 */
+/* headline h2 */
 
 h2 {
   color: var(--color-main);
@@ -462,7 +489,7 @@ h2 {
   }
 }
 
-/* Überschrift H3 */
+/* headline h3*/
 
 h3 {
   color: var(--color-main);
@@ -471,13 +498,14 @@ h3 {
   font-weight: var(--font-weight);
 }
 
-/* Überschrift H4 */
+/* headline h4 */
 
 h4 {
   color: var(--color-main);
 }
 
-/* Schrift */
+/* font size all other text elements */
+
 p,
 address,
 a,
@@ -507,17 +535,19 @@ textarea {
 
 }
 
+/* home link on navbar */
+
 #home {
   font-weight: 300;
 }
 
-/* Fokus */
+/* focus */
 button:focus-visible,
 a:focus-visible,
 a:focus-visible figure,
 input:focus-visible,
 textarea:focus-visible {
-  outline: 3px solid #f39c12;
+  outline: 3px solid var(--color-focus);
   z-index: 9999;
   border-radius: 1px;
   overflow: visible;
@@ -525,7 +555,7 @@ textarea:focus-visible {
 
 
 
-/* Absatz */
+/* paragraph */
 
 p {
   color: var(--color-text);
@@ -533,7 +563,7 @@ p {
   margin: 0;
 }
 
-/* Adresse */
+/* address */
 
 address {
   color: var(--color-text);
@@ -562,7 +592,7 @@ a {
   }
 }
 
-/* Link mit Icon */
+/* link with icon */
 
 .link-with-icon {
   text-decoration: none;
@@ -580,9 +610,7 @@ a {
   }
 }
 
-
-/* Ausrichtung zentriert */
-
+/* center position where its needed */
 
 .center {
   text-align: center;
@@ -594,7 +622,6 @@ h2.center {
   @media only screen and (min-width: 576px) {
     text-align: center;
   }
-
 }
 
 
@@ -604,8 +631,7 @@ h2.center {
 /*                              */
 /*++++++++++++++++++++++++++++++*/
 
-
-/* Link als Button */
+/* call to action button */
 
 .button-cta {
   display: inline-block;
@@ -628,11 +654,9 @@ h2.center {
     background-color: var(--color-highlight);
     color: var(--white);
   }
-
-
 }
 
-/* Link als Navigations-Button */
+/* navigation link with button style */
 
 .button-nav {
   color: var(--color-main);
@@ -674,7 +698,7 @@ h2.center {
   }
 }
 
-/* Spacer kein Abstand */
+/* spacer for no space on top and bottom where its needed */
 
 .mtb-0 {
   padding-top: 0px;
@@ -682,7 +706,7 @@ h2.center {
   margin-bottom: 0px;
 }
 
-/* Spacer Abstand oben 0 und unten größer*/
+/* spacer for a little space on the bottom where its neede */
 .mtb-2 {
   padding-top: 0px;
   padding-bottom: 1rem;
@@ -692,7 +716,7 @@ h2.center {
   }
 }
 
-/* unsortierte Liste ohne Punkte */
+/* unsorted list */
 
 ul {
   list-style-type: none;
@@ -719,7 +743,7 @@ ul {
 /*                              */
 /*++++++++++++++++++++++++++++++*/
 
-/* Abschnitt mit Abständen */
+/* sections */
 
 section {
   max-width: var(--maxwidth);
@@ -739,7 +763,7 @@ section {
   }
 }
 
-/* Grid für bis zu 4 Spalten */
+/* Grid with up to 4 columns */
 
 .grid-4 {
   display: grid;
@@ -766,43 +790,49 @@ section {
   }
 
   /* show all entries in the grid */
+
   .all-grid-items {
     display: list-item;
   }
 
   /* show more button */
+
   +#load-more-button {
     cursor: pointer;
     ;
     margin: 1rem 0;
   }
 
-  /* Bis 575px: nur das erste */
+  /* up to  575px: show only first grid element */
+
   li:nth-of-type(1) {
     display: list-item;
   }
 
-  /* 576px bis 823px: erstes & zweites */
+  /* 576px to 823px: only first and second element */
+
   @media (min-width: 576px) and (max-width: 823px) {
     li:nth-of-type(-n+2) {
       display: list-item;
     }
   }
 
-  /* Ab 824px: alle */
+  /* from 824px show all elements */
+
   @media (min-width: 824px) {
     li {
       display: list-item;
     }
 
+    /* hide show more button */
+
     +#load-more-button {
       display: none;
 
     }
-
   }
 
-  /* setup transition for hover*/
+  /* setup transition for hover on link when its a figure */
 
   a figure {
     scale: 1;
@@ -826,57 +856,43 @@ section {
 
   }
 
-  /* Hintergrund Bildunterschrift im Grid */
+  /* text under the figure */
 
-  figure.grid {
+  figcaption {
+    padding: 1rem 0.5rem 1rem 0.5rem;
+    margin: 0rem;
+    color: var(--color-text);
+    text-transform: uppercase;
 
-    p,
+    /* Überschrift H3 */
+
     h3 {
-      padding-bottom: 0;
-      padding-left: 0;
+      text-align: center;
+      font-size: var(--font-mobile);
+      line-height: 1.3;
+      font-weight: 300;
+      margin: 0;
+
+      @media only screen and (min-width: 576px) {
+        font-size: var(--font-tablet);
+      }
+
+      @media only screen and (min-width: 824px) {
+        font-size: var(--font-laptop);
+      }
     }
 
-
-    /* Untertitel für Bild*/
-
-    figcaption {
-      padding: 1rem 0.5rem 1rem 0.5rem;
-      margin: 0rem;
-      color: var(--color-text);
-      text-transform: uppercase;
-
-      /* Überschrift H3 */
-
-      h3 {
-        text-align: center;
-        font-size: var(--font-mobile);
-        line-height: 1.3;
-        font-weight: 300;
-        margin: 0;
-
-        @media only screen and (min-width: 576px) {
-          font-size: var(--font-tablet);
-        }
-
-        @media only screen and (min-width: 824px) {
-          font-size: var(--font-laptop);
-        }
-      }
-
-      p {
-        text-align: center;
-        font-weight: 200;
-        line-height: 1.3;
-      }
-
+    p {
+      text-align: center;
+      font-weight: var(--font-weight);
+      line-height: 1.3;
+      padding-bottom: 0;
     }
 
   }
-
-
 }
 
-/* Grid Container für Concert Dates */
+/* Grid Container for concert dates */
 
 .grid-table-container {
   display: grid;
@@ -884,15 +900,15 @@ section {
   row-gap: 0.5rem;
   margin-bottom: 1rem;
 
-
-
-  /* Grid Items für Concert Dates */
+  /* Grid Items for concert dates */
 
   .grid-table-row {
     display: grid;
     grid-template-columns: 50% 50%;
     padding: 0;
     align-items: center;
+
+    /* make the call to action button for tickts a bit smaller */
 
     .button-cta {
       margin-top: 1rem;
@@ -924,7 +940,6 @@ section {
 
   section.grid-table-row {
     margin-bottom: 0rem;
-
   }
 
   h3,
@@ -933,11 +948,19 @@ section {
     padding: 0rem;
 
   }
-
 }
 
+/* line */
 
-/* 3 Spalten für Text */
+.table-line {
+  border-color: var(--color-decoration);
+  border-width: 0.5px;
+  width: 100%;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* columns for long text */
 
 .columns-2,
 .columns-3 {
@@ -968,7 +991,7 @@ section {
 }
 
 
-/* Grid mit bis zu 2 Spalten */
+/* grid for upt to 2 columns */
 
 .grid-2 {
   display: grid;
@@ -985,10 +1008,14 @@ section {
     grid-template-columns: 47.5% 47.5%;
     column-gap: 5%;
 
+    /* swap column for image */
+
     .grid-image-right {
       grid-column: 2;
       grid-row: 1;
     }
+
+    /* swap column for text */
 
     .grid-text-left {
       grid-column: 1;
@@ -1013,7 +1040,7 @@ section {
   }
 }
 
-/* Grid Feature mit bis 2 Spalten */
+/* Grid Feature with 2 columns */
 
 .grid-2-feature {
   display: grid;
@@ -1022,8 +1049,8 @@ section {
   padding-top: 2rem;
   padding-bottom: 2rem;
   row-gap: 2rem;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: var(--side-padding);
+  padding-right: var(--side-padding);
 
   h1 {
     color: var(--color-text-feature);
@@ -1073,7 +1100,6 @@ section {
       margin-bottom: 2rem;
     }
 
-
     .button-nav {
       margin-top: 5%;
     }
@@ -1085,17 +1111,13 @@ section {
     column-gap: 10%;
 
   }
-
-
 }
 
-/* Container für Section Feature */
+/* Container for Section Feature with 1 bigger columns within a page */
 
 .section-feature-container {
   width: 100%;
   background-color: var(--color-background);
-
-  /* Section Feature mit 1 Spalte */
 
   .section-feature {
     max-width: calc(var(--maxwidth)/1.5);
@@ -1110,15 +1132,7 @@ section {
   }
 }
 
-/* Abschnittstrenner mit Linie */
 
-.table-line {
-  border-color: var(--color-decoration);
-  border-width: 0.5px;
-  width: 100%;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
 
 /*++++++++++++++++++++++++++++++*/
 /*                              */
@@ -1126,7 +1140,7 @@ section {
 /*                              */
 /*++++++++++++++++++++++++++++++*/
 
-/* Bild */
+/* image square with round corners */
 
 .img-11-s {
   width: 100%;
@@ -1134,7 +1148,7 @@ section {
   aspect-ratio: 1 / 1;
 }
 
-/* Bild im Grid */
+/* image in a grid without round cornders */
 
 .img-grid {
   width: 100%;
@@ -1142,19 +1156,18 @@ section {
 
 }
 
-/* Bild mit Untertitel */
+/* image with subtitle */
 
 figure {
   margin: 0;
   max-width: fit-content;
 }
 
-
 /* Icons */
 
 i {
 
-  /* Icon rechts neben Link */
+  /* Icon on the ride side of a Link */
 
   &.link {
     padding-left: 0.5rem;
@@ -1162,11 +1175,10 @@ i {
 
 }
 
-
 /* Spotify Player */
+
 .spotify-player {
   box-sizing: content-box;
-
 }
 
 /* Youtube Player 16:9 */
@@ -1178,7 +1190,7 @@ i {
   box-sizing: content-box;
 }
 
-/* Video Player: 1/1 */
+/* Video Player: 1:1 */
 
 .video-sq {
   aspect-ratio: 1 / 1;
@@ -1205,33 +1217,26 @@ footer {
   position: relative;
   top: 82px;
 
+  display: grid;
+  grid-template-columns: 100%;
+  row-gap: 2rem;
+  column-gap: 0rem;
+
+  .copyright {
+    grid-column: 1 / -1;
+  }
+
   @media only screen and (min-width: 576px) {
     padding-bottom: 5rem;
   }
 
   @media only screen and (min-width: 824px) {
+    grid-template-columns: 50% 50%;
+    row-gap: 5rem;
     padding-bottom: 5rem;
   }
 
-  /* Footer Container Grid */
-
-  .grid-footer {
-    display: grid;
-    grid-template-columns: 100%;
-    row-gap: 2rem;
-    column-gap: 0rem;
-
-    .copyright {
-      grid-column: 1 / -1;
-    }
-
-    @media only screen and (min-width: 824px) {
-      grid-template-columns: 50% 50%;
-      row-gap: 5rem;
-    }
-  }
-
-  /* Footer Navigation */
+  /* Footer navigation items flex container */
 
   .footer-nav {
     display: flex;
@@ -1253,20 +1258,19 @@ footer {
     }
   }
 
-  /* Footer Navigationselemente */
+  /* Footer navigation items */
 
   .footer-nav-item {
     width: fit-content;
     text-align: center;
     font-weight: var(--font-weight);
 
-
     @media only screen and (min-width: 576px) {
       width: fit-content;
     }
   }
 
-  /* Footer Socialmedia Icons Container */
+  /* Footer social media icon container */
 
   .footer-social-icons {
 
@@ -1285,7 +1289,7 @@ footer {
     }
   }
 
-  /* Bild Social Media Icons */
+  /* footer social media icons */
 
   .icon-social {
     font-size: 24px;
@@ -1296,11 +1300,9 @@ footer {
       color var(--transistion-time) ease-in-out;
 
     &:hover {
-      scale: 1.2;
-      color: var(--color-highlight);
+      scale: 1.3;
     }
   }
-
 }
 
 /*++++++++++++++++++++++++++++++*/
@@ -1315,23 +1317,18 @@ footer {
   height: 44px;
   width: 44px;
   position: fixed;
-  /* Fixed/sticky position */
   bottom: 2rem;
-  /* Place the button at the bottom of the page */
   right: 3vw;
   z-index: 99;
   padding-top: 2px;
   text-align: center;
   border: solid 2px;
   border-radius: 50%;
-  /* rund */
   background-color: var(--color-decoration);
   color: var(--color-text);
   cursor: pointer;
-  /* Add a mouse pointer on hover */
   font-size: var(--font-mobile);
   opacity: 0.8;
-  /* leicht transparent */
   transition: var(--transistion-time);
 
   &:hover {
