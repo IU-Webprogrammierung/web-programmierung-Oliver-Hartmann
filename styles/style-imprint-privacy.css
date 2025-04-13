@@ -11,7 +11,7 @@ h2 {
   text-transform: none;
   line-height: 1.5;
   letter-spacing: 0;
-  font-weight: 100;
+  font-weight: var(--font-weight);
 }
 
 h3 {
@@ -19,13 +19,13 @@ h3 {
   text-transform: none;
   line-height: 1.5;
   letter-spacing: 0;
-  font-weight: 100;
+
 }
 
 h4 {
   font-size: clamp(var(--font-mobile), 2.5vw, var(--font-laptop));
   line-height: 1.5;
-  font-weight: 100;
+  font-weight: var(--font-weight);
 }
 
 h2, h3, h4 {
