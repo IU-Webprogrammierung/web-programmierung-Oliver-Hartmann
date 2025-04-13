@@ -395,13 +395,13 @@ nav a {
 .outer {
 
   background-color: var(--color-background);
-  padding-top: 2rem;
+  padding-top: 32px;
   position: relative;
   z-index: 10;
   top: 82px;
 
   @media only screen and (min-width: 824px) {
-    padding-top: 5rem;
+    padding-top: 80px;
   }
 }
 
@@ -429,10 +429,11 @@ nav a {
   position: relative;
   z-index: 1;
   top: 82px;
-  padding-top: 2rem;
+  padding-top: 32px;
 
   @media only screen and (min-width: 824px) {
-    padding-top: 5rem;
+    padding-top: 80px;
+
   }
 }
 
@@ -744,22 +745,21 @@ ul {
 /*++++++++++++++++++++++++++++++*/
 
 /* sections */
-
 section {
   max-width: var(--maxwidth);
   margin-left: auto;
   margin-right: auto;
-  padding-bottom: 2rem;
+  padding-bottom: 32px;
 
   padding-left: var(--side-padding);
   padding-right: var(--side-padding);
 
   @media only screen and (min-width: 576px) {
-    padding-bottom: 5rem;
+    padding-bottom: 80px;
   }
 
   @media only screen and (min-width: 824px) {
-    padding-bottom: 10rem;
+    padding-bottom: 160px;
   }
 }
 
@@ -1046,8 +1046,8 @@ section {
   display: grid;
   grid-template-columns: 100%;
   background-color: var(--color-feature-background);
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 32px;
+  padding-bottom: 32px;
   row-gap: 2rem;
   padding-left: var(--side-padding);
   padding-right: var(--side-padding);
@@ -1091,8 +1091,8 @@ section {
   }
 
   @media only screen and (min-width: 824px) {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-top: 80px;
+    padding-bottom: 80px;
     grid-template-columns: 47.5% 47.5%;
     column-gap: 5%;
 
@@ -1106,7 +1106,7 @@ section {
 
   }
 
-  @media only screen and (min-width: 1200px) {
+    @media only screen and (min-width: 1200px) {
     grid-template-columns: 45% 45%;
     column-gap: 10%;
 
@@ -1208,7 +1208,7 @@ i {
 /* Footer Container */
 
 footer {
-  padding-bottom: 2rem;
+  padding-bottom: 32px;
   max-width: var(--maxwidth);
   margin-left: auto;
   margin-right: auto;
@@ -1227,13 +1227,13 @@ footer {
   }
 
   @media only screen and (min-width: 576px) {
-    padding-bottom: 5rem;
+    padding-bottom: 80px;
   }
 
   @media only screen and (min-width: 824px) {
     grid-template-columns: 50% 50%;
     row-gap: 5rem;
-    padding-bottom: 5rem;
+
   }
 
   /* Footer navigation items flex container */

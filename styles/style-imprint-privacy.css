@@ -59,13 +59,13 @@ ol {
 }
 
 article {
-  margin-bottom: 2rem;
+  margin-bottom: 32px;
 }
 
 @media only screen and (min-width: 576px) {
 
   article {
-    margin-bottom: 3rem;
+    margin-bottom: 48px;
   }
 
   ol {
@@ -73,7 +73,7 @@ article {
 
   }
   h1.single-title {
-    margin-bottom: 2.5rem;
+    margin-bottom: 40px;
   }
 
   h2, h3, h4 {
@@ -86,7 +86,7 @@ article {
 @media only screen and (min-width: 824px) {
 
   h1.single-title {
-    margin-bottom: 5rem;
+    margin-bottom: 80px;
   }
 
 h2, h3, h4 {
@@ -100,7 +100,7 @@ h2, h3, h4 {
   }
 
   section {
-    padding-bottom: 5rem;
+    padding-bottom: 80px;
   }
 
 }
