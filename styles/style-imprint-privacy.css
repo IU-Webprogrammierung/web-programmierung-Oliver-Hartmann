@@ -72,9 +72,6 @@ article {
     font-size: var(--font-tablet);
 
   }
-  h1.single-title {
-    margin-bottom: 40px;
-  }
 
   h2, h3, h4 {
     margin-bottom: 1rem;
