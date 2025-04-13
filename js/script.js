@@ -85,7 +85,6 @@ function highlightActiveLink() {
 // --- Dark Mode Toggler ---
 
 let darkMode = localStorage.getItem("darkMode");
-const darkModeToggle = document.querySelector("darkModeToggler");
 
 // enable dark mode
 
