@@ -109,7 +109,7 @@ if (darkMode === "enabled") {
 
 // --- function to toggle between light and dark mode ---
 
-function darkModeToggler() {
+function toggleDarkMode() {
 
   darkMode = localStorage.getItem("darkMode");
   if (darkMode !== "enabled") {
@@ -131,7 +131,7 @@ function darkModeToggler() {
 
 // --- toggle mobile menu with hamburger icon ---
 
-function mobileMenu() {
+function openMobileMenu() {
   var menu = document.getElementById("topnav-menu");
   var hamburger = document.getElementById("hamburger-icon");
   const isExpanded = hamburger.getAttribute('ariaExpanded') === 'true';

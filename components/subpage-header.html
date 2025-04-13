@@ -1,17 +1,26 @@
+<!-- Top Navigation Bar -->
 <nav id="topnav-bar">
+
     <a href="../index.html" aria-label="Go to homepage Insect O." id="home">Insect O.</a>
+
+    <!-- Menu Items -->
     <ul id="topnav-menu" aria-label="menu">
         <li><a href="../music.html" aria-label="Go to page music">Music</a></li>
-        <li> <a href="../live.html" aria-label="Go to page live">Live</a></li>
-        <li> <a href="../studio.html" aria-label="Go to page studio">Studio</a></li>
-        <li> <a href="../about.html" aria-label="Go to page about">About</a></li>
-        <li> <button onclick="darkModeToggler()" aria-label="toggle dark mode" role="button"
-                id="darkModeToggler"><i class="fa-solid fa-adjust" aria-hidden="false"></i></button></li>
+        <li><a href="../live.html" aria-label="Go to page live">Live</a></li>
+        <li><a href="../studio.html" aria-label="Go to page studio">Studio</a></li>
+        <li><a href="../about.html" aria-label="Go to page about">About</a></li>
+
+        <!-- Dark Mode Toggler -->
+        <li><button onclick="toggleDarkMode()" aria-label="toggle dark mode" id="darkModeToggler"><i
+                    class="fa-solid fa-adjust" aria-hidden="true"></i></button></li>
     </ul>
-    <button onclick="mobileMenu()" id="hamburger-icon" role="button"
-        aria-label="toggle mobile menu between open and close" aria-expanded="false" class="hamburger">
+
+    <!-- Hamburger Icon -->
+    <button onclick="openMobileMenu()" id="hamburger-icon" aria-label="toggle mobile menu between open and close"
+        aria-expanded="false" class="hamburger">
         <span class="line"></span>
         <span class="line"></span>
         <span class="line"></span>
-</button>
+    </button>
+
 </nav>
