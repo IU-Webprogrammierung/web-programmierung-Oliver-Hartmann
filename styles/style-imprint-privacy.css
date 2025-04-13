@@ -60,7 +60,13 @@ ol {
 
 article {
   margin-bottom: 32px;
+  
+  &.imprint, &.imprint p:last-of-type {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
 }
+
 
 @media only screen and (min-width: 576px) {
 
