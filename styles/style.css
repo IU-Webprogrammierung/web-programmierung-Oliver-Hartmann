@@ -8,11 +8,11 @@
   /* theme colors */
   --white: #fafafa;
   --petrol: #4f6d7a;
+  --petrol-darmkode: #618394;
   --silver: #e9e9e9;
   --black: #030303;
   --dark-grey: #222;
   --light-grey: #bbbbbb;
-  --color-focus: #f39c12;
 
   /*++++++++++++++++++++++*/
   /*                      */
@@ -83,7 +83,7 @@
   --color-background: var(--black);
 
   /* hover color */
-  --color-highlight: var(--petrol);
+  --color-highlight: var(--petrol-darmkode);
 
   /* colors for feature section */
   --color-text-feature: var(--white);
@@ -337,7 +337,7 @@ nav a {
   }
 
   &.active {
-    border-bottom: solid var(--color-main);
+    border-bottom: 3px solid var(--color-main);
   }
 
   vertical-align: middle;
@@ -558,7 +558,7 @@ a:focus-visible,
 a:focus-visible figure,
 input:focus-visible,
 textarea:focus-visible {
-  outline: 3px solid var(--color-focus);
+  outline: 3px solid var(--color-highlight);
   z-index: 9999;
   border-radius: 1px;
   overflow: visible;
