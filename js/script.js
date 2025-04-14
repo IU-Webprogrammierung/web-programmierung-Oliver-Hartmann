@@ -333,32 +333,26 @@ if (grid) {
     } else {
 
       // if its not true
-      // smooth scroll to the start of the grid
-      
-      // scroll down for to not get hidden by topnavbar
-      
-      const yOffset = -83; 
-      const y = document.querySelector("#grid-4").getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: y, behavior: "smooth" });
 
-      // wait 400ms for scrooling to be finished
+      // remove class li tags of all grid elements
 
-      setTimeout(() => {
-        for (let i = 0; i < gridItems.length; i++) {
+      for (let i = 0; i < gridItems.length; i++) {
 
-          // then remove class to show all items from li tags of all grid elements
+        gridItems[i].classList.remove("all-grid-items");
 
-          gridItems[i].classList.remove("all-grid-items");
+        // set showAll to false
 
-          // seit showAll to false
+        isShowAll = false;
 
-          isShowAll = false;
+        // change button text
+        loadMoreBtn.innerText = "show more";
 
-          // change button text
-          loadMoreBtn.innerText = "show more";
+      }
+            // scroll down for h2 releases not get hidden by topnavbar
 
-        }
-      }, 400);
+            const yOffset = -83;
+            const y = document.querySelector("#grid-4").getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({ top: y, behavior: "smooth" });
     }
   });
 }
