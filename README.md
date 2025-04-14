@@ -34,4 +34,4 @@ Es wurden folgende **Features** implementiert:
 - responsive Skalierung der Überschriften mit clamp()
 - visueller Focus für Bedienung mit Keyboard
 
-Die Website wurde in den Browsern Mozilla Firefox, Google Chrome sowie Apple Safarie getestet. Für den Test der Sprachausgabe wurde Voice Over auf Mac verwendet. Die Fehleruntersuchung wurden in den Google Chrome Developer Tools durchgeführt. Die Überprüfung der Barrierefreiheit mit Google Lighthouse ergab 100% Barrierefreiheit nach WCAG2.1 (AA) und WIA. 
+Die Website wurde in den Browsern Mozilla Firefox, Google Chrome sowie Apple Safarie getestet. Für den Test der Sprachausgabe wurde Voice Over auf Mac verwendet. Die Fehleruntersuchung wurden in den Google Chrome Developer Tools durchgeführt. Die Überprüfung der Barrierefreiheit mit Google Lighthouse ergab 100% Barrierefreiheit nach WCAG2.1 (AA) und WIA.
