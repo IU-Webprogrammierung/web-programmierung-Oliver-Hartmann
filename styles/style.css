@@ -662,7 +662,7 @@ h2.center {
     padding var(--transistion-time) ease-in-out;
 
   &:hover {
-    background-color: var(--color-highlight);
+    background-color: var(--petrol);
     color: var(--white);
   }
 }
@@ -688,23 +688,26 @@ h2.center {
   i {
     padding: 0 0.5em 0 0.5em;
     opacity: 0.8;
-    transition: opacity var(--transistion-time) ease-in-out,
+    transition:
+      opacity var(--transistion-time) ease-in-out,
       padding var(--transistion-time) ease-in-out;
   }
 
-
   &:hover {
     color: var(--white);
-    border: 1px solid var(--color-highlight);
-    background-color: var(--color-highlight);
-
-    &.nav-back {
-      padding-left: 0.5em;
-    }
+    border: 1px solid var(--petrol);
+    background-color: var(--petrol);
 
     i {
       opacity: 1;
-      padding-right: 0.8em;
+    }
+
+    &.nav-back {
+      padding-left: 0.5em;
+
+      i {
+        padding-right: 0.8em;
+      }
     }
   }
 }
