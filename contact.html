@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/style-contact.css">
+    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="5ebc2683-6a9d-4134-99b6-4a48490a81aa"
+        data-blockingmode="auto" type="text/javascript"></script>
     <script src="https://kit.fontawesome.com/f49718afc6.js" crossorigin="anonymous"></script>
     <title>Contact | Insect O.</title>
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.png">
@@ -31,12 +33,15 @@
             <!-- Contact information-->
             <section aria-label="contact information">
                 <p class="single-column">
-                    Please use the form below for sending booking requests or press enquiries. I am also happy to talk
-                    about music, production and technology. Feel free to drop me a message to say <cite>Hi</cite>.
+                    For booking requests or press enquiries please write an e-mail to oliver-AT-etui.records.de.</p>
+
+                <p> I am also happy to talk
+                    about music production, research or technology. Feel free to drop me a message to say
+                    <cite>Hi</cite>.
                 </p>
 
-                <!-- Contact Form-->
-                <form aria-label="contact form" id="contact-form">
+                <!-- Contact Form  -->
+                <form action="send.php" method="post" aria-label="contact form" id="contact-form">
 
                     <label for="subject">Subject:<br>
                         <select id="subject" name="subject" aria-label="Select a topic">
@@ -58,14 +63,22 @@
                     </label>
 
                     <label for="message">Message:<span aria-hidden="true"> *</span><br>
-                        <textarea id="message" name="your message" rows="4" cols="50" placeholder="your message"
-                            required aria-required="true"></textarea>
+                        <textarea id="message" name="yourmessage" rows="4" cols="50" placeholder="your message" required
+                            aria-required="true"></textarea>
                     </label>
 
                     <p aria-hidden="true">* = required</p>
                     <input type="submit" value="Submit" class="button-cta">
-
                 </form>
+
+                <div id="form-message">
+                    <script>
+                        const params = new URLSearchParams(window.location.search);
+                        if (params.get('success') === '1') {
+                            document.getElementById('form-message').innerHTML = '<p>Thank you for your message. Your message has been send.</p>';
+                        }
+                    </script>
+                </div>
             </section>
 
             <!-- Back To Homepage -->
@@ -85,6 +98,7 @@
     <button id="toTopButton" title="scroll to top" aria-label="scroll to top"><i aria-hidden="true"></i></button>
 
     <!-- JavaScript laden -->
+    <script src="js/headerfooter.js"></script>
     <script src="js/script.js"></script>
 
 </body>

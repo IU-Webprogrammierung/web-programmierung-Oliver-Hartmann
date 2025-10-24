@@ -2,7 +2,10 @@
 
 // load header and foot
 
-loadHeaderAndFooter();
+// loadHeaderAndFooter(); //
+
+constructHeader();
+constructFooter();
 
 // call scroll to top button
 
@@ -17,57 +20,6 @@ concertDates();
 // functions
 //
 
-
-//--- load header and functions ---
-
-function loadHeaderAndFooter() {
-
-  // check if subpage (single release) is loaded
-
-  isSubpage = document.getElementsByTagName("main")[0].classList.contains("subpage");
-
-  // if so, load special header and footer html
-
-  if (isSubpage) {
-
-    headerPath = "../components/subpage-header.html";
-    footerPath = "../components/subpage-footer.html";
-    loadHeader(headerPath);
-    loadFooter(footerPath);
-
-  } else {
-
-    // if not, load standard header and footer html
-
-    headerPath = "components/header.html";
-    footerPath = "components/footer.html";
-    loadHeader(headerPath);
-    loadFooter(footerPath);
-  }
-}
-
-// --- load header.html ---
-
-function loadHeader(headerPath) {
-  fetch(headerPath)
-    .then(res => res.text())
-    .then(html => {
-      document.querySelector("header").innerHTML = html;
-      highlightActiveLink();
-    });
-
-}
-
-// --- load footer.html ---
-
-function loadFooter(footerPath) {
-  fetch(footerPath)
-    .then(res => res.text())
-    .then(html => {
-      document.querySelector("footer").innerHTML = html;
-    });
-}
-
 // --- set active class for menu itmes ---
 
 function highlightActiveLink() {
@@ -78,7 +30,8 @@ function highlightActiveLink() {
   if (page === "music.html") links[1].classList.add("active");
   if (page === "live.html") links[2].classList.add("active");
   if (page === "studio.html") links[3].classList.add("active");
-  if (page === "about.html") links[4].classList.add("active");
+  if (page === "research.html") links[4].classList.add("active");
+  if (page === "about.html") links[5].classList.add("active");
 }
 
 
@@ -348,11 +301,11 @@ if (grid) {
         loadMoreBtn.innerText = "show more";
 
       }
-            // scroll down for h2 releases not get hidden by topnavbar
+      // scroll down for h2 releases not get hidden by topnavbar
 
-            const yOffset = -83;
-            const y = document.querySelector("#grid-4").getBoundingClientRect().top + window.pageYOffset + yOffset;
-            window.scrollTo({ top: y, behavior: "smooth" });
+      const yOffset = -83;
+      const y = document.querySelector("#grid-4").getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
     }
   });
 }
