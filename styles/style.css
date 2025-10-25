@@ -703,10 +703,10 @@ h2.center {
     }
 
     &.nav-back {
-      padding-left: 0.5em;
+      padding-left: 0.25em;
 
       i {
-        padding-right: 0.5em;
+        padding-right: 0.75em;
       }
     }
   }
@@ -1183,7 +1183,7 @@ i {
   /* Icon on the ride side of a Link */
 
   &.link {
-    padding-left: 0.5rem;
+    padding-left: 0.25em;
   }
 
 }
