@@ -6,3 +6,22 @@
 section.audio-player {
   margin-bottom: 0px !important
 }
+
+/* sections */
+section {
+  max-width: var(--maxwidth);
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 32px;
+
+  padding-left: var(--side-padding);
+  padding-right: var(--side-padding);
+
+  @media only screen and (min-width: 576px) {
+    padding-bottom: 80px;
+  }
+
+  @media only screen and (min-width: 824px) {
+    padding-bottom: 80px;
+  }
+}
