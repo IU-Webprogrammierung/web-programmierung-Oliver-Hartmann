@@ -929,6 +929,7 @@ section {
       padding: 0.5em;
 
       i {
+         padding-right: 0.5em;
         transition:
           padding var(--transistion-time) ease-in-out;
       }
