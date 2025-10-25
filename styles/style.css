@@ -931,6 +931,7 @@ section {
 
       i {
          padding-right: 0.6em;
+         padding-left: 0.3em;
         transition:
           padding var(--transistion-time) ease-in-out;
       }
@@ -940,7 +941,7 @@ section {
 
         i {
           padding-right: 0.3em;
-          padding-left: 0.9em;
+          padding-left: 0.6em;
         }
       }
     }
