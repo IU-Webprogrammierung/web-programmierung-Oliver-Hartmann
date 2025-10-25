@@ -184,7 +184,7 @@ function concertDates() {
 
       // construct headings and container
 
-      htmlTable = "<h2>Concerts</h2>";
+      htmlTable = "<h2>Dates</h2>";
       htmlTable += "<article class='grid-table-container'>";
       htmlTable += "<div class='grid-table-row'>";
       htmlTable += "<h3>Date</h3><h3>Show</h3><h3>City</h3><h3>Venu</h3><h3>Ticket</h3></div>";
@@ -212,6 +212,11 @@ function concertDates() {
           // if you, construct a cta button with link inside
           if (myArr[x].ticket.type == "url") (
             htmlTable += "<p><a href='" + myArr[x].ticket.url + "' class='button-cta' aria-label='buy ticket for Insect O. " + myArr[x].show + " at " + myArr[x].venu + "'>Buy Ticket<i class='fa-solid fa-arrow-right link' aria-hidden='true'></i></a></p>"
+
+          )
+
+                    if (myArr[x].ticket.type == "info") (
+            htmlTable += "<p><a href='" + myArr[x].ticket.url + "' class='button-cta' aria-label='more information about " + myArr[x].show + " at " + myArr[x].venu + "'>more info<i class='fa-solid fa-arrow-right link' aria-hidden='true'></i></a></p>"
 
           )
 

@@ -5,7 +5,7 @@
       "city": "Dresden",
       "venu": "Scheune Blechschloss",
       "ticket": {
-         "type": "url",
+         "type": "info",
          "url": "https://www.dave-festival.de"
       }
    }
