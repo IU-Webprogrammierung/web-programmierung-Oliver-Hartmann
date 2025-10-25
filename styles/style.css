@@ -934,10 +934,10 @@ section {
       }
 
       &:hover {
-        padding-right: 0.5em;
+        padding-right: 0.25em;
 
         i {
-          padding-left: 0.5em;
+          padding-left: 0.75em;
         }
       }
     }
