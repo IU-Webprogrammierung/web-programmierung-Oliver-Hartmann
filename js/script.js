@@ -187,7 +187,7 @@ function concertDates() {
       htmlTable = "<h2>Dates</h2>";
       htmlTable += "<article class='grid-table-container'>";
       htmlTable += "<div class='grid-table-row'>";
-      htmlTable += "<h3>Date</h3><h3>Show</h3><h3>City</h3><h3>Venu</h3><h3>Ticket</h3></div>";
+      //htmlTable += "<h3>Date</h3><h3>Show</h3><h3>City</h3><h3>Venu</h3><h3>Ticket</h3></div>";
       htmlTable += "<hr class='table-line'></hr>";
 
       // chech if array has no entries
