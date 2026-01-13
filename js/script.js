@@ -241,7 +241,7 @@ function concertDates() {
 
       // construct button for booking request
 
-      htmlTable += "<a href='contact.html' class='button-link-with-icon' aria-label='Go to page contact to send a booking request'>booking request<i class='fa-solid fa-arrow-right' aria-hidden='true'></i></a>";
+     // htmlTable += "<a href='contact.html' class='button-link-with-icon' aria-label='Go to page contact to send a booking request'>booking request<i class='fa-solid fa-arrow-right' aria-hidden='true'></i></a>";
 
       // write constructed html into DOM
 
