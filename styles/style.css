@@ -608,6 +608,8 @@ a {
 .link-with-icon {
   text-decoration: none;
   display: inline-block;
+  border:none;
+    text-transform: uppercase;
 
   i {
     transition: padding-left var(--transistion-time) ease-in-out;
@@ -616,6 +618,42 @@ a {
   &:hover {
     i {
       padding-left: 1em;
+    }
+
+  }
+}
+
+/* button-link with icon */
+
+.button-link-with-icon {
+  text-decoration:none;
+  text-transform: uppercase;
+  display: inline-block;
+  border: 1px solid;
+  padding: 0.6em 1.2em;
+  border-radius: 0.5em;
+  color: var(--color-main);
+    transition: padding var(--transistion-time) ease-in-out,
+     color var(--transistion-time) ease-in-out,
+   background-color var(--transistion-time) ease-in-out;
+
+  &:hover {
+    color: var(--color-main);
+    background-color: var(--color-highlight);
+    padding-right: 0.6em;
+  }
+
+
+  i {
+    transition: padding var(--transistion-time) ease-in-out;
+    padding-left: 0.6em;
+   
+  }
+
+  &:hover {
+    i {
+      padding-left: 1.2em;
+
     }
 
   }
@@ -650,7 +688,7 @@ h2.center {
   margin: 0;
   text-decoration: none;
   text-transform: uppercase;
-  border-radius: 0.5rem;
+  border-radius: 0.5em;
   border: none;
   background-color: var(--color-main);
   color: var(--color-background);
@@ -672,11 +710,11 @@ h2.center {
 .button-nav {
   color: var(--color-main);
   border: 1px solid var(--color-main);
-  padding: 0.6em 0.6em;
+  padding: 0.6em 1.2em;
   text-decoration: none;
   text-transform: uppercase;
   display: inline-block;
-  border-radius: 0.5rem;
+  border-radius: 0.5em;
   line-height: 1;
 
   transition:
@@ -703,10 +741,10 @@ h2.center {
     }
 
     &.nav-back {
-      padding-left: 0.3em;
+      padding-left: 0.6em;
 
       i {
-        padding-right: 0.9em;
+        padding-right: 1.2em;
       }
     }
   }

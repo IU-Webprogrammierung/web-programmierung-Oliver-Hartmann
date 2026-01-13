@@ -1,4 +1,14 @@
 [
+      {
+      "date": "2026-01-29",
+      "show": "Producer Meeting Talk & Book Reading",
+      "city": "Dresden",
+      "venu": "Koralle",
+      "ticket": {
+         "type": "info",
+         "url": "https://producermeeting.com/"
+      }
+   },
    {
       "date": "2025-11-05",
       "show": "DAVE Festival Talk: Music Streaming",
