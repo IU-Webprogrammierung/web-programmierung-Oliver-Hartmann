@@ -14,10 +14,7 @@ constructFooter();
 function constructHeader() {
 
 
-  const link = document.createElement("link");
-  link.rel = "stylesheet";
-  link.href = "styles/style.css?v=" + Date.now();
-  document.head.appendChild(link);
+
 
   // check if subpage (single release) is loaded
   let urlAdd = "";
@@ -31,6 +28,13 @@ function constructHeader() {
 
   }
 
+  // CSS Laden
+  const link = document.createElement("link");
+  link.rel = "stylesheet";
+  link.href = urlAdd + "styles/style.css?v=" + Date.now();
+  document.head.appendChild(link);
+
+  // Nav Bar Konstruieren
   htmlHeader = "<!-- Top Navigation Bar -->";
   htmlHeader += "<nav id='topnav-bar'>";
   htmlHeader += "<a href='" + urlAdd + "index.html' aria-label='Go to homepage Insect O.' id='home'>Insect O.</a>";

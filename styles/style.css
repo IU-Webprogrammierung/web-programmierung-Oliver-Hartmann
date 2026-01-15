@@ -49,7 +49,7 @@
 
   /* font weight */
   --font-weight-hero: 100;
-  --font-weight: 200;
+  --font-weight:200;
 
   /* animation duration */
   --transistion-time: 300ms;
@@ -118,9 +118,13 @@ body {
   margin: 0px;
   background-color: var(--color-background);
   font-family: "Roboto";
-  font-weight: var(--font-weight);
   overflow-y: scroll;
   scroll-behavior: smooth;
+
+  font-weight: calc(var(--font-weight)*1.5);
+   @media only screen and (min-width: 576px) {
+    font-weight: var(--font-weight);
+  }
 }
 
 /* Sticky Header with menu */
