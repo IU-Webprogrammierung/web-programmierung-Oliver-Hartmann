@@ -13,6 +13,12 @@ constructFooter();
 
 function constructHeader() {
 
+
+  const link = document.createElement("link");
+  link.rel = "stylesheet";
+  link.href = "styles/style.css?v=" + Date.now();
+  document.head.appendChild(link);
+
   // check if subpage (single release) is loaded
   let urlAdd = "";
   isSubpage = document.getElementsByTagName("main")[0].classList.contains("subpage");
