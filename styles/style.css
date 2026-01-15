@@ -6,12 +6,12 @@
 
 :root {
   /* theme colors */
-  --white: #fafafa;
+  --white: #eee;
   --petrol: #4f6d7a;
   --petrol-darmkode: #618394;
   --silver: #e9e9e9;
-  --black: #030303;
-  --dark-grey: #222;
+  --black: #111;
+  --dark-grey: #333;
   --light-grey: #bbbbbb;
 
   /*++++++++++++++++++++++*/
@@ -43,7 +43,12 @@
 
   /* other variables */
 
+  --font-size-hero: clamp(3rem, 10vw, 7rem);
+  --font-size-h1: clamp(2rem, 5vw, 5rem);
+  --font-size-h2: clamp(2rem, 4vw, 4rem);
+
   /* font weight */
+  --font-weight-hero: 100;
   --font-weight: 200;
 
   /* animation duration */
@@ -379,12 +384,12 @@ nav a {
     h1 {
       color: var(--color-main);
       text-transform: uppercase;
-      font-size: clamp(3rem, 10vw, 7rem);
+      font-size: var(--font-size-hero);
       line-height: 1;
       color: var(--color-main-title);
       letter-spacing: -0.05em;
       font-family: "Roboto";
-      font-weight: 100;
+      font-weight: var(--font-weight-hero)
     }
 
     /* second line hero text */
@@ -464,9 +469,9 @@ nav a {
 
 /* pagetitle headline without a hero section */
 
-h1.single-title {
+h1.single-title, h1 {
   color: var(--color-main);
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: var(--font-size-h1);
   letter-spacing: -0.05em;
   font-weight: 100;
   text-transform: uppercase;
@@ -484,9 +489,9 @@ h1.single-title {
 h2 {
   color: var(--color-main);
   margin: 0 0 1rem 0;
-  font-size: clamp(2rem, 5vw, 4rem);
+  font-size: var(--font-size-h2);
   text-transform: uppercase;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.05em;
   font-family: "Roboto";
   font-weight: 100;
   line-height: 1;
@@ -549,7 +554,7 @@ textarea {
 /* home link on navbar */
 
 #home {
-  font-weight: 300;
+  font-weight: 500;
 }
 
 /* focus */
@@ -823,15 +828,15 @@ section {
   column-gap: 2%;
 
   @media only screen and (min-width: 576px) {
-    grid-template-columns: 49% 49%;
+    grid-template-columns: 1fr 1fr;
   }
 
   @media only screen and (min-width: 824px) {
-    grid-template-columns: 32% 32% 32%;
+    grid-template-columns: 1fr 1fr 1fr;;
   }
 
   @media only screen and (min-width: 1024px) {
-    grid-template-columns: 23.5% 23.5% 23.5% 23.5%
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
   /* show no entries in the grid */
@@ -1051,7 +1056,7 @@ section {
   display: grid;
   grid-template-columns: 100%;
   row-gap: 2rem;
-  column-gap: 10%;
+  column-gap: 5%;
   justify-content: center;
 
   .button-nav {
@@ -1059,8 +1064,8 @@ section {
   }
 
   @media only screen and (min-width: 576px) {
-    grid-template-columns: 47.5% 47.5%;
-    column-gap: 5%;
+    grid-template-columns: 1fr 1fr;
+   
 
     /* swap column for image */
 
@@ -1072,7 +1077,12 @@ section {
     /* swap column for text */
 
     .grid-text-left {
-      grid-column: 1;
+      grid-column: 1 / span 1;
+      grid-row: 1;
+    }
+
+    .grid-text-right {
+      grid-column: 2 / span 1;
       grid-row: 1;
     }
 
@@ -1088,8 +1098,8 @@ section {
   }
 
   @media only screen and (min-width: 1200px) {
-    grid-template-columns: 45% 45%;
-    column-gap: 10%;
+    grid-template-columns: 1fr 1fr;
+
 
   }
 }
@@ -1139,7 +1149,7 @@ section {
   }
 
   img {
-    filter: drop-shadow(0px 10px 10px);
+    /*filter: drop-shadow(0px 10px 10px);*/
     margin-left: auto;
     margin-right: auto;
   }
@@ -1161,8 +1171,8 @@ section {
   }
 
   @media only screen and (min-width: 1200px) {
-    grid-template-columns: 45% 45%;
-    column-gap: 10%;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 5%;
 
   }
 }
