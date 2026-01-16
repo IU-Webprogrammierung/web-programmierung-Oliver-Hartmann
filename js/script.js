@@ -216,7 +216,7 @@ function concertDates() {
           )
 
           if (myArr[x].ticket.type == "info") (
-            htmlTable += "<p><a href='" + myArr[x].ticket.url + "' class='button-cta' aria-label='more information about " + myArr[x].show + " at " + myArr[x].venu + "'>more info<i class='fa-solid fa-arrow-right link' aria-hidden='true'></i></a></p>"
+            htmlTable += "<p><a href='" + myArr[x].ticket.url + "' class='button-cta' aria-label='more information about " + myArr[x].show + " at " + myArr[x].venu + "'>visit<i class='fa-solid fa-arrow-right link' aria-hidden='true'></i></a></p>"
 
           )
 
