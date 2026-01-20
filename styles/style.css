@@ -49,7 +49,7 @@
 
   /* font weight */
   --font-weight-hero: 100;
-  --font-weight:200;
+  --font-weight: 200;
 
   /* animation duration */
   --transistion-time: 300ms;
@@ -122,7 +122,8 @@ body {
   scroll-behavior: smooth;
 
   font-weight: calc(var(--font-weight)*1.5);
-   @media only screen and (min-width: 576px) {
+
+  @media only screen and (min-width: 576px) {
     font-weight: var(--font-weight);
   }
 }
@@ -473,7 +474,8 @@ nav a {
 
 /* pagetitle headline without a hero section */
 
-h1.single-title, h1 {
+h1.single-title,
+h1 {
   color: var(--color-main);
   font-size: var(--font-size-h1);
   letter-spacing: -0.05em;
@@ -617,8 +619,8 @@ a {
 .link-with-icon {
   text-decoration: none;
   display: inline-block;
-  border:none;
-    text-transform: uppercase;
+  border: none;
+  text-transform: uppercase;
 
   i {
     transition: padding-left var(--transistion-time) ease-in-out;
@@ -635,16 +637,16 @@ a {
 /* button-link with icon */
 
 .button-link-with-icon {
-  text-decoration:none;
+  text-decoration: none;
   text-transform: uppercase;
   display: inline-block;
   border: 1px solid;
   padding: 0.6em 1.2em;
   border-radius: 0.5em;
   color: var(--color-main);
-    transition: padding var(--transistion-time) ease-in-out,
-     color var(--transistion-time) ease-in-out,
-   background-color var(--transistion-time) ease-in-out;
+  transition: padding var(--transistion-time) ease-in-out,
+    color var(--transistion-time) ease-in-out,
+    background-color var(--transistion-time) ease-in-out;
 
   &:hover {
     color: var(--color-main);
@@ -656,7 +658,7 @@ a {
   i {
     transition: padding var(--transistion-time) ease-in-out;
     padding-left: 0.6em;
-   
+
   }
 
   &:hover {
@@ -836,7 +838,8 @@ section {
   }
 
   @media only screen and (min-width: 824px) {
-    grid-template-columns: 1fr 1fr 1fr;;
+    grid-template-columns: 1fr 1fr 1fr;
+    ;
   }
 
   @media only screen and (min-width: 1024px) {
@@ -977,7 +980,7 @@ section {
       font-size: 0.8em;
 
       i {
-         padding-right: 0.6em;
+        padding-right: 0.6em;
         transition:
           padding var(--transistion-time) ease-in-out;
       }
@@ -1069,7 +1072,7 @@ section {
 
   @media only screen and (min-width: 576px) {
     grid-template-columns: 1fr 1fr;
-   
+
 
     /* swap column for image */
 
@@ -1120,56 +1123,79 @@ section {
   padding-left: var(--side-padding);
   padding-right: var(--side-padding);
 
-  h1 {
-    color: var(--color-text-feature);
-    margin-bottom: 1rem;
-    padding-left: 0;
-    padding-right: 0;
-  }
+  article {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2em;
 
-  h2 {
-    color: var(--color-text-feature);
-    ;
-  }
+    h1 {
+      color: var(--color-text-feature);
+      margin-bottom: 0rem;
+      padding-bottom: 0rem;
+      padding-left: 0;
+      padding-right: 0;
+    }
 
-  p,
-  li {
-    color: var(--color-text-feature);
-  }
+    h2 {
+      color: var(--color-text-feature);
+      ;
+    }
 
-  ul {
-    display: block;
-  }
+    p,
+    li {
+      color: var(--color-text-feature);
+      padding: 0;
+    }
 
-  .button-nav {
-    color: var(--color-text-feature);
-    border-color: var(--color-text-feature);
-    margin-top: 0.5rem;
-  }
+    ul {
+      display: block;
+    }
 
-  .button-nav:hover {
-    color: var(--white);
-    border-color: var(--color-highlight);
-  }
+    
 
-  img {
-    /*filter: drop-shadow(0px 10px 10px);*/
-    margin-left: auto;
-    margin-right: auto;
+    .button-nav {
+      color: var(--color-text-feature);
+      border-color: var(--color-text-feature);
+      /*margin-top: 0.5rem;*/
+            aspect-ratio: 1 / 1;
+            width: fit-content;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            row-gap: 0.5em;
+
+            i {
+              padding: 0;
+              font-size: 1.5em;
+            }
+    }
+
+    .button-nav:hover {
+      color: var(--white);
+      border-color: var(--color-highlight);
+    }
+
+    img {
+      /*filter: drop-shadow(0px 10px 10px);*/
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 
   @media only screen and (min-width: 824px) {
     padding-top: 80px;
     padding-bottom: 80px;
-    grid-template-columns: 47.5% 47.5%;
+    grid-template-columns: 1fr 1fr;
     column-gap: 5%;
 
     h1 {
-      margin-bottom: 2rem;
+      /*margin-bottom: 2rem;*/
     }
 
     .button-nav {
-      margin-top: 5%;
+      /*margin-top: 5%;*/
     }
 
   }
