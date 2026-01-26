@@ -727,6 +727,7 @@ h2.center {
   display: inline-block;
   border-radius: 0.5em;
   line-height: 1;
+  font-size: 0.8em;
 
   transition:
     background-color var(--transistion-time) ease-in-out,
